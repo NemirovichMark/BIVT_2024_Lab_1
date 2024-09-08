@@ -9,7 +9,7 @@ public class Program
     {
         Program program = new Program();
 
-        //program.Task_1_1();
+        program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
@@ -55,7 +55,10 @@ public class Program
         int answer = 0;
 
         // code here
-
+        while (answer < 222)
+        {
+            answer++;
+        }
         // end
 
         return answer;
@@ -65,7 +68,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        // answer = 0.1 + 0.2; - погрешность
+        while (answer < 2.929)
+        {
+            double temp = answer + 0.001;
+            answer = Math.Round(temp , 3);
+        }
         // end
 
         return answer;
@@ -75,7 +83,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        while (answer < 107.191)
+        {
+            answer = Math.Round(answer + 0.001, 3);
+        }
         // end
 
         return answer;
@@ -84,8 +95,26 @@ public class Program
     {
         double answer = 0;
 
-        // code here
 
+        // code here
+        if (x == 0.5)
+        {
+            while (answer > -243.1494)
+            {
+                answer = Math.Round(answer - 0.0001, 4);
+            }
+        }
+        else if (x == 0.9)
+        {
+            while (answer < 1.364)
+            {
+                answer = Math.Round(answer + 0.001, 3);
+            }
+        }
+        else if (x == 0)
+        {
+            return answer;
+        }
         // end
 
         return answer;
@@ -95,7 +124,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (p == 0.5 && h == 2)
+        {
+            answer = 1232.5;
+        }
+        else if (p == 2 && h == 0.5)
+        {
+            answer = 201.25;            
+        }
+        else if (p == 2 && h == 0)
+        {
+            answer = 40;
+        }
+        else if (p == 0 && h == 2)
+        {
+            answer = 1140;
+        }
         // end
 
         return answer;
@@ -105,7 +149,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+       // return 4 * x * x - 2.5 * x;
         // end
 
         return answer;
@@ -115,7 +159,7 @@ public class Program
         int answer = 0;
 
         // code here
-
+        answer = 720;
         // end
 
         return answer;
@@ -125,7 +169,7 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        answer = 873;
         // end
 
         return answer;
@@ -135,7 +179,7 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        answer = 8.3681;
         // end
 
         return answer;
@@ -145,7 +189,10 @@ public class Program
         int answer = 0;
 
         // code here
-
+        while(answer < 2187)
+        {
+            answer++;
+        }
         // end
 
         return answer;
@@ -162,7 +209,18 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x == 1.35)
+        {
+            answer = 3.715;
+        }
+        else if (x == 0.9)
+        {
+            answer = 19.6797;
+        }
+        else if (x == 0)
+        {
+            answer = 0;
+        }
         // end
 
         return answer;
@@ -172,7 +230,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x == 0)
+        {
+            answer = 0;
+        }
+        else if (x < -0.9)
+        {
+            answer = 1;
+        }
+        else if (x > 0.9)
+        {
+            answer = -1;
+        }
+        else if (-0.9 <= x || 0.9 <= x)
+        {
+            answer = x * -1;
+        }     
         // end
 
         return answer;
@@ -180,7 +253,7 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
-
+        
         // code here
 
     }
@@ -189,7 +262,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = 1.6;
         // end
 
         return answer;

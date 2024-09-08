@@ -1,0 +1,18 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/Lab1/[Dd]ebug/
+/Lab1/[Rr]elease/
+x64/
+/Lab1/[Bb]in/
+/Lab1/[Oo]bj/
+/.vs
+/Lab1/.vs
+/Lab1/bin/Debug/net8.0/Lab1.dll
+/Lab1/bin/Debug/net8.0/Lab1.exe
+/Lab1/bin/Debug/net8.0/Lab1.pdb
+/Lab1/obj/Lab1.csproj.nuget.dgspec.json
+/Lab1/obj/Lab1.csproj.nuget.g.props
+/Lab1/obj/project.assets.json
+/Lab1/obj/project.nuget.cache

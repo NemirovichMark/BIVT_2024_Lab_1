@@ -188,14 +188,16 @@ namespace Tests
         public void Task_1_13Test()
         {
             // Arrange
-            double[] test = new double[31] { -1.5, -1.4, -1.3, -1.2, -1.1, -1.0, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5 };
+            decimal[] test;
+            //double[] test = new double[31] { -1.5, -1.4, -1.3, -1.2, -1.1, -1.0, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5 };
             double[] answer = new double[31] { 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0, -0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9, -1, -1, -1, -1, -1, -1 };
             // Act
-            for (int i = 0; i < test.Length; i++)
-                test[i] = main.Task_1_13(test[i]);
+            /*for (int i = 0; i < test.Length; i++)
+                test[i] = main.Task_1_13(test[i]);*/
             // Assert
+            test = main.Task_1_13(-1.5m,1.5m);  
             for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(answer[i], test[i]);
+                Assert.AreEqual((decimal)answer[i],   test[i]);
         }
 
         [TestMethod()]
@@ -222,7 +224,7 @@ namespace Tests
             // Arrange
             (double, int) test;
             double answer = 2.4596;
-            double power = 18;
+            double power = 18;  
             // Act
             test = main.Task_1_16();
             // Assert
@@ -236,7 +238,7 @@ namespace Tests
             // Arrange
             double[] test = new double[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             double[] answer = new double[10] { 8980.9633, 8981.6704, 8982.3777, 8983.085, 8983.7924, 8984.4998, 8985.2072, 8985.9148, 8986.6223, 8987.33 };
-            // Act
+            // Act  
             for (int i = 0; i < test.Length; i++)
                 test[i] = main.Task_1_17(test[i]);
             // Assert

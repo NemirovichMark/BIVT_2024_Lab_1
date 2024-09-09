@@ -10,7 +10,7 @@ public class Program
     {
         Program program = new Program();
 
-        program.Task_1_1();
+        //program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
@@ -53,9 +53,12 @@ public class Program
     #region Level 1
     public int Task_1_1()
     {
-        int answer = 222;
+        int answer = 0;
 
         // code here
+        int i;
+        for (i = 2; i <= 35; i = i + 3)
+            answer = answer + i;
         Console.WriteLine(answer);
         // end
 
@@ -66,7 +69,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        int i;
+        for (i = 1; i <= 10; i = i + 1)
+        { 
+            answer = answer + (1.0 / i);
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -76,7 +84,11 @@ public class Program
         double answer = 0;
 
         // code here
+        for (int i = 2; i <= 112; i = i + 2)
 
+            answer = answer + (i / (i + 1.0));
+
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -113,10 +125,15 @@ public class Program
     }
     public int Task_1_7()
     {
-        int answer = 0;
+        int answer = 1;
 
         // code here
+        const int n = 6;
+        for (int i = 2; i <= n; i++)
 
+            answer *= i;
+
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -126,7 +143,12 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        const int n = 6;
+        int p = 1;
+        for (int i = 2; i <= n; i++)
+            p *= i;
+        answer += n;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -143,10 +165,16 @@ public class Program
     }
     public int Task_1_10()
     {
-        int answer = 0;
+        int answer = 1;
 
         // code here
+        int ex = 7, num = 3;
 
+        for (int i = 1; i <= ex; i++)
+
+            answer *= num;
+
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -154,6 +182,25 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
+
+       // a)
+        List<int> List1 = new List<int>();
+        for (int i = 1; i <= 6; i++)
+
+            List1.Add(i);
+
+        string str1 = String.Join(" ", List1);
+        Console.WriteLine(str1);
+
+        //б)
+        int n = 5;
+        List<int> List2 = new List<int>();
+        for (int j = 1; j <= 6; j ++)
+
+            List2.Add(n);
+
+        string str2 = String.Join(" ", List2);
+        Console.WriteLine(str2);
 
         // code here
 
@@ -173,10 +220,9 @@ public class Program
         double answer = 0;
 
         // code here
+            // end
 
-        // end
-
-        return answer;
+            return answer;
     }
     public void Task_1_14()
     {

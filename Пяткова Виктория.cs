@@ -9,8 +9,8 @@ public class Program
     {
         Program program = new Program();
 
-        program.Task_1_1();
-        //program.Task_1_2();
+        //program.Task_1_1();
+        program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
@@ -56,9 +56,12 @@ public class Program
 
 
         // code here
-        answer = 222;
+        answer = 0;
+        for (int s = 2; s <= 35; s = s + 3)
+        
+            answer += s;
 
-        Console.WriteLine("gggggg");
+            Console.WriteLine(answer);
 
         // end
 
@@ -66,9 +69,15 @@ public class Program
     }
     public double Task_1_2()
     {
-        double answer = 0;
+        double answer = 1.0;
 
         // code here
+        answer = 1.0;
+        for (int s = 2; s <= 10; s = s + 1)
+
+            answer += 1.0 / s;
+            Console.WriteLine(answer);
+        
 
         // end
 

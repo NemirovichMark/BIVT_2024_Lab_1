@@ -22,12 +22,12 @@ jobs:
               repo: context.repo.repo,
               affiliation: 'all' // Добавили параметр affiliation
             });
-            return JSON.stringify(forks.data); // Возвращаем строку JSON
+            return forks.data; // Возвращаем массив
       - name: Create pull request for each fork
         uses: actions/github-script@v3
         with:
           script: |
-            const forks = JSON.parse(${{ steps.get_forks.outputs.forks }}); // Парсим строку JSON
+            const forks = ${{ steps.get_forks.outputs.forks }}; // Получаем массив
             const repoName = context.repo.repo;
             for (const fork of forks) {
               const forkOwner = fork.owner.login;

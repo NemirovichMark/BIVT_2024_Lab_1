@@ -17,7 +17,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const forks = context.github.repos.listForks({
+            const forks = github.repos.listForks({
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
@@ -32,7 +32,7 @@ jobs:
               const forkOwner = fork.owner.login;
               const forkName = fork.name;
               console.log(Creating pull request for ${forkOwner}/${forkName});
-              context.github.pulls.create({
+              github.pulls.create({
                 owner: forkOwner,
                 repo: forkName,
                 title: 'Update from upstream',

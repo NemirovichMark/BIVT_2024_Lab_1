@@ -1,0 +1,12 @@
+{
+  "name": "Lab1",
+  "version": "1.0.0",
+  "description": "Lab1 from 2100 book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {}
+}

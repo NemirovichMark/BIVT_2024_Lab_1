@@ -26,7 +26,10 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const forks = ${{ steps.get_forks.outputs.forks }};
+            const forks = github.repos.listForks({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
             const repoName = context.repo.repo;
             for (const fork of forks) {
               const forkOwner = fork.owner.login;

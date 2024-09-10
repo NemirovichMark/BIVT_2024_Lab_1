@@ -22,6 +22,8 @@ jobs:
               repo: context.repo.repo,
             });
             return JSON.stringify(forks.data); // Возвращаем строку JSON
+          outputs:
+            forks: ${{ steps.get_forks.outputs.forks }}  # Добавлена секция outputs
       - name: Create pull request for each fork
         uses: actions/github-script@v3
         with:

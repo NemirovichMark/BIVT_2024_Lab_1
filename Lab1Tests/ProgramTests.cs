@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -44,7 +44,7 @@ namespace Tests
         {
             // Arrange
             double test;
-            double answer = 107.191;
+            double answer = 53.9967;
             // Act
             test = main.Task_1_3();
             // Assert
@@ -234,8 +234,8 @@ namespace Tests
         public void Task_1_17Test()
         {
             // Arrange
-            double[] test = new double[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            double[] answer = new double[10] { 8980.9633, 8981.6704, 8982.3777, 8983.085, 8983.7924, 8984.4998, 8985.2072, 8985.9148, 8986.6223, 8987.33 };
+            double[] test = new double[10] { 1, 2, 3, 4, 5, 10, 50, 100, 250, 1000 };
+            double[] answer = new double[10] { 112.6987, 159.3863, 195.2153, 225.424, 252.0417, 356.5109, 798.436, 1131.3708, 1799.3054, 3701.3511 };
             // Act
             for (int i = 0; i < test.Length; i++)
                 test[i] = main.Task_1_17(test[i]);
@@ -249,7 +249,7 @@ namespace Tests
         {
             // Arrange
             int[] test = new int[8] { 3, 6, 9, 12, 15, 18, 21, 24 };
-            int[] answer = new int[8] { 10, 20, 40, 80, 160, 320, 640, 1280 };
+            int[] answer = new int[8] { 20, 40, 80, 160, 320, 640, 1280, 2560 };
             // Act
             for (int i = 0; i < test.Length; i++)
                 test[i] = main.Task_1_18(test[i]);

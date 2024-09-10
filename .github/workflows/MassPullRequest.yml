@@ -21,12 +21,12 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            return forks.data;
+            return JSON.stringify(forks.data); // Возвращаем строку JSON
       - name: Create pull request for each fork
         uses: actions/github-script@v3
         with:
           script: |
-            const forks = ${{ steps.get_forks.outputs.forks }}; 
+            const forks = JSON.parse(${{ steps.get_forks.outputs.forks }}); // Парсим строку JSON
             const repoName = context.repo.repo;
             for (const fork of forks) {
               const forkOwner = fork.owner.login;

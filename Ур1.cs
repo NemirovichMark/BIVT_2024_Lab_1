@@ -51,7 +51,10 @@ public class Program
         //program.Task_3_9(0.1);
     }
 
-    
+      /////////////////////////// Оптимизировать Math.Pow (Перевести для каждого свое через for или while)////
+
+//                                               отступ    округление до 6 зн.п.з
+    ///////////////////   Console.WriteLine($"{n,   10:    f6}");
     #region Level 1
     public int Task_1_1()
     {

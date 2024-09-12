@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -28,17 +28,17 @@ public class Program
         program.Task_1_16();
         program.Task_1_17(10);
         program.Task_1_18(24);
-        //program.Task_2_1(0);
+        program.Task_2_1(0);
         //program.Task_2_2();
-        //program.Task_2_3(8, 2, 0);
+        program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
-        //program.Task_2_5(11, 5);
+        program.Task_2_5(11, 5);
         //program.Task_2_6();
-        //program.Task_2_7a();
+        program.Task_2_7a();
         //program.Task_2_7b();
-        //program.Task_2_7c();
+        program.Task_2_7c();
         //program.Task_2_8();
-        //program.Task_2_9();
+        program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
@@ -51,16 +51,16 @@ public class Program
         //program.Task_3_9(0.1);
     }
 
-      /////////////////////////// Оптимизировать Math.Pow (Перевести для каждого свое через for или while)////
+    /////////////////////////// Оптимизировать Math.Pow (Перевести для каждого свое через for или while)////
 
-//                                               отступ    округление до 6 зн.п.з
+    //                                               отступ    округление до 6 зн.п.з
     ///////////////////   Console.WriteLine($"{n,   10:    F6}");
     #region Level 1
     public int Task_1_1()
     {
         int answer = 0;
 
-        for (int i = 2; i<=35; i += 3)
+        for (int i = 2; i <= 35; i += 3)
         {
             answer += i;
         }
@@ -72,7 +72,7 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int i = 1; i<= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
             answer += 1.0 / i;
         }
@@ -88,9 +88,9 @@ public class Program
         // code here
         for (int i = 2; i <= 112; i += 2)
         {
-            answer += Math.Round(i * 1.0 / (i + 1)*1000)/1000.0;
+            answer += Math.Round(i * 1.0 / (i + 1) * 1000) / 1000.0;
 
-            
+
         }
         // end
         Console.WriteLine(answer);
@@ -102,10 +102,10 @@ public class Program
         double answer = 0;
         // code here
         if (x == 0) return 0;//del(0) вылез
-        for (int i =0;i<9; i++)
+        for (int i = 0; i < 9; i++)
         {
 
-            answer += Math.Cos((1+i)*x) / Math.Pow(x, i);
+            answer += Math.Cos((1 + i) * x) / Math.Pow(x, i);
         }
         // end
         answer = Math.Round(answer, 3);//В ответе 1,3640302081709366, в ответах 1.364     (округление)
@@ -131,9 +131,9 @@ public class Program
 
         // code here
         answer = 0.5 * Math.Pow(x, 2) - 7 * x;
-            // end
+        // end
         Console.WriteLine(answer);
-        
+
         return answer;
     }
     public int Task_1_7()
@@ -175,7 +175,8 @@ public class Program
         // code here;
         for (int n = 1; n <= 6; n++)
         {
-            for (int i = 1; i <= n; i++) { 
+            for (int i = 1; i <= n; i++)
+            {
                 factorial *= i;
             }
             answer += Math.Pow(-1, n) * Math.Pow(5, n) / factorial;
@@ -272,10 +273,10 @@ public class Program
             int tempU = up1, tempD = down1;
             up1 = up2;
             down1 = down2;
-            up2 =up2 + tempU;
-            down2 = down2 + tempD;            
+            up2 = up2 + tempU;
+            down2 = down2 + tempD;
         }
-    Console.WriteLine(up2*1.0/down2);
+        Console.WriteLine(up2 * 1.0 / down2);
         // end
         answer = up2 * 1.0 / down2;
         return answer;
@@ -286,14 +287,14 @@ public class Program
         int power = 0;
         double Last_Squere = 1.0 / 15;
         // code here
-        for (int i = 0; i <= 60; i+=4)
+        for (int i = 0; i <= 60; i += 4)
         {
             Console.Write(Last_Squere); Console.Write(" ");
             //Last_Squere = Last_Squere * 2;
             //answer += Math.Pow(2,i);
         }
         // end
-        Console.WriteLine(answer);
+        Console.WriteLine($"{answer},  1,16");
         return (answer, power);
     }
     public double Task_1_17(double x)
@@ -301,7 +302,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Sqrt(Math.Pow(6350+x, 2)+ Math.Pow(6350,2));
+        answer = Math.Sqrt(Math.Pow(6350 + x, 2) + Math.Pow(6350, 2));
         // end
         Console.WriteLine("Hello");
         Console.WriteLine(answer);
@@ -315,10 +316,10 @@ public class Program
 
         x = x / 3;
 
-        for (int i = 0; i < x; i ++)
+        for (int i = 0; i < x; i++)
         {
             answer *= 2;
-}
+        }
 
         // end
         Console.WriteLine(answer);
@@ -332,9 +333,10 @@ public class Program
         double answer = 0;
         int n = 1;
         // code here
-        while (Math.Abs(Math.Cos(n*x)/Math.Pow(n,2))>=0.0001){
-            answer+=Math.Cos(n*x)/Math.Pow(n,2);
-            n+=1;
+        while (Math.Abs(Math.Cos(n * x) / Math.Pow(n, 2)) >= 0.0001)
+        {
+            answer += Math.Cos(n * x) / Math.Pow(n, 2);
+            n += 1;
         }
         Console.WriteLine(answer);
         // end

@@ -159,7 +159,7 @@ public class Program
             for (double k=1; k <= n; k++) { f *= k; }
             answer += Math.Pow(-1, n) * Math.Pow(5, n) / f;
         }
-        answer = Math.Round(answer,4);
+        answer = Math.Round(answer,2);
         // end
 
         return answer;
@@ -248,7 +248,7 @@ public class Program
         // code 
         answer = 1;
         for (int step = 1; step <= 64; step++) { answer *= 2; }
-        answer /= 15;
+        answer = Math.Round(answer/15, 2);
         // end
 
         return (answer, power);
@@ -269,7 +269,7 @@ public class Program
         int answer = 0;
 
         // code here
-        answer = 5;
+        answer = 10;
         for (int step = 1; step<=x/3;  step++) { answer *= 2; }
         // end
 

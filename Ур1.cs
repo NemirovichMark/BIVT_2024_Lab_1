@@ -302,7 +302,7 @@ public class Program
         Console.WriteLine(answer);
         return answer;
     }
-    public int Task_1_18(int x) //////////           Уточнить
+    public int Task_1_18(int x)
     {
         int answer = 10;
 

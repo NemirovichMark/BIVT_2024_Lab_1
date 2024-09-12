@@ -50,6 +50,8 @@ public class Program
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
     }
+
+    
     #region Level 1
     public int Task_1_1()
     {
@@ -325,9 +327,13 @@ public class Program
     public double Task_2_1(double x)
     {
         double answer = 0;
-
+        int n = 1;
         // code here
-
+        while (Math.Abs(Math.Cos(n*x)/Math.Pow(n,2))>=0.0001){
+            answer+=Math.Cos(n*x)/Math.Pow(n,2);
+            n+=1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;

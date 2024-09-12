@@ -10,7 +10,7 @@ public class Program
         Program program = new Program();
 
         //program.Task_1_1();
-        program.Task_1_2();
+        //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
@@ -21,6 +21,11 @@ public class Program
         //program.Task_1_10();
         //program.Task_1_11();
         //program.Task_1_12(0.9);
+        for (double s = -1.5; s <= 1.5; s += 0.1)
+        {
+            double y = program.Task_1_13(s);
+            Console.WriteLine(y);
+        }
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -58,25 +63,26 @@ public class Program
         // code here
         answer = 0;
         for (int s = 2; s <= 35; s = s + 3)
-        
+        {
             answer += s;
-
             Console.WriteLine(answer);
-
+        }
         // end
 
         return answer;
     }
     public double Task_1_2()
     {
-        double answer = 1.0;
+        double answer = 1;
 
         // code here
         answer = 1.0;
         for (int s = 2; s <= 10; s = s + 1)
-
+        {
             answer += 1.0 / s;
-            Console.WriteLine(answer);
+        }
+        answer = Math.Round(answer, 4);
+        Console.WriteLine(answer);
         
 
         // end
@@ -88,7 +94,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (double s = 2; s <= 112; s += 2)
+        {
+            //for (double i = 3; i <= 113; i += 2)
+            answer += s / (s + 1);
+        }
+        answer = Math.Round(answer, 4);
+        Console.WriteLine(answer);
+        
         // end
 
         return answer;
@@ -98,7 +111,20 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double y = 1;
+        for (double s = 1; s <= 9; s += 1)
+        {
+            if (x == 0)
+            {
+                return 0;
+            }
+            answer += Math.Cos(s*x) / y;
+            y *= x;
+            //answer = Math.Round(answer, 4);
+            //Console.WriteLine(answer);
+        }
+        answer = Math.Round(answer, 4);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -106,9 +132,16 @@ public class Program
     public double Task_1_5(double p, double h)
     {
         double answer = 0;
-
+        double g = 0;
         // code here
+        for (int s = 0;s <=9; s+= 1)
+        {
+            g = p + s * h;
+            answer += g * g;
 
+        }
+        answer = Math.Round(answer, 4);
+        Console.WriteLine(answer); 
         // end
 
         return answer;
@@ -116,19 +149,29 @@ public class Program
     public double Task_1_6(double x)
     {
         double answer = 0;
-
+        double squaredx = 0;
         // code here
-
+        for (double s = -4; s <=4; s += 0.5)
+        {
+            squaredx = x * x;
+            answer = 0.5 * squaredx - 7 * x;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
     }
     public int Task_1_7()
     {
-        int answer = 0;
+        int answer = 1;
 
         // code here
+        for (int s = 1; s <= 6; s += 1)
+        {
+            answer *= s;
 
+        }
+        Console.WriteLine(answer);   
         // end
 
         return answer;
@@ -137,8 +180,15 @@ public class Program
     {
         int answer = 0;
 
-        // code here;
-
+        // code here;]
+        int factorial = 1;
+        for (int s = 1; s <= 6; s += 1)
+        {
+            factorial *= s;
+            answer += factorial;
+        
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -148,7 +198,20 @@ public class Program
         double answer = 0;
 
         // code here;
+        double y = 5;
+        double factorial = 1;
+        double sign = -1;
+        for (int s = 1; s <= 6; s +=1)
+        {
+            answer += sign * y / factorial;
+            //Console.WriteLine($"{answer} {sign} {y} {factorial}");
+            y *= 5;
+            factorial *= s+1;
+            sign *= -1;
 
+        }
+        answer = Math.Round(answer,4);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -158,7 +221,16 @@ public class Program
         int answer = 0;
 
         // code here
+        int s = 3;
+        for (int i = 1; i <= 6; i += 1)
+        {
+            
+            //Console.WriteLine(s);
+            s *= 3;
 
+        }
+        answer = s;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -172,10 +244,22 @@ public class Program
     }
     public double Task_1_12(double x)
     {
-        double answer = 0;
 
+        double answer = 1;
+        double y = x;
         // code here
+        for (int s = 1; s <= 10; s += 1)
+        {
+            if (x == 0)
+            {
+                return 0;
+            }
+            answer += (1 / x);
+            x *= y;
 
+        }
+        answer = Math.Round(answer,3);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -185,7 +269,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        //for (double s = -1.5; s <= 1.5; s += 0.1)
+        //{
+            if (x <= -1)
+            {
+                answer = 1;
+            }
+            else if (x > -1 && x <=1)
+            {
+                answer = -x;
+            }
+            else
+            {
+                answer = -1;
+            }
+        
+        //}
         // end
 
         return answer;
@@ -202,9 +301,25 @@ public class Program
         double answer = 0;
 
         // code here
+        double firstchisl = 1;
+        double firstznam = 1;
+        double secondchisl = 2;
+        double secondznam = 1;
+        for (double s = 3; s <= 5; s += 1)
+        {
+            double newchisl = firstchisl + secondchisl;  
+            double newznam = firstznam + secondznam; 
 
+            firstchisl = secondchisl; // Сдвигаем 2-й предыдущий числ
+            firstznam = secondznam; // Сдвигаем 2-й предыдущий знам
+
+            secondchisl = newchisl; // Обновляем 1-й предыдущий числ
+            secondznam = newznam; // Обновляем 1-й предыдущий знам
+
+        }
         // end
-
+        answer = secondchisl / secondznam;
+        Console.WriteLine(answer);
         return answer;
     }
     public (double, int) Task_1_16()

@@ -11,7 +11,7 @@ public class Program
         Program program = new Program();
 
         //program.Task_1_1();
-        program.Task_1_2();
+        //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
@@ -66,7 +66,8 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int k = 1; k <= 10; k++) { answer += 1.0 / (double)k; Console.WriteLine(1.0 / k); }
+        for (int k = 1; k <= 10; k++) { answer += 1.0 / (double)k; }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -79,8 +80,8 @@ public class Program
         for (double k = 2; k <= 112; k += 2) 
         { 
             answer += k / (k + 1);
-            //Console.WriteLine("{0} {1} {2}",k,answer, k / (k + 1));
         }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -95,7 +96,7 @@ public class Program
         {
             answer += Math.Cos(k * x) / Math.Pow(x, k - 1);
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -179,7 +180,6 @@ public class Program
         // There is no test for this task
 
         // code here
-        string first, second;
         for (int a=1; a<=6; a++) { Console.Write(" "+a); }
         for (int a = 1; a <= 6; a++) { Console.Write(" "+5); }
     }
@@ -195,7 +195,7 @@ public class Program
             for (int step = 1; step <= power; step++) { result *= x; }
             answer += 1/result;
         }
-        answer=Math.Round(answer,4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -248,6 +248,7 @@ public class Program
         // code 
         answer = 1;
         for (int step = 1; step <= 64; step++) { answer *= 2; }
+        answer /= 15;
         // end
 
         return (answer, power);
@@ -258,7 +259,7 @@ public class Program
 
         // code here
         double R = 6350;
-        answer = Math.Sqrt((R + x) * (R + x) - R * R);
+        answer = Math.Round(Math.Sqrt((R + x) * (R + x) - R * R), 2);
         // end
 
         return answer;

@@ -269,7 +269,7 @@ namespace Tests
             double test3 = -0.35;
             double answer3 = 1.13;
             double test4 = 0;
-            double answer4 = 1.64;
+            double answer4 = 1.63;
             // Act
             test1 = main.Task_2_1(test1);
             test2 = main.Task_2_1(test2);

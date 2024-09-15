@@ -88,7 +88,7 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x == 0) return answer; // division by zero is not possible
+        if (x == 0) return 0; // division by zero is not possible
         for (double k = 1, y=1; k <= 9; k++)
         {
             answer += Math.Cos(k * x) / y;

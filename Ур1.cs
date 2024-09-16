@@ -580,14 +580,30 @@ public class Program
 
         return (S, y);
     }
+    //Вычислить сумму s, прекращая суммирование, когда очередной член суммы по
+    //абсолютной величине станет меньше 0,0001, при изменении аргумента x в указанном
+    //диапазоне[а, b] c шагом h.Для сравнения в каждой точке вычислить также функцию y =
+    //f(x), являющуюся аналитическим выражением ряда.
+
+
     public (double, double) Task_3_7(double x)
     {
-        double S = 0, y = 0;
-
+        //x = 1;
+        int i = 1;
+        double S = 0, y = 0, k=x*x/2;
+        //double a = 0.1, b = 1, h = 0.05;
         // code here
-
+        y = (Math.Exp(x) + Math.Exp(-x)) / 2;
+        
+        while (k >= 0.0001){
+            S += k;
+            i += 1;
+            k = k * x * x / (2 * i) /( i*2-1);
+        }
+        S = Math.Round(S, 2) + 1;  //В начале i = 1, в условии i = 0, факториал(0) = 1  => 1/1 = 1
+        y = Math.Round(y, 2);
         // end
-
+        Console.WriteLine($"{S}     {y}");
         return (S, y);
     }
     public (double, double) Task_3_8(double x)

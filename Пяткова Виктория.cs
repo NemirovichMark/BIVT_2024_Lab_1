@@ -21,11 +21,11 @@ public class Program
         //program.Task_1_10();
         //program.Task_1_11();
         //program.Task_1_12(0.9);
-        for (double s = -1.5; s <= 1.5; s += 0.1)
-        {
-            double y = program.Task_1_13(s);
-            Console.WriteLine(y);
-        }
+        //for (double s = -1.5; s <= 1.5; s += 0.1)
+        //{
+            //double y = program.Task_1_13(s);
+            //Console.WriteLine(y);
+        //}
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -238,9 +238,17 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
-
+        for (int s = 1; s <= 6; s += 1)
+        {
+            Console.Write(s + " ");
+        }
+        Console.WriteLine();
+        for (int i = 1; i <= 6; i += 1)
+        {
+            Console.Write("5 ");
+        }
         // code here
-
+        
     }
     public double Task_1_12(double x)
     {
@@ -258,7 +266,7 @@ public class Program
             x *= y;
 
         }
-        answer = Math.Round(answer,3);
+        answer = Math.Round(answer,4);
         Console.WriteLine(answer);
         // end
 
@@ -292,8 +300,19 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
-
+        int first = 1;
+        int second = 1;
+        int third = 0;
+        Console.Write(first + " " + second + " ");
+        for (int s = 3; s <= 8; s += 1)
+        {
+            third = first + second;
+            Console.Write(third + " ");
+            first = second;
+            second = third;
+        }
         // code here
+
 
     }
     public double Task_1_15()
@@ -326,29 +345,51 @@ public class Program
     {
         double answer = 0;
         int power = 0;
-
+        double zerno = 1;
         // code here
-
-        // end
-
+        for (double s = 0; s <= 64; s += 1)
+        {
+            answer += zerno;
+            zerno *= 2;
+            // end
+        }
+        answer = answer / 15;
+        //answer = answer / power;
+        answer = Math.Round(answer, 4);
+        Console.WriteLine(answer);
         return (answer, power);
     }
     public double Task_1_17(double x)
     {
         double answer = 0;
-
         // code here
+        int r = 6350;
+        for (int h = 1; h <= 10; h += 1)
+        {
+            answer = Math.Sqrt(h * (2 * r + h));
+            //answer = Math.Round(answer, 4);
+            //Console.WriteLine(answer);
+            //break;
 
+        }
+        answer  = Math.Round(answer, 4);
+        Console.WriteLine(answer);
         // end
-
         return answer;
     }
     public int Task_1_18(int x)
     {
-        int answer = 0;
+        int answer = 10;
 
         // code here
+        for (int s = 3; s <= 24; s += 3)
+        {
+            answer *= 2;
+            Console.WriteLine(answer);
+            return answer;
 
+
+        }
         // end
 
         return answer;

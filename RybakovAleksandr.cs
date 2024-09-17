@@ -21,7 +21,7 @@ public class Program
         //program.Task_1_10();
         //program.Task_1_11();
         //program.Task_1_12(0.9);
-        program.Task_1_13(-1.5);
+        //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
         //program.Task_1_16();
@@ -74,7 +74,7 @@ public class Program
             answer += (1.0 / x);
             //Console.WriteLine($"answer = {answer}, x = {x}");
         }
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -84,12 +84,12 @@ public class Program
         double answer = 0;
 
         // code here
-        for (double x = 2.0; x <= 112; x++)
+        for (double x = 2.0; x <= 112; x += 2)
         {
             answer += x / (x + 1);
             //Console.WriteLine($"{answer}, {x}");
         }
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 0);
         // end
 
         return answer;
@@ -107,7 +107,7 @@ public class Program
                 answer += Math.Cos(x * y) / Math.Pow(x, (y - 1));
             }
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         //Console.WriteLine(answer);
         // end
 
@@ -131,7 +131,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = 0.5 * x * x - 7 * x;
+        answer = Math.Round((0.5 * x * x - 7 * x), 2);
         // end
 
         return answer;
@@ -185,7 +185,7 @@ public class Program
             s *= i;
             answer += ((double)(Math.Pow(-1, i) * Math.Pow(5, i))) / s;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -234,7 +234,7 @@ public class Program
                 answer += 1.0 / Math.Pow(x, i);
                 Console.WriteLine(answer);
             }
-            answer = Math.Round(answer, 4);
+            answer = Math.Round(answer, 2);
             Console.WriteLine(answer);
         }
         // end
@@ -247,8 +247,8 @@ public class Program
 
         // code here
         if (x <= -1) answer = 1;
-        if (-1 < x && x <= 1) answer = -x;
-        else answer = -1;
+        else if (-1 < x && x <= 1) answer = -x;
+        else if (x > 1) answer = -1;
         // end
 
         return answer;
@@ -256,7 +256,21 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
-
+        int num1 = 1;
+        int num2 = 1;
+        for (int i = 0; i <= 7; i++)
+        {
+            if (i % 2 == 0)
+            {
+                System.Console.WriteLine(num1);
+                num1 += num2;
+            }
+            else
+            {
+                System.Console.WriteLine(num2);
+                num2 += num1;
+            }
+        }
         // code here
 
     }
@@ -265,6 +279,26 @@ public class Program
         double answer = 0;
 
         // code here
+        double num1, num2, num3, num4;
+        num1 = 1;
+        num2 = 2;
+        num3 = num4 = 1;
+        for (int i = 0; i <= 4; i++)
+        {
+            if (i % 2 == 0)
+            {
+                answer = num1 / num3;
+                num1 += num2;
+                num3 += num4;
+            }
+            else
+            {
+                answer = num2 / num4;
+                num2 += num1;
+                num4 += num3;
+            }
+        }
+
 
         // end
 
@@ -276,7 +310,17 @@ public class Program
         int power = 0;
 
         // code here
-
+        double x = 1.0;
+        for (int i = 1; i <= 64; i++)
+        {
+            x *= 2;
+        }
+        answer = x / 15;
+        //с помощью среза строки вычисляю "силу е"
+        power = int.Parse(answer.ToString().Substring(answer.ToString().IndexOf("+") + 1));
+        //System.Console.WriteLine(answer);
+        //с помощью среза оставляю все до "E", чтобы преобразовать все в формат double и округлить
+        answer = Math.Round(double.Parse(answer.ToString().Substring(0, answer.ToString().IndexOf("E"))), 2);
         // end
 
         return (answer, power);
@@ -286,7 +330,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        int R = 6350;
+        answer = Math.Round(Math.Sqrt(((R + x) * (R + x)) - (R * R)), 2);
         // end
 
         return answer;
@@ -296,7 +341,12 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int cell = 10;
+        for (int i = 1; i <= (x / 3); i++)
+        {
+            cell *= 2;
+        }
+        answer = cell;
         // end
 
         return answer;
@@ -319,7 +369,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int n = 1;
+        int l = 1;
+        while (l <= 30000)
+        {
+            n += 3;
+            l *= n;
+        }
+        answer = n - 3;
         // end
 
         return answer;
@@ -339,7 +396,20 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double s = 1;
+        double x1 = 1;
+        double ep = 0.0001;
+        if (Math.Abs(x) < 1)
+        {
+            while (x1 >= ep)
+            {   
+                x1 *= x * x;
+                s += x1;
+                //System.Console.WriteLine($"s = {s}, x = {x1}, n = {n}");
+            }
+            answer = Math.Round(s, 2);
+        }
+        else answer = 0;
         // end
 
         return answer;

@@ -39,13 +39,14 @@ public class Program
         //program.Task_2_7c();
         //program.Task_2_8();
         //program.Task_2_9();
-        program.Task_2_10();
+        //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
-        //program.Task_3_6(0.1);
+        for (double x = 0.9; x <= 1.0; x += 0.1)
+        { program.Task_3_6(x); }
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
@@ -317,11 +318,8 @@ public class Program
             x *= 2;
         }
         answer = x / 15;
-        //с помощью среза строки вычисляю "силу е"
-        power = int.Parse(answer.ToString().Substring(answer.ToString().IndexOf("+") + 1));
-        //System.Console.WriteLine(answer);
-        //с помощью среза оставляю все до "E", чтобы преобразовать все в формат double и округлить
-        answer = Math.Round(double.Parse(answer.ToString().Substring(0, answer.ToString().IndexOf("E"))), 2);
+        power = (int)Math.Log10(answer);
+        answer = Math.Round(answer / Math.Pow(10, power), 2);
         // end
 
         return (answer, power);
@@ -602,21 +600,26 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double a = 1, p = -1, x1 = 1;
+        double a = 1, p = -1, x1;
         const double eps = 0.0001;
-        int i;
-        for (i = 1; a >= eps; i++)
+        int i = 1;
+        while (Math.Abs(a) > eps)
         {
+            x1 = 1;
             p = -p;
-            for (int j = 0; j <= 2 * i + 1; j++)
+            for (int j = 1; j <= 2 * i + 1; j++)
             {
                 x1 *= x;
             }
 
             a = p * (x1 / (4 * i * i - 1));
             S += a;
+            i += 1;
         }
         y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
+        S = Math.Round(S, 2);
+        y = Math.Round(y, 2);
+        Console.WriteLine($"s = {S}, y = {y}");
         // end
 
         return (S, y);

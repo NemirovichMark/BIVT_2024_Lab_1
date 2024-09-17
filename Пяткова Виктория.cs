@@ -81,7 +81,7 @@ public class Program
         {
             answer += 1.0 / s;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         
 
@@ -99,7 +99,7 @@ public class Program
             //for (double i = 3; i <= 113; i += 2)
             answer += s / (s + 1);
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 0);
         Console.WriteLine(answer);
         
         // end
@@ -123,7 +123,7 @@ public class Program
             //answer = Math.Round(answer, 4);
             //Console.WriteLine(answer);
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -156,6 +156,7 @@ public class Program
             squaredx = x * x;
             answer = 0.5 * squaredx - 7 * x;
         }
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -210,7 +211,7 @@ public class Program
             sign *= -1;
 
         }
-        answer = Math.Round(answer,4);
+        answer = Math.Round(answer,2);
         Console.WriteLine(answer);
         // end
 
@@ -266,7 +267,7 @@ public class Program
             x *= y;
 
         }
-        answer = Math.Round(answer,4);
+        answer = Math.Round(answer,2);
         Console.WriteLine(answer);
         // end
 
@@ -355,7 +356,7 @@ public class Program
         }
         answer = answer / 15;
         //answer = answer / power;
-        answer = Math.Round(answer, 4);
+        //answer = Math.Round(answer, 4);
         Console.WriteLine(answer);
         return (answer, power);
     }
@@ -367,13 +368,13 @@ public class Program
         for (int h = 1; h <= 10; h += 1)
         {
             answer = Math.Sqrt(h * (2 * r + h));
-            //answer = Math.Round(answer, 4);
-            //Console.WriteLine(answer);
+            answer = Math.Round(answer, 1);
+            Console.WriteLine(answer);
             //break;
 
         }
-        answer  = Math.Round(answer, 4);
-        Console.WriteLine(answer);
+        //answer  = Math.Round(answer, 1);
+        //Console.WriteLine(answer);
         // end
         return answer;
     }
@@ -387,11 +388,9 @@ public class Program
             answer *= 2;
             Console.WriteLine(answer);
             return answer;
-
-
         }
         // end
-
+        //Console.WriteLine(answer);
         return answer;
     }
     #endregion

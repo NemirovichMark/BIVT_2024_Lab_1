@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -38,7 +39,7 @@ public class Program
         //program.Task_2_7c();
         //program.Task_2_8();
         //program.Task_2_9();
-        //program.Task_2_10();
+        program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
@@ -402,7 +403,7 @@ public class Program
         if (Math.Abs(x) < 1)
         {
             while (x1 >= ep)
-            {   
+            {
                 x1 *= x * x;
                 s += x1;
                 //System.Console.WriteLine($"s = {s}, x = {x1}, n = {n}");
@@ -429,7 +430,18 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int n = 0;
+        int cell = 10;
+        while (true)
+        {
+            if (cell >= 100000) break;
+            else
+            {
+                n += 3;
+                cell *= 2;
+            }
+        }
+        answer = n;
         // end
 
         return answer;
@@ -469,7 +481,19 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double s = 10000;
+        double r = 0.08;
+        int t = 0;
+        while (true)
+        {
+            if (s >= 20000) break;
+            else
+            {
+                t += 1;
+                s += s * r;
+            }
+        }
+        answer = t;
         // end
 
         return answer;
@@ -489,7 +513,33 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double d1 = 1;
+        double d2 = 0;
+        double num1, num2, num3, num4;
+        num1 = 1;
+        num2 = 2;
+        num3 = num4 = 1;
+        int n = 0;
+        for (int i = 0; Math.Abs(d1 - d2) > 0.001; i++)
+        {
+            if (i % 2 == 0)
+            {
+                d1 = num1 / num3;
+                //Console.WriteLine($"d1 = {d1}, num1 = {num1}, num3 = {num3}");
+                num1 += num2;
+                num3 += num4;
+                n += 1;
+            }
+            else
+            {
+                d2 = num2 / num4;
+                //Console.WriteLine($"d2 = {d2}, num2 = {num2}, num4 = {num4}");
+                num2 += num1;
+                num4 += num3;
+                n += 1;
+            }
+        }
+        answer = n;
         // end
 
         return answer;

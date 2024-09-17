@@ -602,7 +602,21 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+        double a = 1, p = -1, x1 = 1;
+        const double eps = 0.0001;
+        int i;
+        for (i = 1; a >= eps; i++)
+        {
+            p = -p;
+            for (int j = 0; j <= 2 * i + 1; j++)
+            {
+                x1 *= x;
+            }
 
+            a = p * (x1 / (4 * i * i - 1));
+            S += a;
+        }
+        y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
         // end
 
         return (S, y);

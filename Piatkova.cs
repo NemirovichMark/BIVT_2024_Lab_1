@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
+using System.Security;
 
 public class Program
 {
@@ -29,13 +30,13 @@ public class Program
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
-        program.Task_1_16();
+        //program.Task_1_16();
         //program.Task_1_17(10);
         //program.Task_1_18(24);
         //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
-        //program.Task_2_4(0.8);
+        program.Task_2_4(0.8);
         //program.Task_2_5(11, 5);
         //program.Task_2_6();
         //program.Task_2_7a();
@@ -416,16 +417,19 @@ public class Program
 
         // code here
         int L = 1;
-        int a = 1;
-        while (L <= 30000)
+        //while (L <= 30000)
+        int n = 1;
+        for (; L * n < 30000; n += 3)
         {
             //answer *= L;
-            L *= a;
-            a += 3;
-            //Console.WriteLine(a);
-            //Console.WriteLine(L);
+            L *= n;
+            //n += 3;
+            Console.WriteLine(n);
+            Console.WriteLine(L);
+            //if (L > 30000)
+                //break;
         }
-        answer = a;
+        answer = n - 3;
         //Console.WriteLine(L);
         Console.WriteLine(answer);
         // end
@@ -447,7 +451,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        const double e = 0.0001;
+        double s = 1;
+        double a = 1;
+        if (Math.Abs(x) >= 1)
+        {
+            return 0;
+        }
+        while (Math.Abs(a) >= e)
+        {
+            a *= x * x;
+            s += a;
+            Console.WriteLine(a);
+        }
+        answer = s;
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -464,12 +483,18 @@ public class Program
     }
     public int Task_2_6()
     {
-        int answer = 0;
-
+        int answer = 10;
+        int start = 10;
+        int v = 100000;
+        int t = 3;
         // code here
-
+        while (start <= v)
+        {
+            start *= 2;
+            t += 3;
+        }
         // end
-
+        answer = t - 3;
         return answer;
     }
     public double Task_2_7a()
@@ -505,8 +530,15 @@ public class Program
     public int Task_2_8()
     {
         int answer = 0;
-
+        double s = 10000;
+        double p = 1.08;
         // code here;
+        while (s < 20000)
+        {
+            s *= p;
+            Console.WriteLine(s);
+            answer += 1;
+        }
 
         // end
 
@@ -525,9 +557,34 @@ public class Program
     public int Task_2_10()
     {
         int answer = 0;
-
+        const double e = 0.001;
         // code here;
+        double firstchisl = 1;
+        double firstznam = 1;
+        double secondchisl = 2;
+        double secondznam = 1;
+        double current = secondchisl / secondznam;
+        double previous = 0;
+        while (Math.Abs(current - previous) > e)
+        {
+            previous = current;
+            Console.WriteLine($"previous {previous}");
+            double newchisl = firstchisl + secondchisl;
+            double newznam = firstznam + secondznam;
+            current = newchisl / newznam;
+            Console.WriteLine($"curent {current}");
+            firstchisl = secondchisl;
+            firstznam = secondznam;
 
+            secondchisl = newchisl;
+            secondznam = newznam;
+            //Console.WriteLine(current);
+            Console.WriteLine($"---- {current - previous}");
+
+        }
+        answer = (int)current;
+        // end
+        //Console.WriteLine(answer);
         // end
 
         return answer;
@@ -542,18 +599,29 @@ public class Program
         // code here
 
         // end
-
+        
         return (S, y);
     }
     public (double, double) Task_3_2(double x)
     {
-        double S = 0, y = 0;
-
+        double S = 0;
+        double y = (x * Math.Sin(Math.PI / 4)) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x);
+        int i = 1;
+        double current = Math.Pow(x, i)*Math.Sin((i* Math.PI) /4);
+        const double e = 0.0001;
+        double current2 = Math.Pow(x, i);
         // code here
+        while (Math.Abs(current2) >= e)
+        {
+            S += current;
+            i += 1;
+            current = Math.Pow(x, i) * Math.Sin((i * Math.PI) / 4);
+            current2 = Math.Pow(x, i);
 
+        }
         // end
 
-        return (S, y);
+        return (Math.Round(S,2), Math.Round(y,2));
     }
     public (double, double) Task_3_3(double x)
     {

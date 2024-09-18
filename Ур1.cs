@@ -302,16 +302,26 @@ public class Program
     //    return (answer, power);
     //}
     public (double, int) Task_1_16() /////////////        HELP
+{
+    double answer = 1;
+    int power = 18;
+    Console.WriteLine();
+    Console.WriteLine();
+    int g = 1;
+    int s = 1;
+    for (int i = 0; i < 61; i += 4)
     {
-        double answer = 0;
-        int power = 0;
-
-        // code here
-
-        // end
-
-        return (answer, power);
+        answer += Math.Pow(2, i);
     }
+    // code here
+    Console.WriteLine(answer);
+    Console.WriteLine(Math.Round(answer/1000000000000000000,2));
+    answer = Math.Round(answer / 1000000000000000000, 2);
+    // end
+    Console.WriteLine();
+
+    return (answer, power);
+}
     public double Task_1_17(double x)
     {
         double answer = 0;

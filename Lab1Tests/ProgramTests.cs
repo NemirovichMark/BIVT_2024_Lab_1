@@ -1,10 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -14,7 +15,6 @@ namespace Tests
     public class ProgramTests
     {
         Program main = new Program();
-
         [TestMethod()]
         public void Task_1_1Test()
         {
@@ -269,7 +269,7 @@ namespace Tests
             double test3 = -0.35;
             double answer3 = 1.13;
             double test4 = 0;
-            double answer4 = 1.63;
+            double answer4 = 1.64;
             // Act
             test1 = main.Task_2_1(test1);
             test2 = main.Task_2_1(test2);

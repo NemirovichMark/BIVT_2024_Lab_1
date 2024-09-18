@@ -101,12 +101,14 @@ public class Program
         double answer = 0;
 
         // code here
+        double p = 1;
         if (x == 0) return 0;
         else
         {
             for (double y = 1; y <= 9; y++)
             {
-                answer += Math.Cos(x * y) / Math.Pow(x, (y - 1));
+                answer += Math.Cos(x * y) / p;
+                p *= x;
             }
         }
         answer = Math.Round(answer, 2);
@@ -181,11 +183,17 @@ public class Program
         double answer = 0;
 
         // code here;
-        int s = 1;
+        double s = 1;
+        double p1 = 1, p2 = 1;
+
         for (int i = 1; i <= 6; i++)
         {
+            p1 *= -1;
+            p2 *= 5;
             s *= i;
-            answer += ((double)(Math.Pow(-1, i) * Math.Pow(5, i))) / s;
+            double p = p1 * p2;
+            answer += p / s;
+            
         }
         answer = Math.Round(answer, 2);
         // end
@@ -228,12 +236,14 @@ public class Program
         double answer = 0;
 
         // code here
+        double p = 1;
         if (x == 0) return 0;
         else
         {
             for (int i = 0; i <= 10; i++)
             {
-                answer += 1.0 / Math.Pow(x, i);
+                answer += 1.0 / p;
+                p *= x;
                 Console.WriteLine(answer);
             }
             answer = Math.Round(answer, 2);
@@ -313,13 +323,18 @@ public class Program
 
         // code here
         double x = 1.0;
+        double p = 1;
         for (int i = 1; i <= 64; i++)
         {
             x *= 2;
         }
         answer = x / 15;
         power = (int)Math.Log10(answer);
-        answer = Math.Round(answer / Math.Pow(10, power), 2);
+        for (int i = 1; i <= power; i++)
+        {
+            p *= 10;
+        }
+        answer = Math.Round(answer / p, 2);
         // end
 
         return (answer, power);

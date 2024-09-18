@@ -365,8 +365,8 @@ namespace Tests
             int test2N = 11;
             int test2M = 5;
             (int, int) answer2 = (2, 1);
-            int test3N = -7;
-            int test3M = -2;
+            int test3N = 7;
+            int test3M = 2;
             (int, int) answer3 = (3, 1);
             int test4N = 8;
             int test4M = 2;

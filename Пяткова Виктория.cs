@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Formats.Asn1;
 using System.Runtime.InteropServices;
+using System.Security;
 
 public class Program
 {
@@ -344,35 +346,44 @@ public class Program
     }
     public (double, int) Task_1_16()
     {
-        double answer = 0;
+        double answer = 1;
         int power = 0;
         double zerno = 1;
         // code here
-        for (double s = 0; s <= 64; s += 1)
+        for (double s = 1; s <= 64; s += 1)
         {
             answer += zerno;
             zerno *= 2;
+            //Console.WriteLine(zerno);
             // end
         }
         answer = answer / 15;
+        while (answer > 10)
+        {
+            answer /= 10;
+            power += 1;
+        }
+        answer = Math.Round(answer,2);
+        //answer = Math.Log(10,answer);
         //answer = answer / power;
         //answer = Math.Round(answer, 4);
-        Console.WriteLine(answer);
+        //Console.WriteLine(answer);
         return (answer, power);
     }
     public double Task_1_17(double x)
     {
         double answer = 0;
         // code here
-        int r = 6350;
-        for (int h = 1; h <= 10; h += 1)
-        {
-            answer = Math.Sqrt(h * (2 * r + h));
-            answer = Math.Round(answer, 1);
-            Console.WriteLine(answer);
+        double r = 6350;
+        
+        //for (int h = 1; h <= 10; h += 1)
+        //{
+        answer = Math.Sqrt(x * (2 * r + x));
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
             //break;
 
-        }
+        //}
         //answer  = Math.Round(answer, 1);
         //Console.WriteLine(answer);
         // end
@@ -381,14 +392,13 @@ public class Program
     public int Task_1_18(int x)
     {
         int answer = 10;
-
+        //int s = x/3;
         // code here
-        for (int s = 3; s <= 24; s += 3)
+        for (int i = x/3; i >= 1; i -= 1)
         {
             answer *= 2;
-            Console.WriteLine(answer);
-            return answer;
         }
+        Console.WriteLine(answer);
         // end
         //Console.WriteLine(answer);
         return answer;
@@ -408,10 +418,25 @@ public class Program
     }
     public int Task_2_2()
     {
-        int answer = 0;
+        int answer = 1;
 
         // code here
-
+        int L = 1;
+        //while (L <= 30000)
+        int n = 1;
+        for (; L * n < 30000; n += 3)
+        {
+            //answer *= L;
+            L *= n;
+            //n += 3;
+            Console.WriteLine(n);
+            Console.WriteLine(L);
+            //if (L > 30000)
+                //break;
+        }
+        answer = n - 3; //цикл завершился на один этап дальше
+        //Console.WriteLine(L);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -431,7 +456,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        const double e = 0.0001;
+        double s = 1;
+        double a = 1;
+        if (Math.Abs(x) >= 1)
+        {
+            return 0;
+        }
+        while (Math.Abs(a) >= e)
+        {
+            a *= x * x;
+            s += a;
+            Console.WriteLine(a);
+        }
+        answer = s;
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -448,12 +488,18 @@ public class Program
     }
     public int Task_2_6()
     {
-        int answer = 0;
-
+        int answer = 10;
+        int start = 10;
+        int v = 100000;
+        int t = 3;
         // code here
-
+        while (start <= v)
+        {
+            start *= 2;
+            t += 3;
+        }
         // end
-
+        answer = t - 3;
         return answer;
     }
     public double Task_2_7a()
@@ -489,8 +535,15 @@ public class Program
     public int Task_2_8()
     {
         int answer = 0;
-
+        double s = 10000;
+        double p = 1.08;
         // code here;
+        while (s < 20000)
+        {
+            s *= p;
+            Console.WriteLine(s);
+            answer += 1;
+        }
 
         // end
 
@@ -508,10 +561,36 @@ public class Program
     }
     public int Task_2_10()
     {
-        int answer = 0;
-
+        int answer = 2;
+        const double e = 0.001;
         // code here;
+        double firstchisl = 1;
+        double firstznam = 1;
+        double secondchisl = 2;
+        double secondznam = 1;
+        double current = secondchisl / secondznam;
+        double previous = 0;
+        while (Math.Abs(current - previous) > e)
+        {
+            previous = current;
+            Console.WriteLine($"previous {previous}");
+            double newchisl = firstchisl + secondchisl;
+            double newznam = firstznam + secondznam;
+            current = newchisl / newznam;
+            Console.WriteLine($"curent {current}");
+            firstchisl = secondchisl;
+            firstznam = secondznam;
 
+            secondchisl = newchisl;
+            secondznam = newznam;
+            answer += 1;
+            //Console.WriteLine(current);
+            Console.WriteLine($"---- {current - previous}");
+
+        }
+        //answer = (int)current;
+        // end
+        //Console.WriteLine(answer);
         // end
 
         return answer;
@@ -526,18 +605,29 @@ public class Program
         // code here
 
         // end
-
+        
         return (S, y);
     }
     public (double, double) Task_3_2(double x)
     {
-        double S = 0, y = 0;
-
+        double S = 0;
+        double y = (x * Math.Sin(Math.PI / 4)) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x);
+        int i = 1;
+        double current = Math.Pow(x, i)*Math.Sin((i* Math.PI) /4);
+        const double e = 0.0001;
+        double current2 = Math.Pow(x, i);
         // code here
+        while (Math.Abs(current2) >= e)
+        {
+            S += current;
+            i += 1;
+            current = Math.Pow(x, i) * Math.Sin((i * Math.PI) / 4);
+            current2 = Math.Pow(x, i);
 
+        }
         // end
 
-        return (S, y);
+        return (Math.Round(S,2), Math.Round(y,2));
     }
     public (double, double) Task_3_3(double x)
     {

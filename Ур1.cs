@@ -301,10 +301,10 @@ public class Program
     //    Console.WriteLine($"{answer},  1,16");
     //    return (answer, power);
     //}
-    public (double, int) Task_1_16() /////////////        HELP
+ public (double, int) Task_1_16() /////////////        HELP
 {
     double answer = 1;
-    int power = 18;
+    int power = 0;
     Console.WriteLine();
     Console.WriteLine();
     int g = 1;
@@ -315,11 +315,17 @@ public class Program
     }
     // code here
     Console.WriteLine(answer);
-    Console.WriteLine(Math.Round(answer/1000000000000000000,2));
-    answer = Math.Round(answer / 1000000000000000000, 2);
+    do
+    {
+        answer /= 10;
+        power++;
+    }
+    while (answer >= 10);
     // end
+    answer = Math.Round(answer, 2);
+    Console.WriteLine($"{answer}    {power}");
     Console.WriteLine();
-
+    Console.WriteLine();
     return (answer, power);
 }
     public double Task_1_17(double x)

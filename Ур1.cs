@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
@@ -68,7 +69,7 @@ public class Program
         Console.WriteLine(answer);
         return answer;
     }
-    public double Task_1_2()   ////                     округление                 /////////////////             
+    public double Task_1_2() 
     {
         double answer = 0;
 
@@ -82,7 +83,7 @@ public class Program
         Console.WriteLine(answer);
         return answer;
     }
-    public double Task_1_3() ////////////////              HELP              ////////////////////////////
+    public double Task_1_3() 
     {
         double answer = 0;
 
@@ -93,13 +94,10 @@ public class Program
 
         }
         // end
-        Console.WriteLine();
-        Console.WriteLine(answer);
-        Console.WriteLine();
         return Math.Round(answer);
     }
     //Вычислить s = cos x + (cos 2x)/x + (cos 3x)/x^2+ ... + (cos 9x)/x^8
-    public double Task_1_4(double x) ////                     округление                 /////////////////
+    public double Task_1_4(double x)
     {
         double answer = 0;
         // code here
@@ -132,9 +130,9 @@ public class Program
     public double Task_1_6(double x)
     {
         double answer = 0;
-        
+
         // code here
-        answer = Math.Round(0.5 * x * x - 7 * x,2);
+        answer = Math.Round(0.5 * x * x - 7 * x, 2);
         // end
         Console.Write(answer);
         return answer;
@@ -172,10 +170,10 @@ public class Program
         return answer;
     }
     //Вычислить s = (–1)^1·5^1/1! + (–1)^2·5^2/2! + ... + (–1)^6·5^6/6!
-    public double Task_1_9() ////                     округление                 /////////////////
+    public double Task_1_9()
     {
         double answer = (-1) * 5 / 1.0;
-        double y = (-1)*5/1.0;
+        double y = (-1) * 5 / 1.0;
         // code here;
         for (int n = 2; n <= 6; n++)
         {
@@ -184,9 +182,8 @@ public class Program
             answer += y;
         }
         // end
-        Console.WriteLine("HELP");
         Console.WriteLine(answer);
-        return Math.Round(answer,2);
+        return Math.Round(answer, 2);
     }
     public int Task_1_10()
     {
@@ -229,12 +226,12 @@ public class Program
 
         for (int i = 1; i <= 10; i++)
         {
-            y /=x;
+            y /= x;
             answer += y;
         }
         // end
         Console.WriteLine(answer);
-        return Math.Round(answer,2);
+        return Math.Round(answer, 2);
     }
     public double Task_1_13(double x)
     {
@@ -285,49 +282,33 @@ public class Program
         answer = up2 * 1.0 / down2;
         return answer;
     }
-    //public (ulong, int) Task_1_16()   ////                HELP           ////////
-    //{
-    //    ulong answer = 0;
-    //    int power = 0;
-    //    double Last_Squere = 1.0 / 15;
-    //    // code here
-    //    for (int i = 0; i <= 60; i += 4)
-    //    {
-    //        Console.Write(Last_Squere); Console.Write(" ");
-    //        //Last_Squere = Last_Squere * 2;
-    //        //answer += Math.Pow(2,i);
-    //    }
-    //    // end
-    //    Console.WriteLine($"{answer},  1,16");
-    //    return (answer, power);
-    //}
- public (double, int) Task_1_16() /////////////        HELP
-{
-    double answer = 1;
-    int power = 0;
-    Console.WriteLine();
-    Console.WriteLine();
-    int g = 1;
-    int s = 1;
-    for (int i = 0; i < 61; i += 4)
+  
+    public (double, int) Task_1_16()
     {
-        answer += Math.Pow(2, i);
+        double answer = 1;
+        int power = 0;
+        Console.WriteLine();
+        Console.WriteLine();
+        double Iin2 = 1;
+        for (int i = 0; i < 61; i += 4)
+        {
+            answer += Iin2;
+            Iin2 *= 16;
+        }
+        // code here
+        do
+        {
+            answer /= 10;
+            power++;
+        }
+        while (answer >= 10);
+        // end
+        answer = Math.Round(answer, 2);
+        Console.WriteLine($"{answer}    {power}");
+        Console.WriteLine();
+        Console.WriteLine();
+        return (answer, power);
     }
-    // code here
-    Console.WriteLine(answer);
-    do
-    {
-        answer /= 10;
-        power++;
-    }
-    while (answer >= 10);
-    // end
-    answer = Math.Round(answer, 2);
-    Console.WriteLine($"{answer}    {power}");
-    Console.WriteLine();
-    Console.WriteLine();
-    return (answer, power);
-}
     public double Task_1_17(double x)
     {
         double answer = 0;
@@ -337,7 +318,7 @@ public class Program
         // end
         Console.WriteLine("Hello");
         Console.WriteLine(answer);
-        return Math.Round(answer,2);
+        return Math.Round(answer, 2);
     }
     public int Task_1_18(int x)
     {
@@ -424,12 +405,12 @@ public class Program
     {
         int quotient = 0, remainder = 0;
         if (M == 0) { return (0, 0); }
-        N = Math.Abs(N);M = Math.Abs(M);
+        N = Math.Abs(N); M = Math.Abs(M);
         // code here
         while (N >= M)
         {
             quotient++;
-            N-= M;
+            N -= M;
         }
         // end
         remainder = N;
@@ -457,13 +438,13 @@ public class Program
         // code here
         for (int i = 0; i < 7; i++)
         {
-            answer+= LastDay;
+            answer += LastDay;
             LastDay *= 1.1;
         }
 
         // end
         Console.WriteLine(answer);
-        return Math.Round(answer,2);
+        return Math.Round(answer, 2);
     }
     //через сколько дней спортсмен пробежит суммарный путь 100 км;
     public int Task_2_7b()
@@ -473,7 +454,7 @@ public class Program
         // code here
         double LastDay = 10;
         // code here
-        while ( s< 100)
+        while (s < 100)
         {
             s += LastDay;
             LastDay *= 1.1;
@@ -512,7 +493,7 @@ public class Program
     public int Task_2_9()
     {
         int answer = 0;
-        double L = 0.1; 
+        double L = 0.1;
         // code here;
         while (L > 0.0000000001)
         {
@@ -606,15 +587,16 @@ public class Program
     {
         //x = 1;
         int i = 1;
-        double S = 0, y = 0, k=x*x/2;
+        double S = 0, y = 0, k = x * x / 2;
         //double a = 0.1, b = 1, h = 0.05;
         // code here
         y = (Math.Exp(x) + Math.Exp(-x)) / 2;
-        
-        while (k >= 0.0001){
+
+        while (k >= 0.0001)
+        {
             S += k;
             i += 1;
-            k = k * x * x / (2 * i) /( i*2-1);
+            k = k * x * x / (2 * i) / (i * 2 - 1);
         }
         S = Math.Round(S, 2) + 1;  //В начале i = 1, в условии i = 0, факториал(0) = 1  => 1/1 = 1
         y = Math.Round(y, 2);

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization.Formatters;
 
 public class Program
 {
@@ -55,7 +56,10 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for(int i = 2; i<=35; i+=3)
+        {
+            answer += i;
+        }
         // end
 
         return answer;
@@ -65,7 +69,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for(double i = 1; i<=10; i++)
+        {
+            answer += 1 / i;
+        }
+        answer = Math.Round(answer, 3);
         // end
 
         return answer;
@@ -75,7 +83,12 @@ public class Program
         double answer = 0;
 
         // code here
+        for (double i = 2; i <= 112; i+=2)
+        {
 
+            answer += i/ (i+1);
+        }
+        answer = Math.Round(answer, 3);
         // end
 
         return answer;
@@ -85,7 +98,16 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x==0)
+        {
+            answer = 0;
+        }
+       
+        else for(int i = 1; i<=9; i++)
+        {
+            answer += Math.Cos(x*i)/Math.Pow(x,i-1);
+        }
+        answer = Math.Round(answer, 4);
         // end
 
         return answer;
@@ -95,7 +117,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for(int i = 0; i<10; i++)
+        {
+            answer += Math.Pow((p + (i * h)), 2);
+        }
         // end
 
         return answer;
@@ -108,14 +133,18 @@ public class Program
 
         // end
 
-        return answer;
+        return 0.5*Math.Pow(x,2)-7*x;
     }
     public int Task_1_7()
     {
         int answer = 0;
 
         // code here
-
+        answer += 1;
+        for (int i = 1; i<=6; i++)
+        {
+            answer *=i;
+        }
         // end
 
         return answer;
@@ -125,6 +154,15 @@ public class Program
         int answer = 0;
 
         // code here;
+        for (int i = 1; i <= 6; i++)
+        {
+            int f = 1;
+            for (int k = 1; k <= i; k++)
+            {
+                f *= k;
+            }
+            answer += f;
+        }
 
         // end
 
@@ -135,7 +173,16 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        for (int i= 1; i <= 6; i++)
+        {
+            int f = 1;
+            for (int k = 1; k <= i; k++)
+            {
+                f *= k;
+            }
+            answer += (Math.Pow(-1,i)* Math.Pow(5,i))/f;
+        }
+        answer = Math.Round(answer, 4);
         // end
 
         return answer;
@@ -145,7 +192,11 @@ public class Program
         int answer = 0;
 
         // code here
-
+        answer = 1;
+        for( int i = 1; i<=7; i++)
+        {
+            answer *= 3;
+        }
         // end
 
         return answer;
@@ -153,16 +204,40 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
+        List<int> num = new List<int>();
+        for(int i = 1; i<=6; i++)
+        {
+            num.Add(i);
+        }
+        string answer = string.Join(" ", num);
+        Console.WriteLine(answer);
 
+        answer = "";
+        for (int i = 1;i<5; i++)
+        {
+            answer += "5";
+            if (i <4)
+            {
+                answer += "";
+            }
+        }
         // code here
-
+        Console.WriteLine(answer);
     }
+    
     public double Task_1_12(double x)
     {
         double answer = 0;
-
+        if (x == 0)
+        {
+            answer = 0;
+        }
         // code here
-
+        else for (double i = 0; i <= 10; i++)
+        {
+            answer += 1 / Math.Pow(x,i);
+        }
+        answer = Math.Round(answer, 4);
         // end
 
         return answer;

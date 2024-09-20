@@ -200,6 +200,7 @@ public class Program
     }
     public void Task_1_11()
     {
+        Console.WriteLine("           Task  11");
         // There is no test for this task
         for (int i = 1; i <= 6; i++)
         {
@@ -249,6 +250,7 @@ public class Program
     }
     public void Task_1_14()
     {
+        Console.WriteLine("      Task 14");
         // There is no test for this task
         int n1 = 1, n2 = 1;
         Console.Write(n1); Console.Write(" "); Console.Write(n2);

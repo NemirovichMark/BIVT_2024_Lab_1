@@ -668,11 +668,13 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+
         int p = 1; // первый множитель
         double f = 1; //факториал
-        int i = 0; 
-        const double e=0.0001;
-        double slagaemoe = p * Math.Pow(x,2*i)/f; 
+        int i = 0;
+        const double e = 0.0001;
+        double xpow = 1;
+        double slagaemoe = p * xpow / f;
 
         y = Math.Cos(x);
 
@@ -681,14 +683,14 @@ public class Program
             S = S + slagaemoe;
             i++;
             p = -p; //меняется на противоположное
+            xpow = xpow * x * x;
             f = f * (2 * i - 1) * (2 * i); //считается следующий факториал
-            slagaemoe = p * Math.Pow(x, 2 * i) / f;
+            slagaemoe = p * xpow / f;
             
         }
 
         S = Math.Round(S, 2);
         y = Math.Round(y, 2);
-        
 
         // end
 

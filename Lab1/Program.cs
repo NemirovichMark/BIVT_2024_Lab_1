@@ -69,7 +69,7 @@ public class Program
         Console.WriteLine(answer);
         return answer;
     }
-    public double Task_1_2() 
+    public double Task_1_2()
     {
         double answer = 0;
 
@@ -83,7 +83,7 @@ public class Program
         Console.WriteLine(answer);
         return answer;
     }
-    public double Task_1_3() 
+    public double Task_1_3()
     {
         double answer = 0;
 
@@ -200,6 +200,8 @@ public class Program
     }
     public void Task_1_11()
     {
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine("           Task  11");
         // There is no test for this task
         for (int i = 1; i <= 6; i++)
@@ -213,6 +215,8 @@ public class Program
             Console.Write(5);
             Console.Write(" ");
         }
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine();
         // code here
 
@@ -250,6 +254,8 @@ public class Program
     }
     public void Task_1_14()
     {
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine("      Task 14");
         // There is no test for this task
         int n1 = 1, n2 = 1;
@@ -261,6 +267,7 @@ public class Program
             n2 = temp + n2;
             Console.Write(" "); Console.Write(n2);
         }
+        Console.WriteLine();
         Console.WriteLine();
         // code here
 
@@ -284,7 +291,7 @@ public class Program
         answer = up2 * 1.0 / down2;
         return answer;
     }
-  
+
     public (double, int) Task_1_16()
     {
         double answer = 1;

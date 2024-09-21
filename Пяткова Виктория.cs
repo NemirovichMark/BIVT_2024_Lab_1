@@ -47,7 +47,7 @@ public class Program
         //program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
-        //program.Task_3_2(0.1);
+        program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
@@ -611,18 +611,24 @@ public class Program
     public (double, double) Task_3_2(double x)
     {
         double S = 0;
+        double powi = x;
         double y = (x * Math.Sin(Math.PI / 4)) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x);
         int i = 1;
-        double current = Math.Pow(x, i)*Math.Sin((i* Math.PI) /4);
+        //double current = Math.Pow(x, i)*Math.Sin((i* Math.PI) /4);
+        double current = powi*Math.Sin((i* Math.PI) /4);
         const double e = 0.0001;
-        double current2 = Math.Pow(x, i);
+        //double current2 = Math.Pow(x, i);
+        double current2 = powi;
         // code here
         while (Math.Abs(current2) >= e)
         {
             S += current;
             i += 1;
-            current = Math.Pow(x, i) * Math.Sin((i * Math.PI) / 4);
-            current2 = Math.Pow(x, i);
+            powi *= x;
+            //current = Math.Pow(x, i) * Math.Sin((i * Math.PI) / 4);
+            current = powi * Math.Sin((i * Math.PI) / 4);
+            //current2 = Math.Pow(x, i);
+            current2 = powi;
 
         }
         // end

@@ -313,8 +313,14 @@ public class Program
         int power = 0;
 
         // code here
-        power = 18;
-        answer = Math.Pow(2, 64)/15/ Math.Pow(10, power);
+        answer = 1;
+        for (double i = 0; i < 64; i++)
+        {
+            answer *= 2;
+        }
+        Console.WriteLine(answer);
+        power = (int)Math.Log10(answer / 15);
+        answer = answer / 15 / Math.Pow(10, power);
         answer = Math.Round(answer, 2);
         
         // end

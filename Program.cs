@@ -72,6 +72,7 @@ public class Program
         {
             answer += 1.0/s;
         }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -85,7 +86,7 @@ public class Program
         {
             answer += s/(s+1);
         }
-        answer = Math.Ceiling(answer);
+        answer = Math.Round(answer);
         // end
 
         return answer;
@@ -95,6 +96,7 @@ public class Program
         double answer = 0;
 
         // code here
+        if (x == 0){return 0};
         for (int i = 1; i <= 9; i += 1)
         {
             answer += Math.Cos(i*x)/Math.Pow(x,i-1);
@@ -191,7 +193,15 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
-
+        for (int i = 1; i <= 6; i++)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+        for (int i = 1; i <= 6; i++)
+        {
+            Console.Write(5 + " ");
+        }
         // code here
 
     }
@@ -214,7 +224,18 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+        {
+            answer = 1;
+        }
+        if (-1 < x && x <= 1)
+        {
+            answer = -x;
+        }
+        if (x > 1)
+        {
+            answer = -1;
+        }
         // end
 
         return answer;
@@ -222,7 +243,17 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
-
+        int a = 1;
+        int b = 1;
+        int store = 1;
+        Console.Write(a + " " + b + " ");
+        for (int i = 1; i <= 6; i++)
+        {
+            store = b;
+            b = a + b;
+            a = store;
+            Console.Write(b + " ");
+        }
         // code here
 
     }
@@ -257,15 +288,20 @@ public class Program
         int power = 0;
 
         // code here
-        answer = 1;
-        for (int i = 1; i <= 64; i++)
+        double summa = 1;
+        for (int i=1; i <= 63; i++)
         {
-            answer *= 2;
+            summa += Math.Pow(2, i);
         }
-        answer = answer / 15;
-        string pre_answer = answer.ToString();
-        answer = Math.Round(Convert.ToDouble(pre_answer.Substring(0,6)),2);
-        power = Convert.ToInt64(pre_answer.Substring(pre_answer.Length-2, 2));
+        summa = summa/15;
+        Console.WriteLine(summa);
+        int counter = 0;
+        for ( ; summa > 10; summa /= 10)
+        {
+            counter++;
+        }
+        double answer = Math.Round(summa, 2);
+        power = counter;
         // end
 
         return (answer, power);

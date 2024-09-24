@@ -14,7 +14,7 @@ public class Program
         //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
-        //program.Task_1_6(4);
+        program.Task_1_6(4);
         //program.Task_1_7();
         //program.Task_1_8();
         //program.Task_1_9();
@@ -46,7 +46,7 @@ public class Program
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
-        program.Task_3_8(0.1);
+        //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
     }
     #region Level 1
@@ -78,7 +78,7 @@ public class Program
             answer += (1.0 / x);
             x += 1;
         }
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -93,9 +93,9 @@ public class Program
         while (x < 113)
         {
             answer += (x / (x + 1.0));
-            x++;
+            x += 2;
         }
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -116,7 +116,7 @@ public class Program
             m *= x;
             answer += Math.Cos(i * x) / m;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -146,14 +146,14 @@ public class Program
 
         // code here
 
-        while (true)
-        {
-            return 0.5 * (x * x) - 7 * x;
-        }
+        answer = 0.5 * (x * x) - 7 * x;
+        answer = Math.Round(answer, 2);
         // end
-     }
 
-   public int Task_1_7()
+        return answer;
+    }
+
+    public int Task_1_7()
     {
         int answer = 1;
 
@@ -204,7 +204,7 @@ public class Program
 
 
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -262,7 +262,7 @@ public class Program
             d *= x;
             i++;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
@@ -368,20 +368,18 @@ public class Program
     }
     public int Task_1_18(int x)
     {
-        int answer = 0;
+        int answer = 10;
 
         // code here
-        int i = 1;
-        while (true)
+
+        for (int i = 3; i <= x; i += 3)
         {
-            i = x / 3;
-            answer = (int)Math.Pow(2, i) * 10;
-            return answer;
-            break;
+            answer *= 2;
+
         }
+
         // end
-
-
+        return answer;
     }
     #endregion
 
@@ -443,7 +441,7 @@ public class Program
             s += i;
         }
         answer = s;
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
 
 
@@ -467,12 +465,13 @@ public class Program
 
         // code here
 
-        int i = 1, s = 0, t = 0;
+        int i = 1, s = 0, t = 0, k = 1;
         while (true)
         {
             if (s > 100000) break;
             t += 3;
-            s = (int)Math.Pow(2, i) * 10;
+            k *= 2;
+            s = k * 10;
             i++;
         }
         answer = t;
@@ -561,9 +560,9 @@ public class Program
             y = c;
             c = f;
         }
-        Console.WriteLine(i+1);
+        Console.WriteLine(i + 1);
         // end
-        return i+1;
+        return i + 1;
     }
     #endregion
 
@@ -658,7 +657,7 @@ public class Program
         Console.WriteLine(S);
         y = Math.Round(y, 2);
         Console.WriteLine(y);
-        
+
         // end
 
         return (S, y);

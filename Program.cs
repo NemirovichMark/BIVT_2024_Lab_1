@@ -375,7 +375,7 @@ public class Program
         {
             s += Math.Cos(i * x) / (Math.Pow(i, 2));
         }
-        answer = Math.Round(s, 2);
+        answer = s;
         // end
 
         return answer;
@@ -672,9 +672,8 @@ public class Program
             S += a_n;
             a_n = Math.Pow(-1, n) * Math.Pow(x, 2 * n) / factorial;
         }
-        S = Math.Round(S, 2);
 
-        y = Math.Round(Math.Cos(x), 2);
+        y = Math.Cos(x);
 
         // end
 
@@ -693,9 +692,8 @@ public class Program
             S += a_n;
             a_n = Math.Pow(x, n) * Math.Sin(n * Math.PI / 4);
         }
-        S = Math.Round(S, 2);
         y = x * Math.Sin(Math.PI / 4) / (1 - 2 * x * Math.Cos(Math.PI / 4) + Math.Pow(x, 2));
-        y = Math.Round(y, 2);
+
         // end
         return (S, y);
     }
@@ -716,9 +714,7 @@ public class Program
             S += a_n;
             a_n = Math.Cos(n * x) / factorial;
         }
-        S = Math.Round(S, 2);
         y = Math.Pow(Math.E, Math.Cos(x)) * Math.Cos(Math.Sin(x));
-        y = Math.Round(y, 2);
         // end
 
         return (S, y);
@@ -740,9 +736,7 @@ public class Program
             S += a_n;
             a_n = (2 * n + 1) * Math.Pow(x, 2 * n) / factorial;
         }
-        S = Math.Round(S, 2);
         y = (1 + 2 * x * x) * Math.Pow(Math.E, x * x);
-        y = Math.Round(y, 2);
         // end
 
         return (S, y);
@@ -759,9 +753,7 @@ public class Program
             S += a_n;
             a_n = Math.Pow(-1, n) * Math.Cos(n * x) / (n * n);
         }
-        S = Math.Round(S, 2);
         y = (x * x - Math.Pow(Math.PI, 2) / 3) / 4;
-        y = Math.Round(y, 2);
         // end
 
         return (S, y);
@@ -778,17 +770,8 @@ public class Program
             S += a_n;
             a_n = Math.Pow(-1, n + 1) * Math.Pow(x, 2 * n + 1) / (4 * n * n - 1);
         }
-        S = Math.Round(S, 2);
 
-        y = Math.Round((1 + x * x) * Math.Atan(x) / 2 - 0.5 * x, 2);
-        if (y == 0.11) // ну я тут хз как по-другому ¯\_(ツ)_/¯
-        {
-            y = 0.1;
-        }
-        if (S == 0.11)
-        {
-            S = 0.1;
-        }
+        y = (1 + x * x) * Math.Atan(x) / 2 - 0.5 * x;
         // end
 
         return (S, y);
@@ -812,14 +795,7 @@ public class Program
             a_n = Math.Pow(x, 2 * n) / factorial;
         }
         y = Math.Cosh(x);
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
 
-        if (x == 0.1) // тоже хз как адекватно это сделать ¯\_(ツ)_/¯
-        {
-            S = 1.01;
-            y = 1.01;
-        }
         // end
 
         return (S, y);
@@ -842,8 +818,7 @@ public class Program
             S += a_n;
             a_n = Math.Pow(2*x, n) / factorial;
         }
-        S = Math.Round(S, 2);
-        y = Math.Round(Math.Pow(Math.E, 2*x), 2);
+        y = Math.Pow(Math.E, 2*x);
         // end
 
         return (S, y);
@@ -861,8 +836,7 @@ public class Program
             S += a_n;
             a_n = Math.Pow(-1, n) * Math.Pow(x, 2 * n + 1) / (2 * n + 1);
         }
-        S = Math.Round(S, 2);
-        y = Math.Round(Math.Atan(x), 2);
+        y = Math.Atan(x);
         // end
 
         return (S, y);

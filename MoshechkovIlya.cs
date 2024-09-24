@@ -317,11 +317,17 @@ public class Program
         {
             answer *= 2;
         }
-        Console.WriteLine(answer);
         power = (int)Math.Log10(answer / 15);
-        answer = answer / 15 / Math.Pow(10, power);
+        double d = 1;
+
+        for (int i = 0; i < power; i++)
+        {
+            d *= 10;
+        }
+        Console.WriteLine(d);
+        answer = answer / 15 / d;
         answer = Math.Round(answer, 2);
-        
+
         // end
 
         return (answer, power);

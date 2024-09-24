@@ -57,8 +57,9 @@ public class Program
 
         // code here
         int s = 0;
+        const int end = 35;
 
-        for (int x = 2; x <= 35; x += 3)
+        for (int x = 2; x <= end; x += 3)
         {
             s += x;  
         }
@@ -72,13 +73,13 @@ public class Program
     public double Task_1_2()
     {
         double answer = 0;
+        const int end = 10;
 
         // code here
         double s = 0;
-        for (double x = 1; x <= 10; x++)
+        for (double x = 1; x <= end; x++)
         {
             s += 1 / x;
-           
         }
         answer = Math.Round(s, 2);
         //Console.WriteLine($"{s, 10}");
@@ -92,8 +93,9 @@ public class Program
 
         // code here
         double s = 0;
+        const int end = 112;
 
-        for (double x = 2; x <= 112; x += 2)
+        for (double x = 2; x <= end; x += 2)
         {
             s += x / (x + 1);
         }
@@ -116,8 +118,10 @@ public class Program
         {
             double n = 1;
             double s = 0;
+            const int end = 9;
+            
 
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= end; i++)
             {
                 s += Math.Cos(i * x) / n;
                 n *= x;
@@ -136,8 +140,9 @@ public class Program
 
         // code here
         double s = 0, b = 0;
+        const double end = 9;
 
-        for (int i = 0; i <= 9; i++)
+        for (int i = 0; i <= end; i++)
         {
             s += (p + b) * (p + b);
             b += h;
@@ -169,8 +174,9 @@ public class Program
 
         // code here
         int f = 1;
+        const double end = 6;
 
-        for (int x = 1; x <= 6; x++)
+        for (int x = 1; x <= end; x++)
         {
             f *= x;
         }
@@ -187,8 +193,9 @@ public class Program
         // code here;
         int f = 1;
         int s = 0;
+        const double end = 5;
 
-        for (int x = 0; x <= 5; x++)
+        for (int x = 0; x <= end; x++)
         {
             f += f * x;
             s += f;
@@ -209,8 +216,9 @@ public class Program
         double s = 0;
         int f = 1;
         double n1 = 1, n2 = 1;
+         const double end = 5;
 
-        for (int i = 0; i <= 5; i++)
+        for (int i = 0; i <= end; i++)
         {
             n1 *= -1;
             n2 *= 5;
@@ -229,8 +237,9 @@ public class Program
 
         // code here
         int p = 1;
+        const double end = 7;
 
-        for (int i = 1; i <= 7; i++)
+        for (int i = 1; i <= end; i++)
         {
             p *= 3;
         }
@@ -243,14 +252,16 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
-        for (int i = 0; i <= 6; i++)
+        const double end = 6;
+
+        for (int i = 0; i <= end; i++)
         {
             Console.Write($"{i,3}");
         }
 
         Console.WriteLine();
 
-        for (int i = 0; i <= 6; i++)
+        for (int i = 0; i <= end; i++)
         {
             Console.Write($"{5,3}");
         }
@@ -272,8 +283,9 @@ public class Program
         {
             double s = 0;
             double n = 1;
+            const double end = 10;
             
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i <= end; i++)
             {
                 s += 1 / n;
                 n *= x;
@@ -322,8 +334,9 @@ public class Program
         // There is no test for this task
         int fibo1 = 1;
         int fibo0 = 0;
+        const double end = 8;
 
-        for (int i = 1; i <= 8; i++)
+        for (int i = 1; i <= end; i++)
         {
             int fibo2 = fibo1;
             fibo1 += fibo0;
@@ -341,8 +354,9 @@ public class Program
         // code here
         double fibo1 = 1;
         double fibo0 = 1;
+        const double end = 8;
 
-        for (int i = 1; i <= 8; i++)
+        for (int i = 1; i <= end; i++)
         {
             answer = Math.Round(fibo1 / fibo0, 1);
             double fibo2 = fibo1;
@@ -362,8 +376,9 @@ public class Program
         // code here
         double power = 0;
         double s = 1;
+        const double end = 64;
 
-        for(int i = 0; i < 64; i++)
+        for(int i = 0; i < end; i++)
         {
             s *= 2;
         }
@@ -527,8 +542,9 @@ public class Program
         double answer = 0;
         double dist = 10; 
         double s = 0;
+        const double days = 7;
 
-        for (int i = 1; i <= 7; i++)
+        for (int i = 1; i <= days; i++)
         {
             s += dist;
             dist += dist * 0.1;
@@ -544,14 +560,15 @@ public class Program
     {
         int answer = 0;
         // code here
-        double dist = 10; 
+        double spacing = 10; 
         double s = 0;
         int cnt = 0;
+        const int distance = 100;
 
-        while (s < 100)
+        while (s < distance)
         {
-            s += dist;
-            dist += dist * 0.1;
+            s += spacing;
+            spacing += spacing * 0.1;
             cnt++;
         }
 
@@ -568,8 +585,9 @@ public class Program
         // code here
         double dist = 10; 
         int cnt = 0;
+        const int finaldist = 20;
 
-        while (dist < 20)
+        while (dist < finaldist)
         {
             dist += dist * 0.1;
             cnt++; 
@@ -626,24 +644,19 @@ public class Program
     {
         
         // code here
-        double S = 0, y = 0, dith = 0;
-        double denominador = 1;
-        double numerador = 1;
-        
-
+        double S = 0, y = 0; 
+        double denominador = 1, numerador = 1;
+    
         for (int i = 0; ; i++)
         {
-            numerador = Math.Pow(x, 2 * i);
-            if (i == 0)
-            {
-                denominador = 1;
-            }
-           
-            else
-            {
-                denominador *= 2 * i * (2 * i - 1); 
-            }
+            double dith = 0;
             
+            numerador = Math.Pow(x, 2 * i);
+
+            if(i != 0)
+            {
+                 denominador *= 2 * i * (2 * i - 1);
+            }
 
             dith = Math.Pow(-1, i) * numerador / denominador;
             S += dith;

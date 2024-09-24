@@ -50,7 +50,7 @@ public class Program
         //program.Task_2_7c();
         //program.Task_2_8();
         //program.Task_2_9();
-        program.Task_2_10();
+        //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);

@@ -17,7 +17,7 @@ public class Program
         //program.Task_1_6(4);       +
         //program.Task_1_7();        +
         //program.Task_1_8();        +
-        //program.Task_1_9();        +
+        program.Task_1_9();        
         //program.Task_1_10();       + 
         //program.Task_1_11();       +
         //program.Task_1_12(0.9);    +
@@ -99,10 +99,14 @@ public class Program
         double answer = 0;
 
         // code here
+        double varieble = 1;
         if (x == 0) return 0;
 
         for (int i = 1; i <= 9; i += 1)
-            answer += (Math.Cos(i * x)) / (Math.Pow(x, i - 1));
+        {
+            answer += ((Math.Cos(i * x)) / varieble);
+            varieble *= x;
+        }
 
         answer =  Math.Round(answer, 2);
         Console.WriteLine(answer);
@@ -173,10 +177,14 @@ public class Program
 
         // code here;
         int Fact = 1;
+        double varieble1 = -1;
+        double varieble2 = 5;
         for (int i = 1; i <= 6; i += 1)
         {
             Fact *= i;
-            answer += (Math.Pow(-1, i) * Math.Pow(5, i)) / Fact;
+            answer += (varieble1 * varieble2) / Fact;
+            varieble1 *= -1;
+            varieble2 *= 5;
         }
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
@@ -554,12 +562,12 @@ public class Program
 
         // code here
         y = Math.Cos(x);
+        double variable2 = 1;
+        double variable3 = 1;
 
         for (int i = 0; i <= 1000000; i++)
         {
             double variable1 = 0;
-            double variable2 = 1;
-            double variable3 = 1;
             double variableRes = 1;
 
             if (i % 2 == 0)
@@ -567,14 +575,10 @@ public class Program
             if (i % 2 == 1)
                 variable1 = -1;
 
-            for (int j = 0; j < 2 * i;  j++)
+            if (i > 0)
             {
-                variable2 *= x;
-            }
-
-            for (int j = 1; j <= 2 * i;  j++)
-            {
-                variable3 *= j;
+                variable2 *= x * x;
+                variable3 *= (2 * i) * (2 * i - 1);
             }
 
             variableRes = variable1 * variable2 / variable3;

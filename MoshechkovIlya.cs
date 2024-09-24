@@ -415,9 +415,9 @@ public class Program
 
         // code here
         double e = 0.0001;
-        double i = 0;
+        
         answer = 1;
-        double a = 0;
+        double a = 1;
         if (Math.Abs(x) == 1)
         {
             answer = 0;
@@ -427,9 +427,8 @@ public class Program
         { 
             do
             {
-            
-            i += 2;
-            a=Math.Pow(x, i);
+
+                a = a * x * x;
             answer += a;
             }
         
@@ -631,26 +630,28 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double answer = 0;
-        double n = 0;
+        S = 0;
+
+        double a = 1;
+        double n = 1;
         int i = 0;
         int fac = 1;
         do
         {
 
-            n = Math.Pow(2 * x, i) / fac;
+            n = a / fac;
             S += n;
             i++;
+            a = a * x * 2;
             fac *= i;
-            
+
         }
         while (n >= 0.0001);
         y = Math.Exp(2 * x);
-        
+
         y = Math.Round(y, 2);
 
-        S = Math.Round(S, 2);
-
+        S = Math.Round(S, 2); ;
         // end
 
         return (S, y);

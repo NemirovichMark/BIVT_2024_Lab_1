@@ -1,12 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.Linq;
-using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Tests
 {
@@ -19,613 +17,472 @@ namespace Tests
         public void Task_1_1Test()
         {
             // Arrange
-            int test;
-            int answer = 222;
+            double[] x = new double[] { 0, 1.5, 1, 3 };
+            double[] y = new double[] { 2, 0.7, 1, 0 };
+            bool[] test = new bool[x.Length];
+            bool[] answer = new bool[] { true, false, false, false };
             // Act
-            test = main.Task_1_1();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_1(x[i], y[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
 
         [TestMethod()]
         public void Task_1_2Test()
         {
             // Arrange
-            double test;
-            double answer = 2.93;
+            double[] x = new double[] { 0, 0.5, -0.5, 3 };
+            double[] y = new double[] { 2, 0.25, 0.25, 0 };
+            bool[] test = new bool[x.Length];
+            bool[] answer = new bool[] { false, true, true, false };
             // Act
-            test = main.Task_1_2();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_2(x[i], y[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
 
         [TestMethod()]
         public void Task_1_3Test()
         {
             // Arrange
-            double test;
-            double answer = 54;
+            double[] a = new double[] { 0, 0.5, -0.5, 3 };
+            double[] b = new double[] { 2, 0.25, 0.25, 4 };
+            double[] test = new double[a.Length];
+            double[] answer = new double[] { 0, 0.5, -0.5, 4 };
             // Act
-            test = main.Task_1_3();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_3(a[i], b[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
 
         [TestMethod()]
         public void Task_1_4Test()
         {
             // Arrange
-            double test1 = 0.5;
-            double answer1 = -243.15;
-            double test2 = 0.9;
-            double answer2 = 1.36;
-            double test3 = 0;
-            double answer3 = 0;
+            double[] a = new double[] { 0, 0.5, -0.5, 3 };
+            double[] b = new double[] { 2, 0.25, 0.25, 4 };
+            double[] c = new double[] { -2, 3, -0.25, -4 };
+            double[] test = new double[a.Length];
+            double[] answer = new double[] { 0, 3, -0.25, 3 };
             // Act
-            test1 = main.Task_1_4(test1);
-            test2 = main.Task_1_4(test2);
-            test3 = main.Task_1_4(test3);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_4(a[i], b[i], c[i]);
+            }
             // Assert
-            Assert.AreEqual(answer1, test1);
-            Assert.AreEqual(answer2, test2);
-            Assert.AreEqual(answer3, test3);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
-
         [TestMethod()]
         public void Task_1_5Test()
         {
             // Arrange
-            double test1p = 0.5;
-            double test1h = 2;
-            double answer1 = 1232.5;
-            double test2p = 2;
-            double test2h = 0.5;
-            double answer2 = 201.25;
-            double test3p = 2;
-            double test3h = 0;
-            double answer3 = 40;
-            double test4p = 0;
-            double test4h = 2;
-            double answer4 = 1140;
+            double[] r = new double[] { 70, 0.86, 0, 4, 123.45 };
+            double[] s = new double[] { 36.74, 0.74, 12, 0, 12.345 };
+            bool[] test = new bool[r.Length];
+            bool[] answer = new bool[] { true, false, false, true, true };
             // Act
-            double test1 = main.Task_1_5(test1p, test1h);
-            double test2 = main.Task_1_5(test2p, test2h);
-            double test3 = main.Task_1_5(test3p, test3h);
-            double test4 = main.Task_1_5(test4p, test4h);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_5(r[i], s[i]);
+            }
             // Assert
-            Assert.AreEqual(answer1, test1);
-            Assert.AreEqual(answer2, test2);
-            Assert.AreEqual(answer3, test3);
-            Assert.AreEqual(answer4, test4);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
         [TestMethod()]
         public void Task_1_6Test()
         {
-            double[] test = new double[17]; int counter = 0;
-            double[] answer = new double[17] { 36, 30.62, 25.5, 20.62, 16, 11.62, 7.5, 3.62, 0, -3.38, -6.5, -9.38, -12, -14.38, -16.5, -18.38, -20 };
+            // Arrange
+            double[] r = new double[] { 70, 0.86, 3.2, 3.2, 123.45, 6 };
+            double[] s = new double[] { 36.74, 0.74, 3.5, 4.5, 12.345, 9 };
+            bool[] test = new bool[r.Length];
+            bool[] answer = new bool[] { false, false, false, true, false, true };
             // Act
-            for (double i = -4; i <= 4; i += 0.5, counter++)
-                test[counter] = main.Task_1_6(i);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_6(r[i], s[i]);
+            }
             // Assert
-            for (int i = 0; i < test.Length; i++)
+            for (int i = 0; i < answer.Length; i++)
+            {
                 Assert.AreEqual(answer[i], test[i]);
+            }
         }
-
         [TestMethod()]
         public void Task_1_7Test()
         {
             // Arrange
-            int test;
-            int answer = 720;
+            double[] x = new double[] { 0, 0.5, -0.5, 3, -1.01 };
+            double[] test = new double[x.Length];
+            double[] answer = new double[] { 0, 0.5, 0.5, 1, 1 };
             // Act
-            test = main.Task_1_7();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_7(x[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
-
         [TestMethod()]
         public void Task_1_8Test()
         {
             // Arrange
-            int test;
-            int answer = 873;
+            double[] x = new double[] { 0, 0.5, -0.5, 3, -1.01 };
+            double[] test = new double[x.Length];
+            double[] answer = new double[] { -1, -0.75, -0.75, 0, 0 };
             // Act
-            test = main.Task_1_8();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_8(x[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
-
         [TestMethod()]
         public void Task_1_9Test()
         {
             // Arrange
-            double test;
-            double answer = 8.37;
+            double[] x = new double[] { 0, 0.5, -0.5, 3, -1.01 };
+            double[] test = new double[x.Length];
+            double[] answer = new double[] { 1, 1, 0.5, 1, 0 };
             // Act
-            test = main.Task_1_9();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_9(x[i]);
+            }
             // Assert
-            Assert.AreEqual(answer, test);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Assert.AreEqual(answer[i], test[i]);
+            }
         }
-
         [TestMethod()]
         public void Task_1_10Test()
         {
-            int test;
-            int answer = 2187;
-            // Act
-            test = main.Task_1_10();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_1_11Test()
-        {
-            Assert.IsTrue(true);
-        }
-
-        [TestMethod()]
-        public void Task_1_12Test()
-        {
             // Arrange
-            double test1 = 1.35;
-            double answer1 = 3.72;
-            double test2 = 0.9;
-            double answer2 = 19.68;
-            double test3 = 0;
-            double answer3 = 0;
+            double[] x = new double[] { 0, 0.5, -0.5, 3, -1.01 };
+            double[] test = new double[x.Length];
+            double[] answer = new double[] { 0, -0.5, 0.5, -1, 1 };
             // Act
-            test1 = main.Task_1_12(test1);
-            test2 = main.Task_1_12(test2);
-            test3 = main.Task_1_12(test3);
+            for (int i = 0; i < answer.Length; i++)
+            {
+                test[i] = main.Task_1_10(x[i]);
+            }
             // Assert
-            Assert.AreEqual(answer1, test1);
-            Assert.AreEqual(answer2, test2);
-            Assert.AreEqual(answer3, test3);
-        }
-
-        [TestMethod()]
-        public void Task_1_13Test()
-        {
-            // Arrange
-            double[] test = new double[31] { -1.5, -1.4, -1.3, -1.2, -1.1, -1.0, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5 };
-            double[] answer = new double[31] { 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0, -0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9, -1, -1, -1, -1, -1, -1 };
-            // Act
-            for (int i = 0; i < test.Length; i++)
-                test[i] = main.Task_1_13(test[i]);
-            // Assert
-            for (int i = 0; i < test.Length; i++)
+            for (int i = 0; i < answer.Length; i++)
+            {
                 Assert.AreEqual(answer[i], test[i]);
+            }
         }
 
+        //[TestMethod()]
+        //public void Task_2_1Test()
+        //{
+        //    // Arrange
+        //    double test = 10;
+        //    double answerR = 163.4;
+        //    // Act
+        //    test = main.Task_2_1((int)test);
+        //    // Assert
+        //    Assert.AreEqual(answerR, test);
+        //}
+        //[TestMethod()]
+        //public void Task_2_2Test()
+        //{
+        //    // Arrange
+        //    int n = 5;
+        //    double[] r = new double[] { 3, 1.5, 1 };
+        //    double[] a = new double[] { 2, 1.5, 3 };
+        //    double[] b = new double[] { 1, 1, 1 };
+        //    int[] test = new int[r.Length];
+        //    int[] answer = new int[] { 3, 2, 0 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        test[i] = main.Task_2_2(n, r[i], a[i], b[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_3Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 10, 8, 6 };
+        //    double[] test = new double[n.Length];
+        //    double[] answer = new double[] { 1.2, 0.8, 0.6 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        test[i] = main.Task_2_3(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_4Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 5, 4, 3 };
+        //    double r1 = 1, r2 = 2, r3 = 3;
+        //    double[] test = new double[2 * n.Length];
+        //    double[] answer = new double[] { 2, 3, 2, 3, 1, 2 };
+        //    // Act
+        //    for (int i = 0; i < n.Length; i++)
+        //    {
+        //        test[2 * i] = main.Task_2_4(n[i], r1, r2);
+        //        test[2 * i + 1] = main.Task_2_4(n[i], r1, r3);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_5Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 10, 8, 6 };
+        //    double norm1 = 30, norm2 = 25.2;
+        //    double[] test = new double[2 * n.Length];
+        //    double[] answer = new double[] { 6, 2, 4, 1, 3, 1 };
+        //    // Act
+        //    for (int i = 0; i < n.Length; i++)
+        //    {
+        //        test[2 * i] = main.Task_2_5(n[i], norm1);
+        //        test[2 * i + 1] = main.Task_2_5(n[i], norm2);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_6Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 5, 4, 3 };
+        //    int[] test = new int[n.Length];
+        //    int[] answer = new int[] { 3, 2, 2 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        test[i] = main.Task_2_6(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_7Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 5, 4, 3 };
+        //    int[] test1 = new int[n.Length];
+        //    int[] test3 = new int[n.Length];
+        //    int[] answer1 = new int[] { 2, 2, 1 };
+        //    int[] answer3 = new int[] { 1, 0, 0 };
+        //    // Act
+        //    for (int i = 0; i < answer1.Length; i++)
+        //    {
+        //        (test1[i], test3[i]) = main.Task_2_7(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer1.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer1[i], test1[i]);
+        //        Assert.AreEqual(answer3[i], test3[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_8Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 5, 4, 3, 0 };
+        //    int[] test1 = new int[n.Length];
+        //    double[] test3 = new double[n.Length];
+        //    int[] answer = new int[] { 5, 3, 3, 0 };
+        //    double[] answerLength = new double[] { 0.71, 1.03, 1.03, 0 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        (test1[i], test3[i]) = main.Task_2_8(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test1[i]);
+        //        Assert.AreEqual(answerLength[i], test3[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_9Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 10, 8, 6, 0 };
+        //    double[] test = new double[n.Length];
+        //    double[] answer = new double[] { 20.1, 22.3, 22.3, 0 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        test[i] = main.Task_2_9(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_10Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 10, 8, 6 };
+        //    int[] test = new int[n.Length];
+        //    int[] answer = new int[] { 5, 4, 3 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        test[i] = main.Task_2_10(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //    }
+        //}
+        //[TestMethod()]
+        //public void Task_2_11Test()
+        //{
+        //    // Arrange
+        //    int[] n = new int[] { 10, 8, 6, 0 };
+        //    int[] test = new int[n.Length];
+        //    double[] testAvg = new double[n.Length];
+        //    int[] answer = new int[] { 4, 3, 2, 0 };
+        //    double[] answerAvg = new double[] { 4.05, 4.19, 4.29, 0 };
+        //    // Act
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        (test[i], testAvg[i]) = main.Task_2_11(n[i]);
+        //    }
+        //    // Assert
+        //    for (int i = 0; i < answer.Length; i++)
+        //    {
+        //        Assert.AreEqual(answer[i], test[i]);
+        //        Assert.AreEqual(answerAvg[i], testAvg[i]);
+        //    }
+        //}
         [TestMethod()]
-        public void Task_1_14Test()
-        {
-            Assert.IsTrue(true);
-        }
-
-        [TestMethod()]
-        public void Task_1_15Test()
-        {
-            // Arrange
-            double test;
-            double answer = 1.6;
-            // Act
-            test = main.Task_1_15();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_1_16Test()
-        {
-            // Arrange
-            (double, int) test;
-            double answer = 1.23;
-            double power = 18;
-            // Act
-            test = main.Task_1_16();
-            // Assert
-            Assert.AreEqual(answer, test.Item1);
-            Assert.AreEqual(power, test.Item2);
-        }
-
-        [TestMethod()]
-        public void Task_1_17Test()
-        {
-            // Arrange
-            double[] test = new double[10] { 1, 2, 3, 4, 5, 10, 50, 100, 250, 1000 };
-            double[] answer = new double[10] { 112.7, 159.39, 195.22, 225.42, 252.04, 356.51, 798.44, 1131.37, 1799.31, 3701.35 };
-            // Act
-            for (int i = 0; i < test.Length; i++)
-                test[i] = main.Task_1_17(test[i]);
-            // Assert
-            for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(answer[i], test[i]);
-        }
-
-        [TestMethod()]
-        public void Task_1_18Test()
-        {
-            // Arrange
-            int[] test = new int[8] { 3, 6, 9, 12, 15, 18, 21, 24 };
-            int[] answer = new int[8] { 20, 40, 80, 160, 320, 640, 1280, 2560 };
-            // Act
-            for (int i = 0; i < test.Length; i++)
-                test[i] = main.Task_1_18(test[i]);
-            // Assert
-            for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(answer[i], test[i]);
-        }
-
-        [TestMethod()]
-        public void Task_2_1Test()
-        {
-            // Arrange
-            double test1 = 1;
-            double answer1 = 0.32;
-            double test2 = 1.6;
-            double answer2 = -0.23;
-            double test3 = -0.35;
-            double answer3 = 1.13;
-            double test4 = 0;
-            double answer4 = 1.64;
-            // Act
-            test1 = main.Task_2_1(test1);
-            test2 = main.Task_2_1(test2);
-            test3 = main.Task_2_1(test3);
-            test4 = main.Task_2_1(test4);
-            // Assert
-            Assert.AreEqual(answer1, test1);
-            Assert.AreEqual(answer2, test2);
-            Assert.AreEqual(answer3, test3);
-            Assert.AreEqual(answer4, test4);
-        }
-
-        [TestMethod()]
-        public void Task_2_2Test()
-        {
-            int test;
-            int answer = 13;
-            // Act
-            test = main.Task_2_2();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_3Test()
-        {
-            // Arrange
-            double test1a = 1;
-            double test1h = 1;
-            double test1p = 10;
-            int answer1 = 4;
-            double test2a = -0.1;
-            double test2h = 1.9;
-            double test2p = 5.85;
-            int answer2 = 3;
-            double test3a = 0;
-            double test3h = 5;
-            double test3p = 985;
-            int answer3 = 20;
-            double test4a = 8;
-            double test4h = 2;
-            double test4p = 0;
-            int answer4 = 0;
-            double test5a = 0.2;
-            double test5h = -1.9;
-            double test5p = 12;
-            int answer5 = 0;
-            // Act
-            test1a = main.Task_2_3(test1a, test1h, test1p);
-            test2a = main.Task_2_3(test2a, test2h, test2p);
-            test3a = main.Task_2_3(test3a, test3h, test3p);
-            test4a = main.Task_2_3(test4a, test4h, test4p);
-            test5a = main.Task_2_3(test5a, test5h, test5p);
-            // Assert
-            Assert.AreEqual(answer1, test1a);
-            Assert.AreEqual(answer2, test2a);
-            Assert.AreEqual(answer3, test3a);
-            Assert.AreEqual(answer4, test4a);
-            Assert.AreEqual(answer5, test5a);
-        }
-
-        [TestMethod()]
-        public void Task_2_4Test()
-        {
-            // Arrange
-            double test1 = 1;
-            double answer1 = 0;
-            double test2 = 0.8;
-            double answer2 = 2.78;
-            double test3 = -0.35;
-            double answer3 = 1.14;
-            double test4 = 0;
-            double answer4 = 1;
-            // Act
-            test1 = main.Task_2_4(test1);
-            test2 = main.Task_2_4(test2);
-            test3 = main.Task_2_4(test3);
-            test4 = main.Task_2_4(test4);
-            // Assert
-            Assert.AreEqual(answer1, test1);
-            Assert.AreEqual(answer2, test2);
-            Assert.AreEqual(answer3, test3);
-            Assert.AreEqual(answer4, test4);
-        }
-
-        [TestMethod()]
-        public void Task_2_5Test()
-        {
-            // Arrange
-            int test1N = 1;
-            int test1M = 0;
-            (int, int) answer1 = (0, 0);
-            int test2N = 11;
-            int test2M = 5;
-            (int, int) answer2 = (2, 1);
-            int test3N = -7;
-            int test3M = -2;
-            (int, int) answer3 = (3, 1);
-            int test4N = 8;
-            int test4M = 2;
-            (int, int) answer4 = (4, 0);
-            // Act
-            (int, int) res1 = main.Task_2_5(test1N, test1M);
-            (int, int) res2 = main.Task_2_5(test2N, test2M);
-            (int, int) res3 = main.Task_2_5(test3N, test3M);
-            (int, int) res4 = main.Task_2_5(test4N, test4M);
-            // Assert
-            Assert.AreEqual(answer1, res1);
-            Assert.AreEqual(answer2, res2);
-            Assert.AreEqual(answer3, res3);
-            Assert.AreEqual(answer4, res4);
-        }
-
-        [TestMethod()]
-        public void Task_2_6Test()
-        {
-            // Arrange
-            int test;
-            int answer = 42;
-            // Act
-            test = main.Task_2_6();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_7aTest()
-        {
-            // Arrange
-            double test;
-            double answer = 94.87;
-            // Act
-            test = main.Task_2_7a();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_7bTest()
-        {
-            // Arrange
-            int test;
-            int answer = 8;
-            // Act
-            test = main.Task_2_7b();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_7cTest()
+        public void Task_2_12Test()
         {
             // Arrange
-            int test;
-            int answer = 8;
+            const int n = 3;
+            double[] r = new double[n] { 1.5, 0.2, 3 };
+            int[] type = new int[n] { 0, 1, 2 };
+            double[,] test = new double[n, n];
+            double[,] answer = new double[n, n] { { 2.25, 7.07, 0.97 }, { 0.04, 0.13, 0.02 }, { 9, 28.27, 3.9 } };
             // Act
-            test = main.Task_2_7c();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_8Test()
-        {
-            // Arrange
-            int test;
-            int answer = 10;
-            // Act
-            test = main.Task_2_8();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_9Test()
-        {
-            // Arrange
-            int test;
-            int answer = 30;
-            // Act
-            test = main.Task_2_9();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_2_10Test()
-        {
-            // Arrange
-            int test;
-            int answer = 10;
-            // Act
-            test = main.Task_2_10();
-            // Assert
-            Assert.AreEqual(answer, test);
-        }
-
-        [TestMethod()]
-        public void Task_3_1Test()
-        {
-            // Arrange
-            double[] x = new double[10] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
-            double[,] test = new double[2, 10];
-            double[] answer = new double[10] { 1, 0.98, 0.96, 0.92, 0.88, 0.83, 0.76, 0.7, 0.62, 0.54 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_1(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
+                for (int j = 0; j < n; j++)
+                {
+                    test[i, j] = main.Task_2_12(r[i], type[j]);
+                }
+            }
+            // Assert
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Assert.AreEqual(answer[i, j], test[i, j]);
+                }
+            }
+            double[] testFail = new double[4];
+            double[] answerFail = new double[] { 0, 0, 0, 0 };
+            testFail[0] = main.Task_2_12(-0.75, 0);
+            testFail[1] = main.Task_2_12(0, 2);
+            testFail[2] = main.Task_2_12(1.2, 3);
+            testFail[3] = main.Task_2_12(1.2, -4);
+            for (int i = 0; i < testFail.Length; i++)
+            {
+                Assert.AreEqual(answerFail[i], testFail[i]);
             }
         }
 
         [TestMethod()]
-        public void Task_3_2Test()
+        public void Task_2_13Test()
         {
             // Arrange
-            double[] x = new double[8] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 };
-            double[,] test = new double[2, 8];
-            double[] answer = new double[8] { 0.08, 0.19, 0.32, 0.48, 0.65, 0.83, 0.99, 1.11 };
+            const int n = 3;
+            double[] A = new double[n] { 1.5, 0.2, 3 };
+            double[] B = new double[n] { 3, 2.8, 2.5 };
+            int[] type = new int[n] { 0, 1, 2 };
+            double[,] test = new double[n, n];
+            double[,] answer = new double[n, n] { { 4.5, 21.21, 2.18 }, { 0.56, 24.5, 0.28 }, { 7.5, 0, 3 } };
             // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_2(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
+                for (int j = 0; j < n; j++)
+                {
+                    test[i, j] = main.Task_2_13(A[i], B[i], type[j]);
+                }
             }
-        }
-
-        [TestMethod()]
-        public void Task_3_3Test()
-        {
-            // Arrange
-            double[] x = new double[10] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
-            double[,] test = new double[2, 10];
-            double[] answer = new double[10] { 2.69, 2.61, 2.49, 2.32, 2.13, 1.93, 1.72, 1.51, 1.32, 1.14 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_3(x[i]);
             // Assert
-            for (int i = 0; i < x.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
+                for (int j = 0; j < n; j++)
+                {
+                    Assert.AreEqual(answer[i, j], test[i, j]);
+                }
             }
-        }
-
-        [TestMethod()]
-        public void Task_3_4Test()
-        {
-            // Arrange
-            double[] x = new double[10] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
-            double[,] test = new double[2, 10];
-            double[] answer = new double[10] { 1.03, 1.12, 1.29, 1.55, 1.93, 2.47, 3.23, 4.32, 5.89, 8.15 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_4(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
+            double[] testFail = new double[4];
+            double[] answerFail = new double[] { 0, 0, 0, 0 };
+            testFail[0] = main.Task_2_13(-0.75, 1, 0);
+            testFail[1] = main.Task_2_13(0.01, 0, 2);
+            testFail[2] = main.Task_2_13(1.2, 2.1, 3);
+            testFail[3] = main.Task_2_13(1.2, 0.2, -4);
+            for (int i = 0; i < testFail.Length; i++)
             {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
-            }
-        }
-
-        [TestMethod()]
-        public void Task_3_5Test()
-        {
-            // Arrange
-            double[] x = new double[21] { 5 * Math.PI / 25, 6 * Math.PI / 25, 7 * Math.PI / 25, 8 * Math.PI / 25, 9 * Math.PI / 25, 10 * Math.PI / 25, 11 * Math.PI / 25, 12 * Math.PI / 25, 13 * Math.PI / 25, 14 * Math.PI / 25, 15 * Math.PI / 25, 16 * Math.PI / 25, 17 * Math.PI / 25, 18 * Math.PI / 25, 19 * Math.PI / 25, 20 * Math.PI / 25, 21 * Math.PI / 25, 22 * Math.PI / 25, 23 * Math.PI / 25, 24 * Math.PI / 25, 25 * Math.PI / 25 };
-            double[,] test = new double[2, 21];
-            double[] answer = new double[21] { -0.72, -0.68, -0.63, -0.57, -0.5, -0.43, -0.34, -0.25, -0.16, -0.05, 0.07, 0.19, 0.32, 0.46, 0.6, 0.76, 0.92, 1.09, 1.27, 1.45, 1.64 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_5(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
-            {
-                Assert.IsTrue(Math.Abs((test[1, i] - test[0, i])) <= 0.1);
-                Assert.AreEqual(answer[i], test[1, i]);
-            }
-        }
-
-        [TestMethod()]
-        public void Task_3_6Test()
-        {
-            // Arrange
-            double[] x = new double[10] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
-            double[,] test = new double[2, 10];
-            double[] answer = new double[10] { 0.00, 0.00, 0.01, 0.02, 0.04, 0.07, 0.1, 0.15, 0.21, 0.29 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_6(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
-            {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
-            }
-        }
-
-        [TestMethod()]
-        public void Task_3_7Test()
-        {
-            // Arrange
-            double[] x = new double[19] { 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1 };
-            double[,] test = new double[2, 19];
-            double[] answer = new double[19] { 1.01, 1.01, 1.02, 1.03, 1.05, 1.06, 1.08, 1.10, 1.13, 1.16, 1.19, 1.22, 1.26, 1.29, 1.34, 1.38, 1.43, 1.49, 1.54 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_7(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
-            {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
-            }
-        }
-
-        [TestMethod()]
-        public void Task_3_8Test()
-        {
-            // Arrange
-            double[] x = new double[19] { 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1 };
-            double[,] test = new double[2, 19];
-            double[] answer = new double[19] { 1.22, 1.35, 1.49, 1.65, 1.82, 2.01, 2.23, 2.46, 2.72, 3.00, 3.32, 3.67, 4.06, 4.48, 4.95, 5.47, 6.05, 6.69, 7.39 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_8(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
-            {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
-            }
-        }
-
-        [TestMethod()]
-        public void Task_3_9Test()
-        {
-            // Arrange
-            double[] x = new double[9] { 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5};
-            double[,] test = new double[2, 9];
-            double[] answer = new double[9] { 0.1, 0.15, 0.2, 0.24, 0.29, 0.34, 0.38, 0.42, 0.46 };
-            // Act
-            for (int i = 0; i < x.Length; i++)
-                (test[0, i], test[1, i]) = main.Task_3_9(x[i]);
-            // Assert
-            for (int i = 0; i < x.Length; i++)
-            {
-                Assert.AreEqual(answer[i], test[0, i]);
-                Assert.AreEqual(answer[i], test[1, i]);
+                Assert.AreEqual(answerFail[i], testFail[i]);
             }
         }
     }

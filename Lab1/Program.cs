@@ -147,9 +147,9 @@ public class Program
             answer += p * p + 2 * p * (i * h) + i * h * i * h;
         }
 
-            // end
+        // end
 
-            return answer;
+        return answer;
     }
     public double Task_1_6(double x)
     {
@@ -197,7 +197,7 @@ public class Program
 
         // end
 
-            return answer;
+        return answer;
     }
     public double Task_1_9()
     {
@@ -239,7 +239,7 @@ public class Program
 
         // end
 
-            return answer;
+        return answer;
     }
     public void Task_1_11()
     {
@@ -312,6 +312,7 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
+
         Console.WriteLine("Номер 1.14");
         int term1 = 1, term2 = 2;
         Console.Write("1" + " " + "1" + " ");
@@ -323,14 +324,15 @@ public class Program
             Console.Write(element + " ");
         }
         
-            // code here
+        // code here
 
-        }
+    }
     public double Task_1_15()
     {
         double answer = 0;
 
         // code here
+
         double dividend1 = 1, deveder1 = 1, dividend2 = 2, deveder2 = 1;
 
 
@@ -678,19 +680,25 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        S = 1;
-        double dividend = 1, deveder = 1, count = 1;
-        while (dividend / deveder > 0.0001)
-        {
 
-            dividend *= 2 * x;
-            deveder *= count;
-            count++;
-            S += dividend / deveder;
+        double dividend = 1, deveder = 1, count = 1;
+        double f = 1;
+
+        while (f > 0.0001)
+        {
+            {
+                S += dividend / deveder;
+                dividend *= 2 * x;
+                deveder *= count;
+                count++;
+                f = dividend / deveder;
+
+
+            }
         }
-        S = Math.Round(S, 2);
+
         y = Math.Exp(2 * x);
-        y = Math.Round(y, 2);
+
         // end
 
         return (S, y);

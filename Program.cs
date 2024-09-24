@@ -103,17 +103,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
-        int n = 1;
-        do
+        double x = 0.5;
+        double answer = 0;
+        for (int i = 1; i <= 9; i++)
         {
-            answer = Math.Cos(n) / n;
-            s = s + answer;
-            n = n + 1;
+            answer += Math.Cos(x*i)/Math.Pow(x,i-1);
         }
-        answer = s;
-        Console.WriteLine(answer);
-
+        answer = Math.Round(answer,2);
+        Console.WriteLine (answer);
         // end
 
         return answer;

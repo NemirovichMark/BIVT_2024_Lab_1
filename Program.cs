@@ -298,10 +298,14 @@ public class Program
         {
             zerna *= x;
         }
-        answer = zerna / 15;
+        double p = 1;
         power = 18;
-        answer = answer / Math.Pow(10, power);
-        answer = Math.Round(answer,2);
+        for (int k = 1; k <= power; k++)
+        {
+            p *= 10;
+        }
+        answer = zerna / 15;
+        answer = Math.Round(answer / p, 2);
         // end
 
         return (answer,power);
@@ -495,13 +499,18 @@ public class Program
         int answer = 0;
 
         // code here;
-        double atom = Math.Pow(10, -10);
+        double atom = 1;
+        for (int i = 0; i < 10; i++)
+        {
+            atom *= 1.0 / 10;
+        }
         double nit = 0.1;
         while (nit >= atom)
         {
             nit = nit / 2;
             answer++;
         }
+        
         // end
 
         return answer;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -217,7 +217,7 @@ public class Program
         {
             Console.Write($"{i} ");
         }
-        Console.WriteLine();
+        
         for (int i = 1; i <= 6; i++)
         {
      
@@ -231,16 +231,17 @@ public class Program
         double answer = 0;
 
         // code here
-        
 
+        double a = 1;
         for (int i = 0; i <= 10; i++)
         {
+           
             if (x == 0)
 
                 { break; }
 
-            answer += (1 / (Math.Pow(x,i)));
-            
+            answer += 1/a;
+            a *= x;
         }
             answer=Math.Round(answer, 2);
         // end
@@ -254,12 +255,10 @@ public class Program
         // code here
 
         
-            if (x <= -1.0) answer = 1.0;
-            else if (x <= 1.0) answer = -x;
-            else answer = -1.0;
+            if (x <= -1) answer = 1;
+            else if (x > -1 && x<=1) answer = -x;
+            else answer = -1;
 
-            Console.Write($"x= {x}    ");
-            Console.WriteLine($"answer= {answer} ");
 
         // end
 
@@ -338,7 +337,7 @@ public class Program
             answer = (6350 + x) * (6350 + x) - 6350 * 6350;
             answer = Math.Sqrt(answer);
             answer = Math.Round(answer, 2);
-            Console.WriteLine(answer);
+            
         }
         // end
 

@@ -634,10 +634,16 @@ public class Program
         for (int i = 0; ; i++)
         {
             numerador = Math.Pow(x, 2 * i);
-            if (i > 0)
+            if (i == 0)
+            {
+                denominador = 1;
+            }
+           
+            else
             {
                 denominador *= 2 * i * (2 * i - 1); 
             }
+            
 
             dith = Math.Pow(-1, i) * numerador / denominador;
             S += dith;

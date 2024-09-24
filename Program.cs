@@ -347,12 +347,12 @@ public class Program
         // code here
         int result = 1;
         int multiplier = 1;
-        while (result <= 30000)
+        while (result * multiplier <= 30000)
         {
-            result *= multiplier;
             multiplier += 3;
+            result *= multiplier;
         }
-        answer = multiplier - 6;
+        answer = multiplier;
         // end
 
         return answer;
@@ -372,7 +372,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x == 1) 
+        {
+            return 0;
+        }
+        for (int i=0; Math.Pow(x, 2 * i) >= 0.0001; i++)
+        {
+            answer += Math.Pow(x, 2 * i);
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -392,7 +400,12 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int count = 10;
+        while (count <= 100000)
+        {
+            answer +=3;
+            count *= 2;
+        }
         // end
 
         return answer;
@@ -432,7 +445,12 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double count = 10000;
+        while (count <= 20000)
+        {
+            answer += 1;
+            count *= 1.08;
+        }
         // end
 
         return answer;
@@ -452,7 +470,24 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double a1 = 1;
+        double a2 = 1;
+        double b1 = 2;
+        double b2 = 1;
+        double store1 = 0;
+        double store2 = 0;
+        int counter = 2;
+        while (Math.Abs(b1/b2 - a1/a2) >= 0.001) 
+        {
+            counter += 1;
+            store1 = b1;
+            store2 = b2;
+            b1 = a1 + b1;
+            b2 = a2 + b2;
+            a1 = store1;
+            a2 = store2;
+        }
+        answer = counter;
         // end
 
         return answer;
@@ -495,7 +530,18 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        double val = 1;
+        // code here
+        for (int i = 0, fac = 1;  ; i++)
+        {
+            if (i > 0) 
+            {fac *= i;}
+            else fac = 1;
+            val = ((2*i+1)*Math.Pow(x, 2 * i))/fac;
+            if (val <= 0.0001) {break;}
+            S += val; 
+        }
+        double y = (1 + 2 * Math.Pow(x, 2)) * Math.Pow(Math.E, Math.Pow(x, 2));
         // end
 
         return (S, y);

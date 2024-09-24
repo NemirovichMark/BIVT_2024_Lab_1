@@ -103,7 +103,6 @@ public class Program
         double answer = 0;
 
         // code here
-        double x = 0.5;
         double answer = 0;
         for (int i = 1; i <= 9; i++)
         {
@@ -120,7 +119,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double answer = 0;
+        for (int i = 0; i <= 9; i++)
+        {
+            answer += Math.Pow(p + i*h,2);
+        }
+        answer = Math.Round(answer,2);
+        Console.WriteLine (answer);
+        
         // end
 
         return answer;

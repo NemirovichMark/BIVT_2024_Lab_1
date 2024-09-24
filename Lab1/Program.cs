@@ -98,11 +98,18 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int i = 1; i<=9; i++)
+        if (x != 0)
         {
-            answer += (Math.Cos(x*i))/(Math.Pow(x,(i-1)));
+            for (int i = 1; i <= 9; i++)
+            {
+                answer += (Math.Cos(x * i)) / (Math.Pow(x, (i - 1)));
+            }
+            answer = Math.Round(answer, 2);
         }
-        answer = Math.Round(answer, 2);
+        else
+        {
+            answer = 0;
+        }
         // end
 
         return answer;
@@ -227,11 +234,18 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int i = 0; i<=10; i++)
+        if (x != 0)
         {
-            answer += 1 / Math.Pow(x, i);
+            for (int i = 0; i <= 10; i++)
+            {
+                answer += 1 / Math.Pow(x, i);
+            }
+            answer = Math.Round(answer, 2);
         }
-        answer = Math.Round(answer, 2);
+        else
+        {
+            answer = 0;
+        }
         // end
 
         return answer;
@@ -277,12 +291,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double a = 1, b = 1;
-        for(int i = 0; i <= 4; i += 1)
+        double a = 0, b = 1, c = 0;
+        for (double i = 1; i <= 5; i++)
         {
-            a = a + b;
+            answer = (a+b) / b;
+            c = a;
+            a = b;
+            b = a + c;
         }
-        answer = a / b;
         // end
 
         return answer;
@@ -293,7 +309,14 @@ public class Program
         int power = 0;
 
         // code here
-
+        double p = 2;
+        for (int i = 2; i <= 64; i++)
+        {
+            answer += p;
+            p *= 2;
+        }
+        answer = answer / 15;
+        answer = Math.Round(answer, power);
         // end
 
         return (answer, power);
@@ -303,7 +326,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double R = 6350;
+        for (double i =1; i<=10; i += 1)
+        {
+            answer = Math.Pow((Math.Pow(R + i, 2) - Math.Pow(R, 2)),0.5);
+            answer = Math.Round(answer, 2);
+            Console.WriteLine(answer);
+        }
         // end
 
         return answer;

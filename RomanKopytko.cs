@@ -561,8 +561,8 @@ public class Program
         double sm = 1, n = 1, f = 1;
         for (int i = 0; ; i++)
         {
-            S += (sm * n) / f;
             if ((sm * n) / f < 0.0001) break;
+            S += (sm * n) / f;
             sm += 2;
             n *= x * x;
             f *= (i + 1);

@@ -22,7 +22,7 @@ public class Program
         //program.Task_1_8();
         //program.Task_1_9();
         //program.Task_1_10();
-        //program.Task_1_11();
+        program.Task_1_11();
         //program.Task_1_12(0.9);
         /*for (double x = -1.5; x <= 1.5; x += 0.1)
             program.Task_1_13(-1.5);*/
@@ -188,12 +188,17 @@ public class Program
         double answer = 0;
 
         // code here;
-        int n = 1, k = 1;
+        int n = 1, m = 5, h = -1;
+        double k = 1;
         while (n <= 6)
         {
-            answer += Math.Pow(-1, n) * Math.Pow(5, n) / k;
+            answer += m * h / k;
+            //Console.WriteLine($"{m} {h} {n} {k} {answer}");
+            m *= 5;
+            h *= -1;
             k *= (n + 1);
             n += 1;
+
         }
         // end
         answer = Math.Round(answer, 2);
@@ -232,6 +237,7 @@ public class Program
             Console.Write("5");
             k++;
         }
+
 
     }
     public double Task_1_12(double x)
@@ -425,13 +431,15 @@ public class Program
             return 0;
         if (x <= -1)
             return 0;
-        int n = 0;
-        while (Math.Pow(x, n) >= 0.0001)
+        double k = x;
+        answer += 1;
+        x = x * x;
+        while (x >= 0.0001)
         {
-            answer += Math.Pow(x, n);
-            n += 2;
+            answer += x;
+            x *= k * k;
+            //Console.WriteLine(x);
             //Console.WriteLine(answer);
-            //Console.WriteLine(n);
         }
         answer = Math.Round(answer, 2);
         // end
@@ -581,12 +589,15 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+        double h = 1;
         y = (1 + 2 * x * x) * Math.Exp(x * x);
         for (int i = 0; i <= 1000000; i++)
         {
+            Console.WriteLine(i);
             double ch1 = 0, ch2 = 1, ch3 = 1, res = 1;
             ch1 = (2 * i + 1);
-            ch2 = Math.Pow(x, 2 * i);
+            ch2 = h;
+            h *= x * x;
             for (int n = 1; n <= i; n++)
                 ch3 *= n;
             res = (ch1 * ch2) / ch3;

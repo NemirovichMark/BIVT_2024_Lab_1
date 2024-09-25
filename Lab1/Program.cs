@@ -98,11 +98,13 @@ public class Program
         double answer = 0;
 
         // code here
+        double p = 1;
         if (x != 0)
         {
             for (int i = 1; i <= 9; i++)
             {
-                answer += (Math.Cos(x * i)) / (Math.Pow(x, (i - 1)));
+                answer += (Math.Cos(x * i)) / (p);
+                p *= x;
             }
             answer = Math.Round(answer, 2);
         }
@@ -179,12 +181,14 @@ public class Program
         int f;
         for (int i = 1; i<=6; i++)
         {
+            double s = 1;
             f = 1;
             for (int a = i; a >= 1; a--)
             {
                 f *= a;
+                s *= 5;
             }
-            answer += Math.Pow(-1, i) * Math.Pow(5, i) / f;
+            answer += (1 -(i%2)*2) * s / f;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -236,9 +240,11 @@ public class Program
         // code here
         if (x != 0)
         {
+            double p = 1;
             for (int i = 0; i <= 10; i++)
             {
-                answer += 1 / Math.Pow(x, i);
+                answer += 1 / p;
+                p *= x;
             }
             answer = Math.Round(answer, 2);
         }
@@ -310,13 +316,13 @@ public class Program
 
         // code here
         double p = 2;
-        for (int i = 2; i <= 64; i++)
+        for (int i = 1; i < 64; i++)
         {
             answer += p;
             p *= 2;
         }
-        answer = answer / 15;
-        answer = Math.Round(answer, power);
+        power = (int)Math.Log10(answer / 15);
+        answer = Math.Round(answer / 15_000_000_000_000_000_000,2);
         // end
 
         return (answer, power);
@@ -327,12 +333,8 @@ public class Program
 
         // code here
         double R = 6350;
-        for (double i =1; i<=10; i += 1)
-        {
-            answer = Math.Pow((Math.Pow(R + i, 2) - Math.Pow(R, 2)),0.5);
-            answer = Math.Round(answer, 2);
-            Console.WriteLine(answer);
-        }
+        answer = Math.Sqrt((Math.Pow(R + x, 2) - Math.Pow(R, 2)));
+        answer = Math.Round(answer,2);
         // end
 
         return answer;
@@ -342,7 +344,8 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int n = 10;
+        answer = (int)(n * Math.Pow(2, x/3));
         // end
 
         return answer;
@@ -355,7 +358,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double n = 1;
+        while (Math.Abs(Math.Cos(n * x) / Math.Pow(n, 2)) >= 0.0001)
+        {
+            answer += Math.Cos(n * x) / Math.Pow(n, 2);
+            n++;
+        }
         // end
 
         return answer;
@@ -365,7 +373,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int l = 1;
+        int p = -2;
+        while (l <= 30_000)
+        {
+            p += 3;
+            l *= p;
+        }
+        answer = p-3; // -3 т.к лишний раз заходим в цикл
         // end
 
         return answer;
@@ -375,7 +390,6 @@ public class Program
         int answer = 0;
 
         // code here
-
         // end
 
         return answer;
@@ -385,7 +399,22 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = 1;
+        double p = x * x;
+        x = p;
+        if (x < 1)
+        {
+            while (x*p >= 0.0001)
+            {
+                answer += x;
+                x *= p;
+            }
+            answer = Math.Round(answer, 2);
+        }
+        else
+        {
+            answer = 0;
+        }
         // end
 
         return answer;
@@ -405,7 +434,12 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int n = 10;
+        while (n < 100_000)
+        {
+            answer += 3;
+            n *= 2;
+        }
         // end
 
         return answer;
@@ -445,7 +479,12 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double w = 10000;
+        while (w < 20000)
+        {
+            answer += 1;
+            w = w * 1.08;
+        }
         // end
 
         return answer;
@@ -465,7 +504,19 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        double a = 0, b = 1, c = 0,e=0,p=0;
+        int k = 0;
+        do
+        {
+            k += 1;
+            p = e;
+            e = (a + b) / b;
+            c = a;
+            a = b;
+            b = a + c;
+        }
+        while (Math.Abs(e - p) >= 0.001);
+        answer = k;
         // end
 
         return answer;
@@ -548,7 +599,22 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        for(double i=0; ;i++)
+        {
+            double f = 1;
+            for (int h = 1; h <= i; h++)
+            {
+                f *= h;
+            }
+            if (Math.Pow(2 * x, i) / f<0.0001)
+            {
+                break;
+            }
+            S += Math.Pow(2 * x, i) / f;
+            y = Math.Pow(double.E,2*x);
+        }
+        S = Math.Round(S, 2);
+        y= Math.Round(y, 2);
         // end
 
         return (S, y);

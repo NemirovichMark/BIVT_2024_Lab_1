@@ -654,7 +654,7 @@ public class Program
         {
             S += z;
             i++;
-            z *= (2*i-1)*(-1*(x*x)/(2*i + 1));
+            z *= (-1*(x*x)/(2*i + 1))*(2*i - 1);
             //z = Math.Pow(-1, i) * Math.Pow(x, 2*i + 1)/(2*i + 1);
             y = Math.Atan(x);
         }

@@ -45,7 +45,7 @@ public class Program
         //program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
-        program.Task_3_2(0.1);
+        //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
@@ -102,12 +102,16 @@ public class Program
         double answer = 0;
 
         // code here
+
+        double power_member = 1;
+
         if (x == 0) return 0;
         else
         {
             for (int i = 0; i <= 8; i++)
-            {
-                answer += Math.Cos(x * (i + 1)) / Math.Pow(x, i);
+            {                
+                answer += Math.Cos(x * (i + 1)) / power_member;
+                power_member *= x;
             }
             answer = Math.Round(answer, 2);
             Console.WriteLine(answer);
@@ -134,7 +138,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Round(0.5 * Math.Pow(x, 2) - 7 * x, 2);
+        answer = Math.Round(0.5 * x*x - 7 * x, 2);
         // end
 
         return answer;
@@ -171,14 +175,15 @@ public class Program
     }
     public double Task_1_9()
     {
-        double answer = 0;
+        double answer = 0, power_member = 1;
 
         // code here;
         double value = 1;
         for (int i = 1; i <=6; i++)
         {
+            power_member *= -1;
             value *= i;
-            answer += Math.Pow(-1, i) * Math.Pow(5, i) / value; ;
+            answer += power_member * Math.Pow(5, i) / value; ;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -217,14 +222,15 @@ public class Program
     }
     public double Task_1_12(double x)
     {
-        double answer = 0;
+        double answer = 0, power_member = 1;
 
         // code here
         if (x == 0) return 0;
 
         for (int i = 0; i <= 10; i++)
-        {
-            answer += 1 / Math.Pow(x, i);
+        {            
+            answer += 1 / power_member;
+            power_member *= x;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -283,11 +289,12 @@ public class Program
         int power = 0;
 
         // code here
-        double amount = 0;
+        double amount = 0, power_member_2 = 1, power_member_10 = 10;
         
         for (int i = 0; i < 64; i++)
         {
-            amount += Math.Pow(2, i);
+            amount += power_member_2;
+            power_member_2 *= 2;
         }
 
         answer = amount / 15;
@@ -299,7 +306,11 @@ public class Program
             power++;
         }
 
-        answer = Math.Round(answer / Math.Pow(10, power), 2);
+        long ten_in_power = 1;
+
+        for (int i = 1; i <= power; i++) ten_in_power *= 10;
+
+        answer = Math.Round(answer / ten_in_power, 2);
         // end
         return (answer, power);
     }
@@ -402,11 +413,12 @@ public class Program
 
         if (x >= 1) return 0;
 
-        double s = 0, e = 0.0001;
+        double s = 0, e = 0.0001, power_memeber = 1;
 
         for (int i = 0;  ; i++)
         {
-            double n = Math.Pow(x, i * 2);
+            double n = power_memeber;
+            power_memeber *= x * x;
             s += n;
 
             if (n < e) break;
@@ -557,13 +569,14 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double sum_member;
+        double sum_member, power_member = 1;   
 
         for (int i = 1; ; i++)
         {
-            sum_member = Math.Pow(x, i) * Math.Sin(i * Math.PI / 4);
+            power_member *= x;
+            sum_member = power_member * Math.Sin(i * Math.PI / 4);
 
-            if (Math.Abs(Math.Pow(x, i)) >= 0.0001) S += sum_member;
+            if (Math.Abs(power_member) >= 0.0001) S += sum_member;
             else break;
         }
 

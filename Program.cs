@@ -138,7 +138,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double s = 0;
+        s = 0.5 * Math.Pow(x, 2) - 7 * x;
+        answer = s;
+        Console.WriteLine (answer);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;

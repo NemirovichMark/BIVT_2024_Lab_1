@@ -528,17 +528,21 @@ public class Program
         double i = 1;
         double fact = 1;
 
-        while (Math.Abs(a)>0.0001)
+        while (Math.Abs(Math.Cos(i * x)) > 0.0001)
         {
             a = Math.Cos(i * x) / fact;
-            S += a;
             i++;
-            y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
+            fact *= i;
+            S += a;
         }
+
+        y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
+        // end
         S = Math.Round(S, 2);
         y = Math.Round(y, 2);
-        // end
-        Console.WriteLine($"{S} - {y}");
+
+        //Console.WriteLine($"S: {S} | y: {y}");
+
         return (S, y);
     }
     public (double, double) Task_3_4(double x)

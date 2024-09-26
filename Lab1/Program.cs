@@ -9,7 +9,7 @@ public class Program
     {
         Program program = new Program();
 
-        //program.Task_1_1();
+        program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
@@ -55,7 +55,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int s = 0, x = 2;
+        while (x<=35)
+        {
+            s = s + x;
+            x = x + 3;
+        }
+        answer = s;
         // end
 
         return answer;

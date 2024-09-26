@@ -14,8 +14,8 @@ public class Program
         program.Task_1_3();
         program.Task_1_4(0.9);
         program.Task_1_5(0, 2);
-        //program.Task_1_6(4);
-        //program.Task_1_7();
+        program.Task_1_6(4);
+        program.Task_1_7();
         //program.Task_1_8();
         //program.Task_1_9();
         //program.Task_1_10();
@@ -148,7 +148,13 @@ public class Program
         int answer = 0;
 
         // code here
-        
+        int s = 1;
+        for (int i = 6; i > 1; i--)
+        {
+            s = s * i;
+        }
+        answer = s;
+        Console.WriteLine(answer);
         // end
 
         return answer;

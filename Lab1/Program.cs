@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
-        //program.Task_3_5(double.Pi/5);
+        program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
@@ -343,7 +343,7 @@ public class Program
             fibo0 = fibo2;
         }
 
-        //Console.WriteLine($"{fibo0, 10}");
+        Console.WriteLine($"{fibo0, 10}");
         // code here
 
     }
@@ -644,21 +644,18 @@ public class Program
     {
         
         // code here
-        double S = 0, y = 0; 
+        double S = 1, y = 0; 
         double denominador = 1, numerador = 1;
+        int one = 1;
     
-        for (int i = 0; ; i++)
+        for (int i = 1; ; i++)
         {
             double dith = 0;
-            
-            numerador = Math.Pow(x, 2 * i);
-
-            if(i != 0)
-            {
-                 denominador *= 2 * i * (2 * i - 1);
-            }
-
-            dith = Math.Pow(-1, i) * numerador / denominador;
+           // if (i )
+            one *= -1;
+            numerador *= x * x;
+            denominador *= 2 * i * (2 * i - 1);
+            dith = one * numerador / denominador;
             S += dith;
             
             if (Math.Abs(dith) < 0.0001)
@@ -667,8 +664,7 @@ public class Program
             }
         }
 
-        y = Math.Round(Math.Cos(x), 2);
-        S = Math.Round(S, 2);
+        y = Math.Cos(x);
         //Console.WriteLine($"{S} = S {y} = y");
         // end
 
@@ -699,6 +695,7 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+       
 
         // end
 
@@ -709,6 +706,27 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+        int one = -1;
+        double sinth = 0;
+        for(int i = 1; ; i++)
+        {
+            if (i % 2 == 0)
+            {
+                one = 1;
+            }
+            else{
+                one = -1;
+            }
+            sinth = one * (Math.Cos(i*x) / (i*i));
+            S += sinth;
+            if(Math.Abs(sinth) < 0.0001)
+            {
+                break;
+            }
+           
+            y = ((x*x) - (Math.PI*Math.PI) / 3)/4;
+            System.Console.WriteLine($"{S,10} {y, 10}");
+        }
 
         // end
 
@@ -718,7 +736,7 @@ public class Program
     {
         double S = 0, y = 0;
 
-        // code here
+        // code hereM
 
         // end
 

@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
-        //program.Task_3_5(double.Pi/5);
+        program.Task_3_5(double.Pi / 5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
@@ -175,15 +175,17 @@ public class Program
     }
     public double Task_1_9()
     {
-        double answer = 0, power_member = 1;
+        double answer = 0, power_member = 1, negativity_switch = 1;
 
         // code here;
         double value = 1;
         for (int i = 1; i <=6; i++)
         {
-            power_member *= -1;
+            negativity_switch *= -1;
+            power_member *= 5;
+
             value *= i;
-            answer += power_member * Math.Pow(5, i) / value; ;
+            answer += negativity_switch * power_member / value; ;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -612,6 +614,25 @@ public class Program
 
         // code here
 
+        double summa, stepen = 1;
+
+        for (int i = 1; ; i++)
+        {
+            stepen *= -1;
+            summa = stepen * Math.Cos(i * x) / (i * i);
+
+            if (Math.Abs(summa) >= 0.0001)
+            {
+                S += summa;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        y = (x * x - Math.PI * Math.PI / 3) / 4;
+        
         // end
 
         return (S, y);

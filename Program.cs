@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -28,7 +29,7 @@ public class Program
         //program.Task_1_16();
         //program.Task_1_17(10);
         //program.Task_1_18(24);
-        program.Task_2_1(0);
+        //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
@@ -260,6 +261,16 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
+        int i = 1, k = 1, m = 1, s = 0;
+        Console.WriteLine('1');
+        Console.WriteLine('1');
+        while (i != 7)
+        {
+            s = m + k;
+            k = m;
+            m = s;
+            Console.WriteLine(s);
+        }
 
         // code here
 
@@ -346,7 +357,7 @@ public class Program
             n++;
             
         } while (Math.Abs(a) > eps);
-        Console.WriteLine(answer);//1,6349839001848923 ответ выводт консоль
+        Console.WriteLine(answer);
                                   
         // end
 
@@ -365,8 +376,21 @@ public class Program
     public int Task_2_3(double a, double h, double p)
     {
         int answer = 0;
-
+        double s = 0;
         // code here
+        do
+        {
+            if (p > (a + (answer * h)))
+            {
+                answer++;
+                s += a + (answer * h);
+            }
+            else
+            {
+                answer = 0;
+                break;
+            }
+        } while (s <= p);
         
         // end
 
@@ -388,7 +412,29 @@ public class Program
         int quotient = 0, remainder = 0;
 
         // code here
-
+        if (N == 0 || M == 0)
+        {
+            quotient = 0;
+            remainder = 0;
+        }
+        else if (N > 0)
+        {
+            while (N >= M)
+            {
+                N -= M;
+                quotient++;
+                remainder = N;
+            }
+        }
+        else
+        {
+            while (N <= M)
+            {
+                M -= N;
+                quotient++;
+                remainder = M;
+            }
+        }
         // end
 
         return (quotient, remainder);
@@ -405,14 +451,15 @@ public class Program
     }
     public double Task_2_7a()
     {
-        double answer = 10;
-        double s = 0;
+        double answer = 0.0,s = 10.0;
+        int x = 0;
         // code here
-        for(int x =0; x<=7;x++)
+        while(x<7)
         {
-            s += answer * 10 / 100;
             answer += s;
-        }    
+            x++;
+            s *= 1.1;
+        }
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
@@ -421,20 +468,34 @@ public class Program
     }
     public int Task_2_7b()
     {
-        int answer = 0;
+        double answer = 0.0, s =10.0;
+        int  n = 0;
 
         // code here
-
+        while(answer<100)
+        {
+            answer+=s;
+            n++;
+            s = s * 1.1;
+        }
+        Console.WriteLine(n);
+        
         // end
-
-        return answer;
+        
+        return n;
     }
     public int Task_2_7c()
     {
         int answer = 0;
-
+        const double d = 20.0;
+        double s = 10.0;
         // code here
-
+        while(s<d)
+        {
+            s *= 1.1;
+            answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -452,9 +513,15 @@ public class Program
     public int Task_2_9()
     {
         int answer = 0;
-
+        double l = 0.1;
+        double da = 0.0000000001;
         // code here;
-
+        while(l > da)
+        {
+            answer++;
+            l /= 2;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;

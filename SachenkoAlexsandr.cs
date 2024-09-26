@@ -350,7 +350,7 @@ public class Program
 
         }
         power = (int)Math.Log10(answer);
-        answer /= Math.Pow(10, 18);
+        answer /= Math.Pow(10, power);
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end

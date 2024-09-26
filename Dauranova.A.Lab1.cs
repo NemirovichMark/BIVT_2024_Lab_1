@@ -17,7 +17,7 @@ public class Program
         program.Task_1_6(4);
         //program.Task_1_7();
         //program.Task_1_8();
-        //program.Task_1_9();
+        program.Task_1_9();
         program.Task_1_10();
         //program.Task_1_11();
         //program.Task_1_12(0.9);

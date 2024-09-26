@@ -103,13 +103,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double answer = 0;
+        double s = 0;
         for (int i = 1; i <= 9; i++)
         {
-            answer += Math.Cos(x*i)/Math.Pow(x,i-1);
+            s += Math.Cos(x*i)/Math.Pow(x,i-1);
         }
-        answer = Math.Round(answer,2);
+        answer = s;
         Console.WriteLine (answer);
+        answer = Math.Round(answer,2);
         // end
 
         return answer;
@@ -119,13 +120,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double answer = 0;
+        double s = 0;
         for (int i = 0; i <= 9; i++)
         {
-            answer += Math.Pow(p + i*h,2);
+            s += Math.Pow(p + i*h,2);
         }
-        answer = Math.Round(answer,2);
+        answer = s;
         Console.WriteLine (answer);
+        answer = Math.Round(answer,2);
         
         // end
 
@@ -146,7 +148,7 @@ public class Program
         int answer = 0;
 
         // code here
-
+        
         // end
 
         return answer;

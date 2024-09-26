@@ -344,8 +344,14 @@ public class Program
         int answer = 0;
 
         // code here
-        int n = 10;
-        answer = (int)(n * Math.Pow(2, x/3));
+        int n = 10,i =0;
+        while (i < x)
+        {
+            i += 3;
+            n *= 2;
+        }
+        answer = n;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -596,22 +602,22 @@ public class Program
     }
     public (double, double) Task_3_8(double x)
     {
-        double S = 0, y = 0;
+        double S = 0, y = 0, f =1, xs=1;
 
         // code here
         for(double i=0; ;i++)
         {
-            double f = 1;
-            for (int h = 1; h <= i; h++)
+            if (i > 0)
             {
-                f *= h;
+                f = f * i;
             }
-            if (Math.Pow(2 * x, i) / f<0.0001)
+            if (xs / f<0.0001)
             {
                 break;
             }
-            S += Math.Pow(2 * x, i) / f;
+            S += xs / f;
             y = Math.Pow(double.E,2*x);
+            xs *= 2 * x;
         }
         S = Math.Round(S, 2);
         y= Math.Round(y, 2);

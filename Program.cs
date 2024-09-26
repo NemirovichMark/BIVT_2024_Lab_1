@@ -507,13 +507,19 @@ public class Program
             {
                 znam *= j;
             }
-            Console.WriteLine(znam);
+            //Console.WriteLine(znam);
             ch = Math.Pow((-1), i) * (Math.Pow(x, (2 * i)) / znam);
+            if (Math.Abs(ch) <= 0.0001)
+            {
+                break;
+            }
             S += ch;
-            Console.WriteLine($"ch = {ch}");
-            Console.WriteLine(S);            
+            y = Math.Cos(x);
+            //Console.WriteLine($"ch = {ch}");
+            //Console.WriteLine(S);            
         }
-        Console.WriteLine($"");
+        Console.WriteLine(S);
+        Console.WriteLine(y);
         // end
 
         return (S, y);

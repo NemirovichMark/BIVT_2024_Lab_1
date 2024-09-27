@@ -13,7 +13,7 @@ public class Program
         //program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
-        //program.Task_1_4(0.9);
+        //program.Task_1_4(0.5);
         //program.Task_1_5(0, 2);
         //program.Task_1_6(4);
         //program.Task_1_7();
@@ -21,7 +21,7 @@ public class Program
         //program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
-        //program.Task_1_12(1.35);
+        //program.Task_1_12(0.9);
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -40,7 +40,7 @@ public class Program
         //program.Task_2_8();
         //program.Task_2_9();
         //program.Task_2_10();
-        program.Task_3_1(0.1);
+        //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
@@ -98,14 +98,20 @@ public class Program
     }
     public double Task_1_4(double x)
     {
-        double answer = 0;
+        double answer = 0, z = 1, c = 0;
 
         // code here
         for (double i = 1, j = 0; i < 10; i += 1, j += 1)
         {
-            answer += (Math.Cos(x * i) / (Math.Pow(x, j)));
+            z = 1;
+            c = j;
+            while (c>0)
+            {
+                z *= x;
+                c--;
+            }
+            answer += (Math.Cos(x * i) / z);
         }
-
         answer = Math.Round(answer, 2);
         if (x == 0)
         {
@@ -171,13 +177,15 @@ public class Program
     }
     public double Task_1_9()
     {
-        double answer = 0;
+        double answer = 0, ch = 1, f = 1;
 
         // code here;
-        for (int i = 1, f = 1; i <= 6; i++)
+        for (int i = 1, znak = 1; i <= 6; i++)
         {
+            znak *= (-1);
+            ch *= 5;
             f *= i;
-            answer += Math.Pow((-1), i) * ((Math.Pow(5, i)) / f);
+            answer += znak * (ch / f);
         }
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
@@ -217,12 +225,13 @@ public class Program
     }
     public double Task_1_12(double x)
     {
-        double answer = 0;
+        double answer = 1, f = 1;
 
         // code here
-        for (int i = 0; i <= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
-            answer += 1 / (Math.Pow(x, i));
+            f *= x;
+            answer += 1 / f;
         }
         answer = Math.Round(answer, 2);
         if (x == 0)
@@ -291,15 +300,15 @@ public class Program
     }
     public (double, int) Task_1_16()
     {
-        double answer = 0;
+        double answer = 1;
         int power = 0;
 
         // code here
         for (int i = 0; i < 64; i++)
         {
-            answer += Math.Pow(2, i);
+            answer *= 2;
         }
-        // end
+        
         answer = answer / 15;
         for (; answer > 10; answer = answer / 10)
         {
@@ -308,6 +317,7 @@ public class Program
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         Console.WriteLine(power);
+        // end
         return (answer, power);
     }
     public double Task_1_17(double x)
@@ -375,7 +385,7 @@ public class Program
     }
     public double Task_2_4(double x)
     {
-        double answer = 0;
+        double answer = 1;
         double slog = 1;
         // code here
         if ( x == 1 )
@@ -385,7 +395,7 @@ public class Program
         }
         for (double n = 0; slog > 0.0001; n++)
         {
-            slog = Math.Pow(x, 2 * n);
+            slog *= x * x;
             answer += slog;        
         }
         answer = Math.Round(answer, 2);
@@ -497,7 +507,7 @@ public class Program
     #region Level 3
     public (double, double) Task_3_1(double x)
     {
-        double S = 1, y = 0, ch = 1, znam = 1;
+        double S = 1, y = 0, ch = 1, znam = 1, znak = 1, chisl = 1;
 
         // code here 
         for (int i = 1; Math.Abs(ch) >= 0.0001; i++)
@@ -508,7 +518,9 @@ public class Program
                 znam *= j;
             }
             //Console.WriteLine(znam);
-            ch = Math.Pow((-1), i) * (Math.Pow(x, (2 * i)) / znam);
+            znak *= (-1);
+            chisl *= x * x;
+            ch = znak * chisl / znam;
             if (Math.Abs(ch) <= 0.0001)
             {
                 break;

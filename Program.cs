@@ -241,15 +241,17 @@ public class Program
         double summ = 0;
 
         // code here
+        int counter = 0;
         double sch = 0;
         if (x == 0)
         {
             return 0;
         }
-        while (sch <= 10)
+        while (counter <= 10)
         {
             summ += 1/sch;
             sch *= x;
+            counter++;
         }
         summ = Math.Round(summ, 2);
         // end
@@ -375,7 +377,6 @@ public class Program
             n++;
             total = (int)(Math.Cos (n*x)/(n*n));
         }
-        
         // end
 
         return answer;
@@ -456,6 +457,7 @@ public class Program
         {
             start *= 1.1;
             answer += start;
+            counter++;
         }
         // end
 

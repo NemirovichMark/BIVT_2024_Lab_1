@@ -155,27 +155,7 @@ public class Program
 
         // code here
         int factr  = 1;
-        for (int i = 1; i <= 1; i = i + 1 )
-        {
-            factr = factr * i;
-        }
-        for (int i = 2; i <= 2; i = i + 2 )
-        {
-            factr = factr * i;
-        }
-        for (int i = 3; i <= 3; i = i + 3)
-        {
-            factr = factr * i;
-        }
-        for (int i = 4; i <= 4; i = i + 4)
-        {
-            factr = factr * i;
-        }
-        for (int i = 5; i <= 5; i = i + 5)
-        {
-            factr = factr * i;
-        }
-        for (int i = 6; i <= 6; i = i + 6)
+        for (int i = 1; i <= 6; i = i + 1)
         {
             factr = factr * i;
         }
@@ -193,15 +173,11 @@ public class Program
 
         // code here;
         int s = 0;
+        int factr = 1;
         for (int i = 1; i <= 6; i = i + 1)
         {
-            int factr = 1;
-            for (int j = 1; j <= i; j = j + 1)
-            {
-                factr = factr * j;
-            }
+            factr = factr * i; 
             s = s + factr;
-         
         }
         answer = s;
         Console.WriteLine(answer);
@@ -231,7 +207,7 @@ public class Program
                 n = -1;
             }
             t *= 5;
-            s = s + n * Math.Pow(5, i) / factr;
+            s = s + n * t / factr;
         }
         answer = Math.Round(s, 2);
         Console.WriteLine (answer);
@@ -652,7 +628,7 @@ public class Program
         double a = 1;  //скобки
         double b = 1;  //x в степени 
         double f = 1; //факториал
-        double g = (a * b) / f;
+        double g = (a * b) / f; // готовая скобка
         int i = 0; 
         while (g >= 0.0001)
         {

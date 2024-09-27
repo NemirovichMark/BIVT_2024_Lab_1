@@ -528,20 +528,21 @@ public class Program
         double i = 1;
         double fact = 1;
 
-        while (Math.Abs(Math.Cos(i * x)) > 0.0001)
+        while (Math.Abs(a) > 0.0001)
         {
             a = Math.Cos(i * x) / fact;
-            i++;
-            fact *= i;
-            S += a;
+            if (Math.Abs(a) > 0.0001)
+            {
+                i++;
+                fact *= i;
+                S += a;
+            }
+            else break;
+
         }
 
         y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
         // end
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
-
-        //Console.WriteLine($"S: {S} | y: {y}");
 
         return (S, y);
     }

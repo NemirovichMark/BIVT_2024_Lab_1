@@ -293,7 +293,7 @@ public class Program
         int power = 0;
 
         // code here
-        int a = 1;
+        double a = 1;
         for (int i =0; i<64; i++)
         {
             a *= 2;

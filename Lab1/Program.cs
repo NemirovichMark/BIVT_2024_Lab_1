@@ -20,10 +20,10 @@ public class Program
         //program.Task_1_8();
         //program.Task_1_9();
         //program.Task_1_10();
-        program.Task_1_11();
+        // program.Task_1_11();
         //program.Task_1_12(0.9);
         //program.Task_1_13(-1.5);
-        program.Task_1_14();
+        // program.Task_1_14();
         //program.Task_1_15();
         //program.Task_1_16();
         //program.Task_1_17(10);

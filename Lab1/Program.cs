@@ -387,21 +387,20 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0, p = Math.Cos(x), n=1;
+        double s = 0, p = Math.Cos(x), n = 1;
         const double eps = 0.0001;
-        while (Math.Abs(p)>=eps)
+        while (Math.Abs(p) >= eps)
         {
-            p = Math.Cos(n * x) / (n * n);
             s += p;
             n++;
-            
-          
+            p = Math.Cos(n * x) / (n * n);
+         
         }
         answer = s;
-        answer=Math.Round(answer, 2);
         Console.WriteLine(answer);
         // end
 
+        
         return answer;
     }
     public int Task_2_2()
@@ -564,33 +563,32 @@ public class Program
         double S = 1, y = 0;
 
         // code here
-        
         double n = 1, i = 1, f = 1, st = 1, k = 1;
         const double eps = 0.0001;
-        for (i=1; Math.Abs(n) >= eps; i++)
+        for (i = 1; Math.Abs(n) >= eps; i++)
         {
             k = -k;
             st *= x * x;
-            f =f*( 4 * i * i - 2 * i);
-            n = (k * st )/ f;
+            f = f * (4 * i * i - 2 * i);
+            n = (k * st) / f;
             S += n;
         }
+        S = S - n;
         y = Math.Cos(x);
-        y = Math.Round(y, 2);
-        S = Math.Round(S, 2);
+        //y = Math.Round(y, 2);
+        //S = Math.Round(S, 2);
 
-
+    } 
+    
 
         // end
-
-        return (S, y);
-    }
     public (double, double) Task_3_2(double x)
     {
         double S = 0, y = 0;
 
         // code here
-
+       
+        
         // end
 
         return (S, y);

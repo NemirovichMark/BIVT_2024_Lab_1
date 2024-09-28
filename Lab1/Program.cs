@@ -390,7 +390,7 @@ public class Program
             y = Math.Cos(n * x) / (n * n);
         }
         // end
-        answer = Math.Round(answer,2);
+       // answer = Math.Round(answer,2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -644,9 +644,10 @@ public class Program
             f *= (x * x);
             i++;
         }
+        S = S - n;
         y = Math.Atan(x);
-        y = Math.Round(y, 2);
-        S = Math.Round(S, 2);
+        //y = Math.Round(y, 2);
+        //S = Math.Round(S, 2);
         // end
 
         return (S, y);

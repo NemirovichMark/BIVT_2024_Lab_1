@@ -45,7 +45,7 @@ public class Program
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
-        //program.Task_3_5(double.Pi/5);
+        program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
@@ -303,14 +303,27 @@ public class Program
     }
     public (double, int) Task_1_16()
     {
-        double answer = 0;
+        double answer = 0.0;
         int power = 0;
 
         // code here
-
+        int i = 1;
+        double z = 1.0;
+        while(i!= 65)
+        {
+            answer += z;
+            z *= 2;
+            i++;
+        }
+        answer /= 15;
+        power = (int)Math.Log10(answer);
+        answer = answer/Math.Pow(10, power);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        Console.WriteLine(power);
         // end
-
-        return (answer, power);
+        ;
+        return (answer,power);
     }
     public double Task_1_17(double x)
     {
@@ -345,20 +358,18 @@ public class Program
     #region Level 2
     public double Task_2_1(double x)
     {
-        double answer = 0.0;
-        const double eps = 0.0001;
+        double answer = 0;
         int n = 1;
-        double a;
+        double a = 1;
         // code here
-        do
+        while(a>=0.0001)
         {
-            a = Math.Cos(x * n) / (n*n);
-            answer += a;
+            answer += Math.Cos(x * n) / (n * n);
             n++;
-            
-        } while (Math.Abs(a) > eps);
+            a = Math.Abs(Math.Cos(n*x)/(n*n));  
+        }
+      
         Console.WriteLine(answer);
-                                  
         // end
 
         return answer;
@@ -453,6 +464,7 @@ public class Program
     {
         double answer = 0.0,s = 10.0;
         int x = 0;
+
         // code here
         while(x<7)
         {
@@ -582,21 +594,29 @@ public class Program
     public (double, double) Task_3_5(double x)
     {
         double S = 0, y = 0;
-
+        int i = 1;
+        int p = -1;
         // code here
-
+        while (Math.Abs(p*Math.Cos(x * i )/(i*i)) >= 0.0001)
+        {
+            S += p * Math.Cos(x * i) / (i * i);
+            p *= -1;
+            i++;
+        }
+        Console.WriteLine(S);
+        y = ((x * x - (double.Pi * double.Pi / 3)) / 4);
         // end
+        Console.WriteLine(y);
 
         return (S, y);
     }
     public (double, double) Task_3_6(double x)
     {
         double S = 0, y = 0;
-
         // code here
-
+       
         // end
-
+        
         return (S, y);
     }
     public (double, double) Task_3_7(double x)

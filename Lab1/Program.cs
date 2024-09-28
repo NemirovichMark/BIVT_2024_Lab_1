@@ -20,7 +20,7 @@ public class Program
         //program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
-        //program.Task_1_12(0.9);
+        program.Task_1_12(0);
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -41,7 +41,7 @@ public class Program
         //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
-        program.Task_3_3(1);
+        //program.Task_3_3(1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
@@ -279,12 +279,13 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 1 + 1/x;
+        double s = 1, d = 1;
         if(x != 0)
         {
-            for(double i = 2;i <= 10; i++)
+            for(double i = 1;i <= 10; i++)
             {
-                s += 1 / Math.Pow(x, i);
+                d = d * x;
+                s += 1 / d;
 
             }
             answer = Math.Round(s,2);

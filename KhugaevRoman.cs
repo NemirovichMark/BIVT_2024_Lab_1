@@ -82,7 +82,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 3));
 
-        return Math.Round(answer,3);
+        return Math.Round(answer,2);
     }
     public double Task_1_3()
     {
@@ -98,7 +98,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public double Task_1_4(double x)
     {
@@ -120,7 +120,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public double Task_1_5(double p, double h)
     {
@@ -176,7 +176,7 @@ public class Program
 
         //}
 
-        return (0.5 * x * x - 7 * x);
+        return (Math.Round((0.5 * x * x - 7 * x),2));
 
     }
     public int Task_1_7()
@@ -231,7 +231,7 @@ public class Program
 
         }
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public int Task_1_10()
     {
@@ -287,7 +287,7 @@ public class Program
         Console.WriteLine(answer);
         if (answer != 0)
         { 
-            return Math.Round(answer, 4);
+            return Math.Round(answer, 2);
         }
         else
         { 
@@ -441,7 +441,7 @@ public class Program
         //    Console.WriteLine(i + "             km = " + Math.Round(answer, 4));
         //}
         Console.WriteLine(Math.Round(answer, 4));
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public int Task_1_18(int x)
     {
@@ -516,7 +516,7 @@ public class Program
         }
 
 
-        return Math.Round(s, 4);
+        return Math.Round(s, 2);
     }
     public (int, int) Task_2_5(int N, int M)
     {
@@ -646,17 +646,22 @@ public class Program
     {
         double S = 0, y = 0;
 
-        double i = 1, proverka = Math.Pow(x, i), fact = 1;
-        for (; Math.Abs(proverka) > 0.0001; i++)
-        {
-            proverka = Math.Pow(x, i);
-            S += proverka * Math.Sin(i*Math.PI/4);
-            y = (x* Math.Sin(Math.PI / 4)) / (1-2*x*(Math.Cos(Math.PI / 4))+x*x);
-            Console.WriteLine($"Sum: {S}, elem: {proverka} fact: {fact}");
-        }
-    
+        double i = 1, proverka = Math.Pow(x, i);
 
-        return (S,y);
+        while (Math.Round(Math.Abs(proverka), 8) > 0.0001)
+        {
+
+
+            S += proverka * Math.Sin(i * Math.PI / 4);
+            i++;
+            proverka = Math.Pow(x, i);
+            Console.WriteLine($"S = {S}, proverka = {Math.Round(Math.Abs(proverka), 8)}");
+        }
+
+        y = ((x * Math.Sin(Math.PI / 4)) / (1 - (2 * x * (Math.Cos(Math.PI / 4))) + x * x));
+
+        Console.WriteLine(y);
+        return (S, y);
     }
     public (double, double) Task_3_3(double x)
     {

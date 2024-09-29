@@ -27,17 +27,17 @@ public class Program
         program.Task_1_16();
         program.Task_1_17(10);
         program.Task_1_18(24);
-        //program.Task_2_1(0);
+        program.Task_2_1(0);
         //program.Task_2_2();
-        //program.Task_2_3(8, 2, 0);
+        program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
-        //program.Task_2_5(11, 5);
+        program.Task_2_5(11, 5);
         //program.Task_2_6();
-        //program.Task_2_7a();
-        //program.Task_2_7b();
-        //program.Task_2_7c();
+        program.Task_2_7a();
+        program.Task_2_7b();
+        program.Task_2_7c();
         //program.Task_2_8();
-        //program.Task_2_9();
+        program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
@@ -47,7 +47,7 @@ public class Program
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
-        //program.Task_3_9(0.1);
+        program.Task_3_9(0.1);
     }
     #region Level 1
     public int Task_1_1()
@@ -257,6 +257,10 @@ public class Program
         double answer = 0;
 
         // code here
+        double answer = 0;
+        if (x <= -1.0) answer = 1;
+        if (x > -1 && x <= 1) answer = -x;
+        if (x > 1) answer = -1;
 
         // end
 
@@ -265,16 +269,36 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
-
         // code here
-
+        int x = 1, y = 1, z = 1;
+        Console.WriteLine(x);
+        Console.WriteLine(y);
+        for (int i = 1; i <= 6; i++)
+        {
+        z = y;
+        y = x + y;
+        x = z;
+        Console.WriteLine(y);
+        
     }
     public double Task_1_15()
     {
         double answer = 0;
 
         // code here
-
+        double answer = 0;
+        double s = 0, S = 0, x = 1, y = 1, w = 2, z = 1;
+        for (int i = 1; i <= 3; i++)
+        {
+            s = w;
+            S = z;
+            w = x + w;
+            z = y + z;
+            x = s; y = S;
+            Console.WriteLine(w / z);
+        }
+        answer = w / z;
+        
         // end
 
         return answer;
@@ -338,7 +362,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double s = 0;
+        int i = 1;
+        while (Math.Abs(Math.Cos(i*x)/Math.Pow(i,2)) >= 0.0001)
+        {
+            s += Math.Cos(i * x)/Math.Pow(i, 2);
+            i++;
+        }
+        answer = s;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -348,7 +380,6 @@ public class Program
         int answer = 0;
 
         // code here
-
         // end
 
         return answer;
@@ -358,7 +389,24 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int z = 0;
+        double s = 0;
+        if (h < 0)
+        {
+            z = 0;
+            return z;
+        }
+        for (int i = 0; ;i++)
+        {
+            s += a + i * h;
+            if (s > p) 
+            {
+                break;
+            }
+            z++;
+        }
+        answer = z;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -378,10 +426,20 @@ public class Program
         int quotient = 0, remainder = 0;
 
         // code here
+        int q = 0, r = 0;
+        if (M == 0) { q = 0; r = 0; return (q, r); }
+        rr = N;
+        while (r >= M)
+        {
+            r = r - M;
+            q++;
+        }
+        Console.WriteLine(q);
+        Console.WriteLine(r);
 
         // end
 
-        return (quotient, remainder);
+        return (q, r);
     }
     public int Task_2_6()
     {
@@ -398,7 +456,17 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double s = 0;
+        double distance = 10;
+        int days = 10;
+        for (int i = 1; i <= 7; i++)
+        {
+            s += distance;
+            distance *= 1.1;
+        }
+        answer = s;
+        Console.WriteLine(answer);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -408,6 +476,22 @@ public class Program
         int answer = 0;
 
         // code here
+        int s = 0;
+        double distance = 10;
+        int days = 10;
+        double j = 0;
+        for (int i = 1; ; i++)
+        {
+            j += distance;
+            distance *= 1.1;
+            if (j >= 100)
+            {
+                s = i;
+                break;
+            }
+        }
+        answer = s;
+        Console.WriteLine(answer);
 
         // end
 
@@ -418,7 +502,22 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int s = 0;
+        double distance = 10;
+        int days = 10;
+        double j = 0;
+        for (int i = 1; ; i++)
+        {
+            j += distance;
+            distance *= 1.1;
+            if (distance >= 20)
+            {
+                s = i;
+                break;
+            }
+        }
+        answer = s;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -438,7 +537,15 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        int s = 0;
+        double l = 0.1;
+        while (l > Math.Pow(10,-10))
+        {
+            l = l / 2;
+            s++;
+        }
+        answer = s;
+        Console.WriteLine(answer);
         // end
 
         return answer;

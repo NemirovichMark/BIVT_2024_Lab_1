@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
+using System.Xml;
 
 public class Program
 {
@@ -9,9 +10,9 @@ public class Program
     {
         Program program = new Program();
 
-        program.Task_1_1();
+        //program.Task_1_1();
         //program.Task_1_2();
-        //program.Task_1_3();
+        program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
         //program.Task_1_6(4);
@@ -42,7 +43,7 @@ public class Program
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
-        //program.Task_3_4(0.1);
+        program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
@@ -88,7 +89,7 @@ public class Program
         }
         answer = Math.Round(answer);
         // end
-
+        System.Console.WriteLine(answer);
         return answer;
     }
     public double Task_1_4(double x)
@@ -97,13 +98,14 @@ public class Program
 
         // code here
         if (x == 0){return 0;};
+        double mult = 1;
         for (int i = 1; i <= 9; i += 1)
-        {
-            answer += Math.Cos(i*x)/Math.Pow(x,i-1);
+        {   
+            answer += Math.Cos(i*x)/mult;
+            mult *= x;
         }
         answer = Math.Round(answer, 2);
         // end
-
         return answer;
     }
     public double Task_1_5(double p, double h)
@@ -114,9 +116,11 @@ public class Program
         answer = Math.Pow(p,2);
         for (int i = 1; i <= 9; i += 1)
         {
-            answer += Math.Pow(p+h*i,2);
+            answer += (p+h*i)*(p+h*i);
         }
         answer = Math.Round(answer, 2);
+        
+
         // end
 
         return answer;
@@ -126,7 +130,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Round(0.5 * Math.Pow(x,2) - 7 * x, 2);
+        answer = Math.Round(0.5 * x*x - 7 * x, 2);
         // end
 
         return answer;
@@ -166,14 +170,18 @@ public class Program
 
         // code here;
         int var = 1;
+        int cringe = -1;
+        double megacringe = 5;
         for (int i = 1; i <= 6; i++)
         {
             var *= i;
-            answer += Math.Pow(-1,i) * Math.Pow(5,i) / var;
+            answer += cringe * megacringe / var;
+            cringe *= -1;
+            megacringe *= 5;
         }
         answer = Math.Round(answer, 2);
         // end
-
+        System.Console.WriteLine(answer);
         return answer;
     }
     public int Task_1_10()
@@ -210,14 +218,16 @@ public class Program
         double answer = 0;
 
         // code here
+        double cringe = 1;
         if (x == 0) {return 0;}
         for (int i = 0; i <= 10; i++)
         {
-            answer += 1/Math.Pow(x,i);
+            answer += 1/cringe;
+            cringe *= x;
         }
         answer = Math.Round(answer, 2);
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public double Task_1_13(double x)
@@ -313,8 +323,9 @@ public class Program
 
         // code here
         int r = 6350;
-        answer = Math.Round(Math.Pow((Math.Pow(r+x,2) - Math.Pow(r,2)),0.5),2);
+        answer = Math.Round(Math.Sqrt((r+x) * (r+x) - r*r),2);
         // end
+        System.Console.WriteLine(answer);
         
         return answer;
     }
@@ -323,9 +334,13 @@ public class Program
         int answer = 0;
 
         // code here
-        answer = Convert.ToInt32(Math.Pow(2,x / 3) * 10);
+        answer = 10;
+        for (int i=3; i<=x; i+=3)
+        {
+            answer *=2;
+        }
         // end
-
+        System.Console.WriteLine(answer);
         return answer;
     }
     #endregion
@@ -377,11 +392,14 @@ public class Program
         {
             return 0;
         }
+        double dryan = 1;
         for (int i=0; Math.Pow(x, 2 * i) >= 0.0001; i++)
         {
             answer += Math.Pow(x, 2 * i);
+            dryan *= x * x;
         }
         answer = Math.Round(answer, 2);
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -531,20 +549,23 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double val = 1;
+        double val = 0;
+        double trash = 1;
+        double fac = 1;
         // code here
-        for (int i = 0, fac = 1;  ; i++)
+        for (double i = 0;  ; i++)
         {
-            if (i > 0) 
-            {fac *= i;}
-            else fac = 1;
-            val = ((2*i+1)*Math.Pow(x, 2 * i))/fac;
+            val = (2*i+1)*trash/fac;
             if (val <= 0.0001) {break;}
             S += val; 
+            fac *= i+1;
+            trash *= x * x;
         }
-        y = (1 + 2 * Math.Pow(x, 2)) * Math.Pow(Math.E, Math.Pow(x, 2));
+        double musor = Math.Exp(x*x*Math.Log(Math.E));
+        y = (1 + (2 * (x * x))) * musor;
         // end
-
+        System.Console.WriteLine(S);
+        System.Console.WriteLine(y);
         return (S, y);
     }
     public (double, double) Task_3_5(double x)

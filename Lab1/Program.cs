@@ -615,16 +615,14 @@ public class Program
             x1 *= x * 2;
             fact *= i;
             n = x1 / fact;
-            S += n;
-            i++;
-            
+            if (Math.Abs(n) >= 0.0001)
+            {
+                S += n;
+                i++;
+            }
+
         }
-        double del = Math.E;
-        for (int k = 1; k <= 2*x - 1; k++)
-        {
-            del *= x;
-        }
-        y = del;
+        y = Math.Pow(Math.E, 2 * x);
         Console.WriteLine(S);
         Console.WriteLine(y);
         // end

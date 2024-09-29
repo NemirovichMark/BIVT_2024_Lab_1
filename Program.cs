@@ -128,7 +128,6 @@ public class Program
         answer = s;
         Console.WriteLine (answer);
         answer = Math.Round(answer,2);
-        
         // end
 
         return answer;
@@ -261,7 +260,6 @@ public class Program
         if (x <= -1.0) answer = 1;
         if (x > -1 && x <= 1) answer = -x;
         if (x > 1) answer = -1;
-
         // end
 
         return answer;
@@ -298,7 +296,6 @@ public class Program
             Console.WriteLine(w / z);
         }
         answer = w / z;
-        
         // end
 
         return answer;
@@ -648,7 +645,22 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        double S = 1, y = 0, h = 1, z = 1, k = 1, c = 1;
+        for (int i = 1; Math.Abs(h) > 0.0001; i++)
+        {
+            z = 2 * i + 1
+            k *= (-1);
+            c = Math.Pow(x, 2 * i + 1)
+            h = k * c / z;
+            if (Math.Abs(h) <= 0.0001)
+            {
+                break;
+            }
+            S += h
+            y = Math.Atan(x);
+        }
+        Console.Writeline(S);
+        Console.Writeline(y);
         // end
 
         return (S, y);

@@ -157,13 +157,10 @@ public class Program
         int answer = 0;
 
         // code here;
+        int x = 1;
         for (int i = 1; i <= 6; i++)
         {
-            int x = 1;
-            for (int j = 1; j <= i; j++)
-            {
-                x *= j;
-            }
+            x *= i;
             answer += x;
         }
 
@@ -176,14 +173,10 @@ public class Program
         double answer = 0;
 
         // code here;
-        double x1 = -1, x2 = 5;
+        double x1 = -1, x2 = 5, x3 = 1;
         for (int i = 1; i <= 6; i ++)
         {
-            int x3 = 1;
-            for (int j = 1; j <= i; j ++)
-            {
-                x3 *= j;
-            }
+            x3 *= i;
             answer += x1 * x2 / x3;
             x1 = -x1;
             x2 *= 5;
@@ -554,14 +547,10 @@ public class Program
         double k = 1, k1 = 1, k2 = 1, k3 = 1;
         for (int i = 1; k >= 0.0001; i++)
         {
-            k3 = 1;
+            k3 *= i;
             S += k;
             k1 = (2 * i + 1);
             k2 = Math.Pow(x, 2 * i);
-            for (int j = 1; j <= i; j++)
-            {
-                k3 *= j;
-            }
             k = k1 * k2 / k3;
             y = (1 + 2 * x * x) * Math.Pow(e, x * x);
             Console.WriteLine(S);

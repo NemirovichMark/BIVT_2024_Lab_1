@@ -335,7 +335,7 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int n = 1; Math.Abs(Math.Cos(n * x)/(n * n)) > 0.0001; n += 1)
+        for (int n = 1; Math.Abs(Math.Cos(n * x)/(n * n)) >= 0.0001; n += 1)
         {
             answer += Math.Cos(n * x) / (n * n);
         }

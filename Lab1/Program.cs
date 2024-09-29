@@ -40,12 +40,12 @@ public class Program
         program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
-        program.Task_3_2(0.1);
+        //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
-        //program.Task_3_7(0.1);
+        program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
     }
@@ -494,15 +494,7 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        for (double i = 1, k = x, n = 1; Math.Abs(k) >= 0.0001; i++)
-        {
-            n = k * Math.Sin(i * Math.PI / 4);
-            S += n;
-            k *= x;
-        }
-        y = x * Math.Sqrt(2) / (2 - 2 * Math.Sqrt(2) * x + 2 * x * x);
-        y = Math.Round(y, 2);
-        S = Math.Round(S, 2);
+        
         // end
 
         return (S, y);
@@ -549,12 +541,20 @@ public class Program
     }
     public (double, double) Task_3_7(double x)
     {
-        double S = 0, y = 0;
+        double S = 1, y = 0;
 
         // code here
-
+        for (double i = 1, n = x * x, d = 1, m = 1; Math.Abs(n) >= 0.0001; i++)
+        {
+            d *= 2 * i * (2 * i - 1);
+            m = n / d;
+            S += m;
+            n *= x * x;
+        }
         // end
-
+        y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, -x)) / 2;
+        S = Math.Round(S, 2);
+        y = Math.Round(y, 2);
         return (S, y);
     }
     public (double, double) Task_3_8(double x)

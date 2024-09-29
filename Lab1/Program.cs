@@ -109,11 +109,13 @@ public class Program
         double answer = 0;
 
         // code here
-        if(x > 0)
+        double o = 1.0;
+        if (x > 0)
         {
             for (int i = 1; i <= 9; i++)
             {
-                answer += Math.Cos(i * x) / (Math.Pow(x, (i - 1)));
+                answer += Math.Cos(i * x) / o;
+                o *= x;
             }
         }
         else
@@ -121,7 +123,6 @@ public class Program
             answer = 0;
         }
         answer = Math.Round(answer, 2);
-
         // end
 
         return answer;
@@ -169,13 +170,15 @@ public class Program
         int answer = 0;
 
         // code here;
+        int q = 1;
         for (int i = 1; i <= 6; i++)
+
         {
-            int q = 1; for (int j = 1; j <= i; j++)
-            {
-                q *= j;
-            }
+            q = q * i;
             answer += q;
+
+
+
         }
 
         // end
@@ -187,27 +190,22 @@ public class Program
         double answer = 0;
 
         // code here;
+       
 
-        int n = 6;
         
-        int sign = -1;
-        int baseNumber = 5;
-        int factorial = 1;
-
-        for (int i = 1; i <= n; i++)
+        double baseNumber = 1;
+        double factorial = 1;
+        for (int i = 1; i <= 6; i++)
         {
-            int power = 1;
-            for (int j = 0; j < i; j++)
-            {
-                power *= baseNumber;
-            }
-
-            answer += sign * (double)power / factorial;
-            sign *= -1;
-            factorial *= (i + 1);
+            int sign = (i % 2 == 0) ? 1 : -1;
+            factorial *= i;
+            baseNumber *= 5;
+            answer += sign * baseNumber / factorial;
+            
         }
-        answer = Math.Round(answer,2);
-        Console.WriteLine(answer);
+
+        answer = Math.Round(answer, 2);
+        
         // end
 
         return answer;
@@ -236,7 +234,8 @@ public class Program
         {
             Console.Write(i + " ");
         }
-        Console.WriteLine(); for (int i = 0; i < 6; i++)
+        Console.WriteLine(); 
+        for (int i = 0; i < 6; i++)
         {
             Console.Write("5 ");
         }
@@ -246,21 +245,24 @@ public class Program
     }
     public double Task_1_12(double x)
     {
+        
         double answer = 0;
-
         // code here
+         double o = 1;
+        double w = 1;
+        double sum = 1;
         if (x != 0)
         {
-            double s = 1.0; for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                double cashe_x = 1; for (int q = 1; q <= i; q++)
-                {
-                    cashe_x *= x;
-                }
-                s += 1.0 / cashe_x;
-                answer = Math.Round(s, 2);
+                w *= x;
+                sum += o / w;
+
             }
+            answer = Math.Round(sum, 2);
         }
+        
+        
 
         // end
 
@@ -333,7 +335,7 @@ public class Program
             w = chisl;
             z = znam;
             answer = w / z;
-            Console.WriteLine(answer);
+            //Console.WriteLine(answer);
         }
 
 
@@ -389,7 +391,7 @@ public class Program
         for (int i = 1; i <= (x / 3);i++) {
             answer = answer * 2;
         }
-        Console.Write(answer);
+        //Console.Write(answer);
         
         // end
 
@@ -676,11 +678,9 @@ public class Program
     public (double, double) Task_3_9(double x)
     {
         double S = 0, y = 0;
-
         // code here
-        double eps = 0.0001, i = 0.0; int sign = (i % 2 == 0) ? 1 : -1; 
-        double currSum = 1; 
-        for (int j = 0; j < 2 * i+1; j++)
+        double eps = 0.0001, i = 0.0; int sign = (i % 2 == 0) ? 1 : -1; double currSum = 1; double sum = x;
+        for (int j = 0; j < 2 * i + 1; j++)
         {
             currSum *= x;
         }
@@ -689,14 +689,20 @@ public class Program
         {
             S += currSum; i++;
             int ign = (i % 2 == 0) ? 1 : -1;
-            double sum = 1; for (int j = 0; j < 2 * i + 1; j++) sum *= x;
-
+            sum *= x * x;
+            if (i == 0) sum *= x;
+            
             currSum = ign * sum / (2 * i + 1);
         }
         y = Math.Round(Math.Atan(x), 2); S = Math.Round(S, 2);
-        // end
+        
 
+        
+        // end
         return (S, y);
+        
     }
+
+    
     #endregion
 }

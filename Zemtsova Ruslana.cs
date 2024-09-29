@@ -609,17 +609,16 @@ public class Program
         // code here
         double ch = 1, zn = 1, answer = 0, n = 1;
         if (zn != 0)
-        y = (Math.Exp(x) + Math.Exp(-x)) / 2;
-        for (double i = 1; Math.Abs(n) >= 0.0001;)
+            y = (Math.Exp(x) + Math.Exp(-x)) / 2;
+        for (int i = 1; Math.Abs(n) >= 0.0001; i++)
         {
             ch *= x * x;
-            zn = (2 * i) * (2 * i - 1);
+            zn *= (2 * i) * (2 * i - 1);
             n = ch / zn;
             S += n;
-            i++;
         }
         Console.WriteLine($"{x,10:f2}\t{y,10:f2}\t{S,10:f2}");
-        answer = Math.Round(S,2);
+        answer = Math.Round(S, 2);
 
         // end
 
@@ -639,7 +638,7 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-       
+
         // end
 
         return (S, y);

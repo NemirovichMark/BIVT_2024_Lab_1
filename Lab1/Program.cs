@@ -563,28 +563,16 @@ public class Program
         // code here
         double zn = 1, p = 1, i = 0, ch = 1, s0 = 0, k2 = 1;
         int k1 = 0;
-        do
+        while (Math.Abs(s0) >= 0.0001)
         {
-            for (k1 = 0; k1 < 2 * i; k1 = k1 + 1)
-            {
-                ch = ch * x;
-            }
-            for (k2 = 1; k2 <= (2 * i); k2 = k2 + 1)
-            {
-                zn = zn * k2;
-            }
-            s0 = p * (ch / zn);
+            S = S + s0;
             p = p * -1;
-            if (Math.Abs(s0) >= 0.0001)
-            {
-                S = S + s0;
-            }
-            zn = 1;
-            ch = 1;
             i = i + 1;
-        } while (Math.Abs(s0) >= 0.0001);
-        y = Math.Round(Math.Cos(x), 2);
-        S = Math.Round(S, 2);
+            ch = ch * x*x;
+            zn = zn * 2*i*(2*i-1);
+            s0 = p * (ch / zn);
+            y = Math.Cos(x);
+        }
         // end
 
         return (S, y);

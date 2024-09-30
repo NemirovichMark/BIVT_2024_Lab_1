@@ -55,7 +55,7 @@ public class Program
         //program.Task_3_6(0.1);
         //for (double x = 0.1; x <= 1; x += 0.05)
         //{
-        //    program.Task_3_7(x);
+        //    program.Task_3_7(0.1);
         //}
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
@@ -617,8 +617,8 @@ public class Program
             n = ch / zn;
             S += n;
         }
-        //Console.WriteLine($"{x,10:f2}\t{y,10:f2}\t{S,10:f2}");
-        answer = Math.Round(S, 2);
+        //Console.WriteLine($"{x,10}\t{y,10}\t{S,10}");
+        answer = S;
 
         // end
 

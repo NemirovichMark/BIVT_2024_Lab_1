@@ -12,7 +12,7 @@ public class Program
 
         //program.Task_1_1();
         //program.Task_1_2();
-        program.Task_1_3();
+        //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
         //program.Task_1_6(4);
@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
-        //program.Task_2_4(0.8);
+        program.Task_2_4(0.8);
         //program.Task_2_5(11, 5);
         //program.Task_2_6();
         //program.Task_2_7a();
@@ -43,7 +43,7 @@ public class Program
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
-        program.Task_3_4(0.1);
+        //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
@@ -113,8 +113,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Pow(p,2);
-        for (int i = 1; i <= 9; i += 1)
+        for (int i = 0; i <= 9; i += 1)
         {
             answer += (p+h*i)*(p+h*i);
         }
@@ -299,13 +298,14 @@ public class Program
         int power = 0;
 
         // code here
-        double summa = 1;
-        for (int i=1; i <= 63; i++)
+        double summa = 0;
+        double cringe = 1;
+        for (int i=1; i <= 64; i++)
         {
-            summa += Math.Pow(2, i);
+            summa += cringe;
+            cringe *= 2;
         }
         summa = summa/15;
-        Console.WriteLine(summa);
         int counter = 0;
         for ( ; summa > 10; summa /= 10)
         {
@@ -313,6 +313,7 @@ public class Program
         }
         answer = Math.Round(summa, 2);
         power = counter;
+        Console.WriteLine(answer);
         // end
 
         return (answer, power);
@@ -393,9 +394,9 @@ public class Program
             return 0;
         }
         double dryan = 1;
-        for (int i=0; Math.Pow(x, 2 * i) >= 0.0001; i++)
+        for (int i=0; dryan >= 0.0001; i++)
         {
-            answer += Math.Pow(x, 2 * i);
+            answer += dryan;
             dryan *= x * x;
         }
         answer = Math.Round(answer, 2);

@@ -98,19 +98,14 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x==0)
-        {
-            answer = 0;
-        }
-       
+        double del = 1;
+        if (x == 0) return answer;
         else for(int i = 1; i<=9; i++)
         {
-                double del = 1;
-                for (int k = 1; k<=i-1; k++)
-                {
-                    del *= x;
-                }
+               
+                
                answer += Math.Cos(x*i)/del;
+                del *= x;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -159,14 +154,13 @@ public class Program
         int answer = 0;
 
         // code here;
+        int del = 1;
         for (int i = 1; i <= 6; i++)
         {
-            int f = 1;
-            for (int k = 1; k <= i; k++)
-            {
-                f *= k;
-            }
-            answer += f;
+            int k = 1;
+            
+            del *= i;
+            answer += del;
         }
 
         // end
@@ -178,24 +172,16 @@ public class Program
         double answer = 0;
 
         // code here;
-        for (int i= 1; i <= 6; i++)
+      int del = -1;
+        double del1 = 1.0;
+        int del2 = 1;
+
+        for (int i = 1; i<=6; i++)
         {
-            int f = 1;
-            for (int k = 1; k <= i; k++)
-            {
-                f *= k;
-            }
-            double del = 1;
-            for (int k = 1; k <= i; k++)
-            {
-                del *= -1;
-            }
-            double del1 = 1;
-            for (int k = 1; k <= i; k++)
-            {
-                del *= 5;
-            }
-            answer += (del* del1)/f;
+            del1 *= 5;
+            del2 *= i;
+            answer += del * del1 / del2;
+            del *= -1;
         }
         answer = Math.Round(answer,2);
         // end
@@ -246,19 +232,17 @@ public class Program
     public double Task_1_12(double x)
     {
         double answer = 0;
+        double del = 1;
         if (x == 0)
         {
             answer = 0;
         }
         // code here
+                            
         else for (double i = 0; i <= 10; i++)
         {
-                double del = 1;
-                for (int k = 1; k <= i; k++)
-                {
-                    del *= x;
-                }
                 answer += 1 / del;
+                del *= x;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -324,14 +308,13 @@ public class Program
         int power = 0;
 
         // code here
+        int del = 1;
         for (int i = 0; i < 64; i++)
         {
-            double del = 1;
-            for (int k = 1; k <= i; k++)
-            {
-                del *= 2;
-            }
+           
+            
             answer +=del ;
+            delegate *= 2;
         }
         answer /= 15;
         while (answer > 10)

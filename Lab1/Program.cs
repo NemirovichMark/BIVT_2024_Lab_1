@@ -55,7 +55,7 @@ public class Program
     {
         int answer = 0;
 
-        for (int n = 2; n <= 35;) 
+        for (int n = 2; n <= 35;)
         {
             answer += n;
             n += 3;
@@ -66,22 +66,22 @@ public class Program
     public double Task_1_2()
     {
         double answer = 0;
-        for (double n = 1; n <= 10; n++) 
+        for (double n = 1; n <= 10; n++)
         {
             answer += (1/n);
         }
-        answer = Math.Round(answer,2);
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public double Task_1_3()
-    {   
+    {
         double answer = 0;
         for (double n = 2; n <=113; n+=2)
-        { 
+        {
             answer+=(n/(n+1));
-            
+
         }
-        answer= Math.Round(answer,0);
+        answer= Math.Round(answer, 0);
         return answer;
     }
     public double Task_1_4(double x)
@@ -98,11 +98,11 @@ public class Program
             {
                 answer += Math.Cos((n+1)*x)/b;
                 b *= x;
-                
+
             }
-             
+
         }
-        answer = Math.Round(answer,2);
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public double Task_1_5(double p, double h)
@@ -119,13 +119,13 @@ public class Program
     public double Task_1_6(double x)
     {
         double answer = 0;
-        
-        
-        
-        answer = Math.Round((0.5*x*x - 7*x),2);
-            
-        
-        
+
+
+
+        answer = Math.Round((0.5*x*x - 7*x), 2);
+
+
+
 
         return answer;
     }
@@ -141,17 +141,12 @@ public class Program
     }
     public int Task_1_8()
     {
-        int answer = 0;
+        int answer = 1;
         int fact = 1;
-        for (int n = 1; n<=6; n++)
+        for (int n = 2; n<=6; n++)
         {
-            for (int n2 = 1;n2<=n; n2++)
-            {
-                fact*=n2;
-
-            }
+            fact*=n;
             answer += fact;
-            fact=1;
         }
         return answer;
     }
@@ -175,8 +170,9 @@ public class Program
     {
         int answer = 1;
         for (int n = 1; n<=7; n++)
-            { answer *= 3; 
-            }
+        {
+            answer *= 3;
+        }
 
         return answer;
     }
@@ -209,7 +205,7 @@ public class Program
             i++;
             answer += 1 / a;
             a *= x;
-            
+
         }
         //Console.WriteLine(answer);
         answer = Math.Round(answer, 2);
@@ -232,8 +228,8 @@ public class Program
         {
             answer = -1;
         }
-        answer=Math.Round(answer,3);
-            return answer;
+        answer=Math.Round(answer, 3);
+        return answer;
     }
     public void Task_1_14()
     {
@@ -270,7 +266,7 @@ public class Program
             n1 = nn1;
             n2 = nn2;
         }
-        answer = Math.Round(answer,1);
+        answer = Math.Round(answer, 1);
         return answer;
     }
     public (double, int) Task_1_16()
@@ -279,14 +275,14 @@ public class Program
         int power = 0;
         double zerno = 0;
         double a = 1;
-       
-        for (int i = 1; i<= 64; i++) 
-            {
+
+        for (int i = 1; i<= 64; i++)
+        {
             zerno += a;
             a *= 2;
-            }
+        }
         answer = zerno/15;
-        
+
         while (answer>=10)
         {
 
@@ -316,7 +312,8 @@ public class Program
     {
         int answer = 10;
         int i = 0;
-        while (x > 0) {
+        while (x > 0)
+        {
             answer *= 2;
             x -= 3;
         }
@@ -343,7 +340,7 @@ public class Program
             {
                 break;
             }
-            
+
         }
         return answer;
     }
@@ -363,15 +360,15 @@ public class Program
         double s = 0;
 
         // code here
-        for (int i = 0;i<= 10000; i++)
+        for (int i = 0; i<= 10000; i++)
         {
             if ((s+(a+i*h)) > (s+(a+(i+1)*h)))
             {
                 answer = 0;
                 break;
             }
-            
-            else if ( (s+(a+i*h)) <= p)
+
+            else if ((s+(a+i*h)) <= p)
             {
                 s+=(a+i*h);
                 answer+= 1;
@@ -381,7 +378,7 @@ public class Program
                 return answer;
                 break;
             }
-           
+
         }
         // end
 
@@ -442,9 +439,9 @@ public class Program
         {
             norma *= 1.1;
             answer += norma;
-            
+
         }
-        answer = Math.Round(answer,2);
+        answer = Math.Round(answer, 2);
         // end
         Console.WriteLine(answer);
         return answer;
@@ -466,11 +463,11 @@ public class Program
     }
     public int Task_2_7c()
     {
-        
+
         int day = 0;
         double norma = 10;
         // code here
-        while ( norma <= 20 )
+        while (norma <= 20)
         {
             day++;
             norma *= 1.1;
@@ -499,8 +496,8 @@ public class Program
             answer++;
             L /= 2;
         }
-            // end
-        
+        // end
+
         return answer;
     }
     public int Task_2_10()
@@ -536,34 +533,34 @@ public class Program
 
         return (S, y);
     }
+
     
-        //2 var
-        public (double, double) Task_3_3(double x)
-        {
-            double S = 0, y = 0;
+    //public (double, double) Task_3_3(double x)
+    //{
+    //    double S = 0, y = 0;
 
-            // code here
-        S = 1;
-        double elem = Math.Cos(x), fact = 1.0;
-            
-        for (int i = 1; ;)
-        {
-            
-            elem = Math.Cos(i * x) / fact;
-            if (Math.Abs(elem) < 0.0001) break;
-            S += elem;
-            i ++;
-            fact *= i;
-            
-        }
-        y = Math.Exp(Math.Cos(x))*Math.Cos(Math.Sin(x));
-            //S = Math.Round(S);
-            //y = Math.Round(y);
-        Console.WriteLine(S + " " + y);
-            // end
+    //    // code here
+    //    S = 1;
+    //    double elem = Math.Cos(x), fact = 1.0;
 
-        return (S, y);
-        }
+    //    for (int i = 1; ;)
+    //    {
+
+    //        elem = Math.Cos(i * x) / fact;
+    //        if (Math.Abs(elem) < 0.0001) break;
+    //        S += elem;
+    //        i++;
+    //        fact *= i;
+
+    //    }
+    //    y = Math.Exp(Math.Cos(x))*Math.Cos(Math.Sin(x));
+    //    //S = Math.Round(S);
+    //    //y = Math.Round(y);
+    //    Console.WriteLine(S + " " + y);
+    //    // end
+
+    //    return (S, y);
+    //}
 
     public (double, double) Task_3_4(double x)
     {
@@ -626,4 +623,23 @@ public class Program
         return (S, y);
     }
     #endregion
+
+    public (double, double) Task_3_3(double x)
+    {
+        double S = 1, y = 0;
+        double element = Math.Cos(x), i1 = 1;
+        for (int j = 1; ;)
+        {
+
+            element = Math.Cos(j * x) / i1;
+            if (Math.Abs(element) < 0.0001) break;
+            S += element;
+            j++;
+            i1 *= j;
+        }
+        Console.WriteLine($"{S} {y}");
+        y = Math.Exp(Math.Cos(x))*Math.Cos(Math.Sin(x));
+        return (S, y);
+
+    }
 }

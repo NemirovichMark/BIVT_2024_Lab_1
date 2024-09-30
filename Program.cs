@@ -584,24 +584,27 @@ public class Program
     #region Level 3
     public (double, double) Task_3_1(double x)
     {
-        
+
         double S = 1, x1 = 1, f = 1, a = 1, i = 1;
         double y;
         const double e = 0.0001;
         int p = 1;
         // code here
-        while (Math.Abs(a) >= e)
+        while (true)
         {
             p = -p;
             x1 *= x * x;
-            f *= i * (i + 1);
+            f *= i * (i +1 );
             a = (p * x1) / f;
+            if (Math.Abs(a) <= e)
+                break;
             S += a;
             i += 2;
         }
-        S = Math.Round(S, 2);
-        y = Math.Round(Math.Cos(x), 2);
         
+        y = Math.Cos(x);
+        Console.WriteLine(S + " " + y);
+
 
 
         // end

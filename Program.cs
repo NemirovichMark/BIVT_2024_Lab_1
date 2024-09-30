@@ -603,7 +603,7 @@ public class Program
         }
         
         y = Math.Cos(x);
-        Console.WriteLine(S + " " + y);
+       
 
 
 

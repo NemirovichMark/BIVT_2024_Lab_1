@@ -20,7 +20,7 @@ public class Program
         //program.Task_1_6(4);
         //program.Task_1_7();
         //program.Task_1_8();
-        //program.Task_1_9();
+        program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
         //program.Task_1_12(0.9);
@@ -33,7 +33,7 @@ public class Program
         //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
-        //program.Task_2_4(0.8);
+        program.Task_2_4(0.8);
         //program.Task_2_5(11, 5);
         //program.Task_2_6();
         //program.Task_2_7a();
@@ -42,7 +42,7 @@ public class Program
         //program.Task_2_8();
         //program.Task_2_9();
         //program.Task_2_10();
-        program.Task_3_1(0.1);
+        //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
@@ -171,22 +171,18 @@ public class Program
     public double Task_1_9()
     {
         double answer = 0;
-        int fact = 1;
+        double fact = 1, a = 1, b = 1;
 
         // code here;
         for (int i = 1; i <= 6; i++)
         {
-            int s = 1;
-            fact = 1;
-            for (int j = 1; j <= i; j++)
-            {
-                fact *= j;
-                s *= 5;
-
-            }
-            answer += Math.Pow(-1, i) * s / fact;
+            fact *= i;
+            a *= -1;
+            b *= 5;
+            answer += (a * b) / fact;
         }
         answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -374,20 +370,19 @@ public class Program
     }
     public double Task_2_4(double x)
     {
-        double answer = 0, eps = 0.0001, i = 1;
-        int n = 0;
+        double answer = 0;
+        double eps = 0.0001, i = 1, s = 1;
 
         // code here
         if (x < 1)
         {
             while (Math.Abs(i) > eps)
             {
-                answer += i;
-                n++;
-                i = Math.Pow(x, 2 * n);
+                i *= x * x;
+                s += i;
             }
+            answer = Math.Round(s, 2);
         }
-        answer = Math.Round(answer, 2);
         // end
 
         return answer;

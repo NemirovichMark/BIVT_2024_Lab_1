@@ -385,13 +385,14 @@ public class Program
 
         // code here
         double k = 1;
+        answer += k;
         if (Math.Abs(x) >= 1)
         {
             return 0;
         }
         for (int i = 0; k >= 0.0001; i ++)
         {
-            k = Math.Pow(x, 2 * i);
+            k *= x * x;
             answer += k;
             Console.WriteLine(answer);
 
@@ -550,11 +551,11 @@ public class Program
             k3 *= i;
             S += k;
             k1 = (2 * i + 1);
-            k2 = Math.Pow(x, 2 * i);
+            k2 *= x * x;
             k = k1 * k2 / k3;
             y = (1 + 2 * x * x) * Math.Pow(e, x * x);
-            Console.WriteLine(S);
-            Console.WriteLine(k3);
+            //Console.WriteLine(S);
+            //Console.WriteLine(k2);
         }
 
         // end

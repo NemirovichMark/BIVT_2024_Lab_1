@@ -249,7 +249,7 @@ public class Program
         }
         while (counter <= 10)
         {
-            summ += 1/sch;
+            summ += 1.0/sch;
             sch *= x;
             counter++;
         }
@@ -304,10 +304,10 @@ public class Program
         double answer = 0 ;
 
         // code here
-        int ch1 = 1, zn1 = 1;  
-        int ch2 = 2, zn2 = 1;  
-        int ch3 = 0, zn3 = 0;
-        for (int i = 3; i <= 5; i++)
+        double ch1 = 1, zn1 = 1;  
+        double ch2 = 2, zn2 = 1;  
+        double ch3 = 0, zn3 = 0;
+        for (int i = 3; i <= 3; i++)
         {
             ch3 = ch1 + ch2;  
             zn3 = zn1 + zn2;  
@@ -375,9 +375,10 @@ public class Program
         {
             answer += total;
             n++;
-            total = (int)(Math.Cos (n*x)/(n*n));
+            total = Math.Cos (n*x)/(n*n);
         }
         // end
+        
 
         return answer;
     }
@@ -619,7 +620,7 @@ public class Program
         double summ = 0;
         double xsqrt = x*x;
         int i = 0;
-        while (x/(2*i + 1) >= 0.0001)
+        while ((x/(2*i + 1)) >= 0.0001)
         {
             int znak = (i % 2 == 0) ? 1:-1;
             summ += znak * x/(2*i + 1);

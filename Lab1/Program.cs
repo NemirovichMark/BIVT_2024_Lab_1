@@ -541,20 +541,30 @@ public class Program
     }
     public (double, double) Task_3_7(double x)
     {
-        double S = 1, y = 0;
+        double S = 0, y = 0;
 
         // code here
-        for (double i = 1, n = x * x, d = 1, m = 1; Math.Abs(n) >= 0.0001; i++)
+        y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-x))) / 2;
+        for (double i = 1, n = 1, d = 1, m = 1; i <= 10000000; i++)
         {
-            d *= 2 * i * (2 * i - 1);
-            m = n / d;
-            S += m;
             n *= x * x;
+            d *= (2 * i) * (2 * i - 1);
+            m = n / d;
+            if (Math.Abs(m) < 0.0001)
+            {
+                break;
+            }
+            else
+            {
+                S += m;
+            }
         }
+        S = Math.Round(S, 4);
+        y = Math.Round(y, 4);
+
         // end
-        y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, -x)) / 2;
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
+
+        Console.WriteLine("{0} {1}", S, y);
         return (S, y);
     }
     public (double, double) Task_3_8(double x)

@@ -374,17 +374,17 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = Math.Cos(x), n = 1, cosik = Math.Cos(x);
+        double s = 0, n = 1, cosik = Math.Cos(x);
         while (Math.Abs(cosik) >= 0.0001)
         {
-            if (n * x > 1 && n * x < -1)
+            /*if (n * x > 1 && n * x < -1)
             {
                 answer = 0;
                 break;
-            }
+            }*/
+            s += cosik;
             n++;
             cosik = Math.Cos(n * x) / (n * n);
-            s += cosik;
         }
         answer = s;
 
@@ -612,31 +612,27 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        S = 1;
+        S = 0;
         double e = 0.0001, i = 1;
-        double ch = (0.1 * 0.1) / (1 * 2), i2 = i * 2, fact = 1, prost = 1;
+        double ch = (x * x) / (1 * 2), i2 = i * 2, fact = 1, prost = x*x;
         while (Math.Abs(ch) >= e)
         {
-
-            //x += h;
+            S += ch;
+            i++;
             i2 = i * 2;
             prost *= x * x;
             while (i2 > 0)
             {
                 fact *= i2;
-             
+
                 i2 = i2 - 1;
             }
             ch = prost / fact;
-            S += ch;
-            i++;
-            S = Math.Round(S, 4);
+    
+            //S = Math.Round(S, 4);
         }
-        
-        //while (S >= 10) { S /= 10; }
-        //S = Math.RoundS, 4);
         y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-1) * x)) / 2;
-        //y = Math.Round(y, 4);
+        
         // end
 
         return (S, y);

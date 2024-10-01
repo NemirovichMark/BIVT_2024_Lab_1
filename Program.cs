@@ -103,14 +103,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
+        double delitel = 1;
         for (int i = 1; i <= 9; i++)
         {
-            s += Math.Cos(x*i)/Math.Pow(x,i-1);
+            answer += Math.Cos(x * i) / delitel;
+            delitel = delitel * x;
         }
-        answer = s;
-        Console.WriteLine (answer);
-        answer = Math.Round(answer,2);
+        Console.WriteLine(answer);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -120,14 +120,12 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
         for (int i = 0; i <= 9; i++)
         {
-            s += Math.Pow(p + i*h,2);
+            answer += (p + (i * h)) * (p + (i * h));
         }
-        answer = s;
-        Console.WriteLine (answer);
-        answer = Math.Round(answer,2);
+        Console.WriteLine(answer);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -137,11 +135,10 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
-        s = 0.5 * Math.Pow(x, 2) - 7 * x;
-        answer = s;
-        Console.WriteLine (answer);
+        answer = 0.5 * (x * x) - 7 * x;
+        Console.WriteLine(answer);
         answer = Math.Round(answer, 2);
+
         // end
 
         return answer;
@@ -188,7 +185,7 @@ public class Program
         for (int i = 1, f = 1; i <= 6; i++)
         {
             f = i;
-            s += Math.Pow((-1), i) ((Math.Pow(5, i)) / f);
+            s += Math.Pow((-1), i)*((Math.Pow(5, i)) / f);
         }
         answer = s;
         Console.WriteLine(answer);
@@ -296,6 +293,7 @@ public class Program
             Console.WriteLine(w / z);
         }
         answer = w / z;
+    }
         // end
 
         return answer;
@@ -306,16 +304,18 @@ public class Program
         int power = 0;
 
         // code here
-        for  (int i = 0; i < 64; i++)
+        double a = 1;
+        for (int i = 0; i < 64; i++)
         {
-            answer += Math.Pow(2, i);
+            answer += a;
+            a = a * 2;
         }
         answer = answer / 15;
         for (; answer > 10; answer = answer / 10)
         {
             power += 1;
         }
-        answer = Math.Round(answer,2);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         Console.WriteLine(power);
         // end
@@ -327,7 +327,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = Math.Round(Math.Pow(Math.Pow(x + 6350, 2) - Math.Pow(6350, 2), 0.5), 2);
+        answer = Math.Round(Math.Sqrt(((x + 6350) * (x + 6350)) - (6350 * 6350)), 2);
         Console.WriteLine(answer);
         // end
 
@@ -338,7 +338,6 @@ public class Program
         int answer = 0;
 
         // code here
-        int answer = 0;
         int cell = 10;
         while (x > 0)
         {
@@ -361,9 +360,9 @@ public class Program
         // code here
         double s = 0;
         int i = 1;
-        while (Math.Abs(Math.Cos(i*x)/Math.Pow(i,2)) >= 0.0001)
+        while (Math.Abs(Math.Cos(i * x) / (i* i)) >= 0.0001)
         {
-            s += Math.Cos(i * x)/Math.Pow(i, 2);
+            s += Math.Cos(i * x) / (i * i);
             i++;
         }
         answer = s;
@@ -534,14 +533,17 @@ public class Program
         int answer = 0;
 
         // code here;
-        int s = 0;
+        double a = 1;
         double l = 0.1;
-        while (l > Math.Pow(10,-10))
+        for (int i = 1;  i <= 10; i++)
+        {
+            a /= 10;
+        }
+        while (l > a)
         {
             l = l / 2;
-            s++;
+            answer++;
         }
-        answer = s;
         Console.WriteLine(answer);
         // end
 
@@ -645,22 +647,18 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double S = 1, y = 0, h = 1, z = 1, k = 1, c = 1;
-        for (int i = 1; Math.Abs(h) > 0.0001; i++)
+        double chisl = x, drob = x, znak = 1;
+        for (int i = 1; Math.Abs(drob) >= 0.0001; i++)
         {
-            z = 2 * i + 1
-            k *= (-1);
-            c = Math.Pow(x, 2 * i + 1)
-            h = k * c / z;
-            if (Math.Abs(h) <= 0.0001)
-            {
+            S += drob;
+            chisl *= x * x;
+            znak = -znak;
+            drob = znak * chisl / (2 * i + 1);
+            if (Math.Abs(drob) <= 0.0001)
                 break;
-            }
-            S += h
-            y = Math.Atan(x);
         }
-        Console.Writeline(S);
-        Console.Writeline(y);
+        Console.WriteLine(S);
+        y = Math.Atan(x);
         // end
 
         return (S, y);

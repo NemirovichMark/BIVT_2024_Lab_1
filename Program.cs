@@ -458,14 +458,16 @@ public class Program
         // code here
         while(Math.Abs(k)>0.0001)
         {
-            k *= x;
-            S += (k * Math.Sin((i * Math.PI) / 4));
-            i++;   
+            if (Math.Abs(k) > 0.0001)
+            {
+                k *= x;
+                S += (k * Math.Sin((i * Math.PI) / 4));
+                i++;
+            }
+            else break;
         }
         // end
         y = ((x * Math.Sin((Math.PI) / 4)) / (1 - 2 * x * Math.Cos((Math.PI) / 4) + x * x));
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
         return (S, y);
     }
     public (double, double) Task_3_3(double x)

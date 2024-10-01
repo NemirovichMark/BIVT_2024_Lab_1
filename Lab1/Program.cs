@@ -79,7 +79,7 @@ public class Program
             s = s + (1/i);
         }
         {
-            s = Math.Round(s, 3);
+            s = Math.Round(s, 2);
         }
         answer = s;
         // end
@@ -91,15 +91,13 @@ public class Program
         double answer = 0;
 
         // code here
+        
         double s = 0;
-        for (double i = 2, j = 3; i <= 112; i = i + 1, j = j + 1)
+        for (double i = 2, j = 3; i < 112; i = i + 2, j = j + 2)
         {
             s = s + (i / j);
         }
-        {
-            s = Math.Round(s, 3);
-        }
-        answer = s;
+        answer = Math.Ceiling(s);
         // end
 
         return answer;
@@ -118,7 +116,7 @@ public class Program
             t += 1;
             xx = xx * x;
         }
-        answer = Math.Round(s, 4);
+        answer = Math.Round(s, 2);
         // end
 
         return answer;
@@ -150,6 +148,7 @@ public class Program
 
         // code here
         answer = 0.5 * x * x - 7 * x;
+        answer = Math.Round(answer,2);
         // end
 
         return answer;
@@ -201,7 +200,7 @@ public class Program
             kol += 1;
 
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -244,7 +243,7 @@ public class Program
             x = x * xx;
 
         }
-        answer = Math.Round(s, 4);
+        answer = Math.Round(s, 2);
         // end
 
         return answer;
@@ -318,7 +317,7 @@ public class Program
 
         // code here
         double weight = 0, col = 0, amount = 1;
-        while (col != 64)
+        while (col != 63)
         {
             col += 1;
             amount = amount * 2;
@@ -332,7 +331,7 @@ public class Program
             weight /= 10;
         }
         
-        answer = Math.Round(weight, 4);
+        answer = Math.Round(weight, 2);
         //число дел на 10 до тех пор пока оно больше 10 = мальтиса = сколько раз мы сдвинули = power
         // end
         return (answer, power);
@@ -387,7 +386,7 @@ public class Program
             cosik = Math.Cos(n * x) / (n * n);
             s += cosik;
         }
-        answer = Math.Round(s, 4);
+        answer = s;
 
         // end
 
@@ -474,7 +473,7 @@ public class Program
             day = nextday;
         }
         // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public int Task_2_7b()
@@ -635,9 +634,9 @@ public class Program
         }
         
         //while (S >= 10) { S /= 10; }
-        S = Math.Round(S, 4);
+        //S = Math.RoundS, 4);
         y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-1) * x)) / 2;
-        y = Math.Round(y, 4);
+        //y = Math.Round(y, 4);
         // end
 
         return (S, y);

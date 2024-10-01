@@ -181,13 +181,15 @@ public class Program
         double answer = 0;
 
         // code here;
-        double s = 0;
-        for (int i = 1, f = 1; i <= 6; i++)
+        double n = 5, z = -1, f = 1;
+        for (int i = 1; i <= 6; i++)
         {
-            f = i;
-            s += Math.Pow((-1), i) * ((Math.Pow(5, i)) / f);
+            answer += z * n / f;
+            f *= (i+1);
+            z *= -1;
+            n *= 5;
+
         }
-        answer = s;
         Console.WriteLine(answer);
         answer = Math.Round(answer, 2);
         // end

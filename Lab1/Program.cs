@@ -199,6 +199,7 @@ public class Program
     public double Task_1_12(double x)
     {
         double answer = 0;
+        double k = 1;
 
         // code here
         if (x == 0) 
@@ -208,7 +209,8 @@ public class Program
 
         for (double i = 0; i <= 10; i++)
         {
-            answer += 1 / Math.Pow(x, i);
+            answer += 1 / k;
+            k *= x
         }
         answer = Math.Round(answer, 2);
         // end

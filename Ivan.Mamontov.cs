@@ -612,26 +612,29 @@ public class Program
     }
     public (double, double) Task_3_6(double x)
     {
-        double S = 0, y = 0, a = 1, e = 0.0001, numer, minus;
+        double S = 0, y, a, e = 0.0001, denom, numer, minus = -1;
 
         // code here
-        for (int i = 1; Math.Abs(a) >= e; i++)
+        for (int i = 1; ; i++)
         {
-            minus = 1;
-            for (int j = 1; j <= i + 1; j++)
-                minus = minus * -1;
+            minus = minus * -1;
             numer = 1;
-            for (int k = 1; k <= 2 * i + 1; k++)
+            for (int j = 1; j <= 2 * i + 1; j++)
+            {
                 numer = numer * x;
-            a = (minus * numer) / (4 * i * i - 1);
+            }
+            denom = 4 * i * i - 1;
+            a = minus * (numer / denom);
             if (Math.Abs(a) < e) break;
             S = S + a;
+
         }
         y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
-        
+        Console.WriteLine(S);
 
 
-       
+
+
 
 
 

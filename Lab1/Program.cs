@@ -561,7 +561,7 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double zn = 1, p = 1, i = 0, ch = 1, s0 = 0, k2 = 1;
+        double zn = 1, p = 1, i = 0, ch = 1, s0 = 1;
         int k1 = 0;
         while (Math.Abs(s0) >= 0.0001)
         {
@@ -572,6 +572,7 @@ public class Program
             zn = zn * 2*i*(2*i-1);
             s0 = p * (ch / zn);
             y = Math.Cos(x);
+            Console.WriteLine(S);
         }
         // end
 

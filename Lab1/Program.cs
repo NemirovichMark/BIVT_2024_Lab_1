@@ -96,11 +96,12 @@ public class Program
     public double Task_1_4(double x)
     {
         double answer = Math.Cos(x);
-
+        double k = 1;
         // code here
         for (double j = 1; j <= 8; j++)
         {
-            answer += Math.Cos((j + 1) * x) / Math.Pow(x, j);
+            k *= x;
+            answer += Math.Cos((j + 1) * x) / k);
         }
         answer = Math.Round(answer, 2);
         // end
@@ -489,7 +490,7 @@ public class Program
             s += n;
             p *= x * x;
         }
-        y = (1 + 2 * x * x) * Math.Pow(Math.E, x * x);
+        y = (1 + 2 * x * x) * Math.Exp(x * x);
         s = Math.Round(s, 2);
         y = Math.Round(y, 2);
         // end

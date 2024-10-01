@@ -56,15 +56,14 @@ public class Program
 
         // code here
 
-        int sum = 0;
+        int answer = 0;
         int a1 = 2;
         while (a1 <= 35)
         {
-            sum += a1;
+            answer += a1;
             a1 += 3;
         }
-        Console.WriteLine(sum);
-
+        
         // end
 
         return answer;
@@ -81,8 +80,8 @@ public class Program
             sum += 1.0 / i;
         }
         double roundsum = Math.Round(sum, 2);
-        Console.WriteLine(roundsum);
-
+        answer = roundsum;
+        
         // end
 
         return answer;
@@ -99,7 +98,7 @@ public class Program
             sum += (double)i / (i + 1);
         }
         double roundsum = Math.Round(sum);
-        Console.WriteLine(roundsum);
+        answer = roundsum;
 
         // end
 
@@ -125,7 +124,7 @@ public class Program
                 sum += value;
                 exponent *= X;
             }
-            Console.WriteLine($"{sum:f2}");
+            answer = Math.Round(sum, 2);
         }
 
 
@@ -141,13 +140,12 @@ public class Program
 
         double P = 0;
         double H = 0;
-        double sum = 0;
+        double answer = 0;
         for (int n = 0; n < 10; n++)
         {
             double currentTerm = P + n * H;
-            sum += currentTerm * currentTerm;
+            answer += currentTerm * currentTerm;
         }
-        Console.WriteLine(sum);
 
         // end
 
@@ -159,11 +157,11 @@ public class Program
 
         // code here
 
-        double X;
+        //double X;
         double Y;
         Console.WriteLine("     X |      Y(X) ");
 
-        for (X = -4; X <=4; X += 0.5)
+        //for (X = -4; X <=4; X += 0.5)
         {
             Y = 0.5 * X * X - 7 * X;
             Console.WriteLine($"{X,7}|{Y,11:F2}");
@@ -184,7 +182,7 @@ public class Program
         {
             factorial *= i;
         }
-        Console.WriteLine(factorial);
+        answer = factorial;
 
         // end
 
@@ -196,19 +194,13 @@ public class Program
 
         // code here;
 
-        int sum = 0;
-        for (int i = 1; i <= 6; i++)
+        int factorial = 1;
+        for (int i = 1; i < 7; i++)
         {
-            int factorial = 1;
-
-            for (int j = 1; j <= i; j++)
-            {
-                factorial *= j;
-            }
-
-            sum += factorial;
+            factorial *= i;
+            
+            answer += factorial;
         }
-        Console.WriteLine(sum);
 
         // end
 
@@ -220,26 +212,18 @@ public class Program
 
         // code here;
 
-        double sum = 0.0;
+        int factorial = 1;
+        int firstTerm = -1;
+        int secondTerm = 5;
 
         for (int i = 1; i <= 6; i++)
         {
-            int factorial = 1;
-            for (int j = 1; j <= i; j++)
-            {
-                factorial *= j;
-            }
-
-            int exponent = 1;
-            for (int j = 0; j < i; j++)
-            {
-                exponent *= 5;
-            }
-
-            double term = (i % 2 == 0 ? 1 : -1) * (double)exponent / factorial;
-            sum += term;
+            factorial *= i;
+            answer += (double)firstTerm * secondTerm / factorial;
+            firstTerm *= -1;
+            secondTerm *= 5;
         }
-        Console.WriteLine($"{sum:f2}");
+        answer = Math.Round(answer, 2);
 
         // end
 
@@ -259,7 +243,7 @@ public class Program
         {
             result *= basis;
         }
-        Console.WriteLine(result);
+        answer = result;
 
         // end
 
@@ -303,7 +287,7 @@ public class Program
                 one /= X;
                 sum += one;
             }
-            Console.WriteLine($"{sum:f2}");
+            answer = Math.Round(sum, 2);
         }
 
 
@@ -358,7 +342,7 @@ public class Program
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
 
-        Console.WriteLine("Первые 8 членов последовательности Фибоначчи:");
+        Console.WriteLine("ГЏГҐГ°ГўГ»ГҐ 8 Г·Г«ГҐГ­Г®Гў ГЇГ®Г±Г«ГҐГ¤Г®ГўГ ГІГҐГ«ГјГ­Г®Г±ГІГЁ Г”ГЁГЎГ®Г­Г Г·Г·ГЁ:");
 
         for (int i = 0; i < count; i++)
         {
@@ -389,8 +373,7 @@ public class Program
             denominators[i] = denominators[i - 1] + denominators[i - 2];
         }
 
-        double answer1 = (double)numerators[4]/denominators[4];
-        Console.WriteLine(answer1);
+        double answer = (double)numerators[4]/denominators[4];
 
         // end
 
@@ -403,26 +386,24 @@ public class Program
 
         // code here
 
-        double Answer = 1;
-        double Power = 0;
-        double Grains = 1;
+        double answer = 1;
+        double power = 0;
+        double grains = 1;
 
         for (int i = 1; i <= 63; i++)
         {
-            Grains *= 2;
-            Answer += Grains;
+            grains *= 2;
+            answer += grains;
         }
 
-        Answer = Answer / 15;
+        answer = answer / 15;
 
-        while (Answer >= 10)
+        while (answer >= 10)
         {
-            Answer = Answer / 10;
-            Power ++;
+            answer = answer / 10;
+            power ++;
         }
-
-        Console.WriteLine($"{Answer:f2}");
-        Console.WriteLine(Power);
+        answer = Math.Round(answer, 2);
 
         // end
 
@@ -436,8 +417,8 @@ public class Program
 
         int R = 6350;
         int h = 1000;
-        double d = Math.Sqrt(h * (2 * R + h)); 
-        Console.WriteLine($"Расстояние до линии горизонта с высоты {h} км: {d:f2} км");
+        double answer = Math.Sqrt(h * (2 * R + h)); 
+        answer = Math.Round(answer, 2);
 
         // end
 
@@ -450,7 +431,7 @@ public class Program
         // code here
 
         int count = 10;
-        Console.WriteLine("Время (ч) | Кол-во клеток");
+        Console.WriteLine("Г‚Г°ГҐГ¬Гї (Г·) | ГЉГ®Г«-ГўГ® ГЄГ«ГҐГІГ®ГЄ");
 
         int currentCount = count;
         for (int hours = 3; hours <= 24; hours += 3)
@@ -484,7 +465,7 @@ public class Program
             sum += currentTerm;
             i += 1;
         }
-        Console.WriteLine(sum);
+        answer = sum;
 
         // end
 
@@ -506,24 +487,22 @@ public class Program
 
         // code here
 
-        double A = 1;
-        double H = 1;
-        double P = 10;
-
+        double a = 1;
+        double h = 1;
+        double p = 10;
         int n = 0;
-        double sum = 0;
 
         while (true)
         {
-            double currentTerm = A + n * H;
-            sum += currentTerm;
+            double currentTerm = a + n * h;
+            answer += currentTerm;
 
-            if (sum > P)
+            if (answer > P)
                 break;
 
             n++;
         }
-        Console.WriteLine(n);
+        Console.WriteLine(answer);
 
         // end
 
@@ -551,16 +530,14 @@ public class Program
         if (m == 0)
             return (0, 0);
 
-        int Quotient = 0;
-        int Remainder = n;
+        int quotient = 0;
+        int remainder = n;
 
-        while (Remainder >= m)
+        while (remainder >= m)
         {
-            Remainder -= m;
-            Quotient++;
+            remainder -= m;
+            quotient++;
         }
-        Console.WriteLine($"Частное: {Quotient}");
-        Console.WriteLine($"Остаток: {Remainder}");
 
         // end
 
@@ -590,7 +567,7 @@ public class Program
             sum += a1;
             a1 += a1 * 0.1;
         }
-        Console.WriteLine($"{sum:f2}");
+        answer = Math.Round(sum, 2);
 
         // end
 
@@ -612,7 +589,7 @@ public class Program
             a1 += a1 * 0.1;
             days++;
         }
-        Console.WriteLine(days);
+        answer = days;
 
         // end
 
@@ -632,7 +609,7 @@ public class Program
             days++;
             a1 += a1 * 0.1;
         }
-        Console.WriteLine(days);
+        answer = days;
 
         // end
 
@@ -663,7 +640,7 @@ public class Program
             L /= 2;
             cuts++;
         }
-        Console.WriteLine(cuts);
+        answer = cuts;
 
         // end
 
@@ -767,6 +744,19 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+        
+        double i = 0, f = x, n = 1, m = 1;
+        double eps = 0.0001;
+        while (Math.Abs((n)) >= eps)
+        {
+            n = (m * f / (2 * i + 1));
+            S += n;
+            m = -m;
+            f *= (x * x);
+            i++;
+        }
+        S = S - n;
+        y = Math.Atan(x);
 
         // end
 

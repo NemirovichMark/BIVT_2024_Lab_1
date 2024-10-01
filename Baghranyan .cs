@@ -572,6 +572,7 @@ public class Program
             S += k;
             p *= x * x;
         }
+        S -= k;
         y = (1 + 2 * x * x) * Math.Exp(x * x);
         Console.WriteLine($"{S}, {y}");
         // end

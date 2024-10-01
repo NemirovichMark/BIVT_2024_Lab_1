@@ -42,7 +42,7 @@ public class Program
         //program.Task_2_9();
         //program.Task_2_10();
         //program.Task_3_1(0.1);
-        program.Task_3_2(0.1);
+        //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
@@ -82,7 +82,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 3));
 
-        return Math.Round(answer,2);
+        return Math.Round(answer,3);
     }
     public double Task_1_3()
     {
@@ -98,7 +98,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 2);
+        return Math.Round(answer, 4);
     }
     public double Task_1_4(double x)
     {
@@ -120,7 +120,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 2);
+        return Math.Round(answer, 4);
     }
     public double Task_1_5(double p, double h)
     {
@@ -176,7 +176,7 @@ public class Program
 
         //}
 
-        return (Math.Round((0.5 * x * x - 7 * x),2));
+        return (0.5 * x * x - 7 * x);
 
     }
     public int Task_1_7()
@@ -192,19 +192,15 @@ public class Program
     }
     public int Task_1_8()
     {
-        int answer = 0;
-        for (int i = 1,dop_a = 1; i <= 6; i++)
-        { 
-            for (int j = 1; j <= i; j++)
-            {
-                dop_a *= j;
-                Console.WriteLine(dop_a);
+        int pred_a = 1, answer = 1;
+        for (int i = 2, dop_a = 1; i <= 6; i++)
+        {
+            answer += pred_a * i;
+            pred_a = pred_a * i;
+            Console.WriteLine(answer);
 
-            }
-            answer += dop_a;
-            dop_a = 1;
         }
-
+        
         return answer;
     }
     public double Task_1_9()
@@ -231,7 +227,7 @@ public class Program
 
         }
 
-        return Math.Round(answer, 2);
+        return Math.Round(answer, 4);
     }
     public int Task_1_10()
     {
@@ -242,6 +238,16 @@ public class Program
             answer *= 3;
             Console.WriteLine(answer);
         }
+
+        //Функция Math.Pow() в виде цикла для любого числа:
+        //int chislo = 1;
+        //for (int ii = 1; ii <= stepen; ii++)
+        //{
+        //    chislo *= 2;
+
+        //}
+
+
 
         return answer;
     }
@@ -287,7 +293,7 @@ public class Program
         Console.WriteLine(answer);
         if (answer != 0)
         { 
-            return Math.Round(answer, 2);
+            return Math.Round(answer, 4);
         }
         else
         { 
@@ -441,7 +447,7 @@ public class Program
         //    Console.WriteLine(i + "             km = " + Math.Round(answer, 4));
         //}
         Console.WriteLine(Math.Round(answer, 4));
-        return Math.Round(answer, 2);
+        return Math.Round(answer, 4);
     }
     public int Task_1_18(int x)
     {
@@ -451,7 +457,15 @@ public class Program
 
         //узнаем 2 в cтепени того, сколько раз клетки делились, ибо колво амёб умножается на два каждый час, значит нужно узнать во сколько раз их стало больше за всё время
         double i = x;
-        i = Math.Pow(2,i);
+        //i = Math.Pow(2,i);
+        int g = 1;
+        for (int ii = 1; ii <= i; ii++)
+        {
+            g *= 2;
+
+        }
+        i = g;
+
         x = Convert.ToInt32(i);
 
 
@@ -509,14 +523,23 @@ public class Program
 
         double n = 1, s = 1;
 
-        for (double L = 0.0001; Math.Pow(x, 2*n) >= L; n ++)
+
+
+        double g = 1, pred_x = 1;
+        for (double L = 0.0001; pred_x * (x*x) >= L; n++)
         {
-            s += Math.Pow(x, 2 * n);
-            Console.WriteLine(s+"  -  " + Math.Pow(x, 2 * n));
+
+            s += pred_x * (x * x);
+            Console.WriteLine(s + "  -  " + (pred_x * (x * x)));
+            //Thread.Sleep(3000);
+            pred_x *= (x * x);
         }
 
+       
 
-        return Math.Round(s, 2);
+
+
+        return Math.Round(s, 4);
     }
     public (int, int) Task_2_5(int N, int M)
     {
@@ -536,12 +559,14 @@ public class Program
         //Такого логарифма нет, однако ответ, согласно тестам обязан быть целым - следовательно нужно найти ближайшее целое значение дающее больше 10000.
         double n = 1;
         
-        for (; Math.Pow(2, n) <= 10000; n++)
+        
+        int chislo = 1, i = 1;
+        for (; chislo <= 10000; i++)
         {
-            Console.WriteLine(Math.Pow(2, n));
+            chislo *= 2;
         }
 
-        int i = Convert.ToInt32(n);
+        i -= 1;
         return i*3;
     }
     public double Task_2_7a()
@@ -646,22 +671,18 @@ public class Program
     {
         double S = 0, y = 0;
 
-        double i = 1, proverka = Math.Pow(x, i);
-
-        while (Math.Round(Math.Abs(proverka), 8) > 0.0001)
+        double i = 1, proverka = x, fact = 1;
+        for (; Math.Abs(proverka) > 0.0001; i++)
         {
-
-
-            S += proverka * Math.Sin(i * Math.PI / 4);
-            i++;
-            proverka = Math.Pow(x, i);
-            Console.WriteLine($"S = {S}, proverka = {Math.Round(Math.Abs(proverka), 8)}");
+            
+            S += proverka * Math.Sin(i*Math.PI/4);
+            y = (x* Math.Sin(Math.PI / 4)) / (1-2*x*(Math.Cos(Math.PI / 4))+x*x);
+            Console.WriteLine($"Sum: {S}, elem: {proverka} fact: {fact}");
+            proverka *= x;
         }
+    
 
-        y = ((x * Math.Sin(Math.PI / 4)) / (1 - (2 * x * (Math.Cos(Math.PI / 4))) + x * x));
-
-        Console.WriteLine(y);
-        return (S, y);
+        return (S,y);
     }
     public (double, double) Task_3_3(double x)
     {

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -9,7 +9,7 @@ public class Program
     {
         Program program = new Program();
 
-        //program.Task_1_1();
+        program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
@@ -52,10 +52,10 @@ public class Program
     #region Level 1
     public int Task_1_1()
     {
-        int answer = 0;
+        int answer = 222;
 
         // code here
-
+        Console.WriteLine(answer);
         // end
 
         return answer;

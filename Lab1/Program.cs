@@ -613,6 +613,7 @@ public class Program
         double S = 0, y = 0;
 
         // code here
+
         for (double i = 1, l = 1, p = x, n = x; Math.Abs(n) >= 0.0001; i+=1)
         {
             S += n;
@@ -621,6 +622,7 @@ public class Program
             n = l  * p / (2 * i + 1);
         }
         y = Math.Atan(x);
+
         // end
 
         return (S, y);

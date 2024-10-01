@@ -20,7 +20,7 @@ public class Program
         //program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
-        program.Task_1_12(0);
+        //program.Task_1_12(0);
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -41,7 +41,7 @@ public class Program
         //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
-        //program.Task_3_3(1);
+        program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
@@ -189,16 +189,11 @@ public class Program
         int answer = 0;
 
         // code here;
-        int a = 0, s = 0;
+        int a = 0, s = 0, f = 1;
         while (a < 6)
         {
             a++;
-            int i = 0, f = 1;
-            while (i < a)
-            {
-                i++;
-                f *= i;
-            }
+            f *= a;
             s = s + f;
         }
         answer = s;
@@ -218,12 +213,8 @@ public class Program
             a = a * -1;
             b = b * 5;
             t = a * b;
-            while (i < n)
-            {
-                i++;
-                f *= i;
-
-            }
+            i++;
+            f *= i;
             s += t / f;
             n++;
             
@@ -232,7 +223,7 @@ public class Program
             
         }
         answer = Math.Round(s, 2);
-        Console.WriteLine("{0:f2}",  answer);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -445,7 +436,7 @@ public class Program
             n = n + 1;
             a = Math.Cos(n * x) / (n * n);
         } while (Math.Abs(a) >= eps);
-        answer = Math.Round(s, 2);
+        answer = s;
         Console.WriteLine(answer);
         // end
 
@@ -691,14 +682,12 @@ public class Program
         {
             i++;
             f *= i;
-            Console.WriteLine(f);
             a = Math.Cos(i * x) / f;
-            Console.WriteLine(a);
             if (Math.Abs(a) <= eps)
             {
                 u = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
-                S = Math.Round(s, 2);
-                y = Math.Round(u, 2);
+                S = s;
+                y = u;
                 Console.WriteLine(S);
                 Console.WriteLine(y);
                 break;

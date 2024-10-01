@@ -77,7 +77,7 @@ public class Program
         double i = 1;
         while (i <= 10) 
         {
-            answer = Math.Round(answer + 1/i, 3);
+            answer = Math.Round(answer + 1/i, 2);
             i++;
         }
         // end
@@ -97,7 +97,7 @@ public class Program
             i = i + 2;
             j = j + 2;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // погрешность
         // end
 
@@ -126,7 +126,7 @@ public class Program
             i++;
         }
         
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -162,7 +162,7 @@ public class Program
         {
             pow *= x;
         }
-        answer = 0.5 * pow - 7 * x;
+        answer = Math.Round(0.5 * pow - 7 * x, 2);
 
         // end
         return answer;
@@ -222,7 +222,7 @@ public class Program
             }
             answer += pow * pow2 / factorial;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -273,7 +273,7 @@ public class Program
             }
             answer += 1 / pow; 
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -379,7 +379,7 @@ public class Program
 
         // code here
         const int R = 6350;
-        answer = Math.Round(Math.Sqrt(x * (2 * R + x)),4);
+        answer = Math.Round(Math.Sqrt(x * (2 * R + x)),2);
         // end
 
         return answer;
@@ -584,7 +584,6 @@ public class Program
             currentValue = numerator2 / denominator2;
             answer++;
         }
-
         // end
 
         return answer;
@@ -611,7 +610,12 @@ public class Program
 
         for (int i = 1; Math.Abs(Math.Pow(x, i)) >= 0.0001; i++)
         {
-            S += Math.Pow(x, i) * Math.Sin(Math.PI * i / 4);
+            double pow = 1;
+            for (int p = 0; p < i; p++)
+            {
+                pow *= x;
+            }
+            S += pow * Math.Sin(Math.PI * i / 4);
         }
 
         y = Math.Abs(x * Math.Sin(Math.PI / 4) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x));

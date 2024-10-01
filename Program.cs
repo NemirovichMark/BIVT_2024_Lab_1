@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -70,9 +70,9 @@ public class Program
 
         // code here
         double s = 0;
-        for (int i = 1; i <=10 ; i++)
+        for (int i = 1; i <= 10; i++)
         {
-            s += 1.0 / i ;
+            s += 1.0 / i;
         }
         answer = s;
         Console.WriteLine(answer);
@@ -185,7 +185,7 @@ public class Program
         for (int i = 1, f = 1; i <= 6; i++)
         {
             f = i;
-            s += Math.Pow((-1), i)*((Math.Pow(5, i)) / f);
+            s += Math.Pow((-1), i) * ((Math.Pow(5, i)) / f);
         }
         answer = s;
         Console.WriteLine(answer);
@@ -237,7 +237,7 @@ public class Program
         {
             return 0;
         }
-            for (int i = 1; i <= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
             s /= x;
             answer += s;
@@ -253,7 +253,6 @@ public class Program
         double answer = 0;
 
         // code here
-        double answer = 0;
         if (x <= -1.0) answer = 1;
         if (x > -1 && x <= 1) answer = -x;
         if (x > 1) answer = -1;
@@ -270,30 +269,29 @@ public class Program
         Console.WriteLine(y);
         for (int i = 1; i <= 6; i++)
         {
-        z = y;
-        y = x + y;
-        x = z;
-        Console.WriteLine(y);
-        
-    }
-    public double Task_1_15()
-    {
-        double answer = 0;
+            z = y;
+            y = x + y;
+            x = z;
+            Console.WriteLine(y);
 
-        // code here
-        double answer = 0;
-        double s = 0, S = 0, x = 1, y = 1, w = 2, z = 1;
-        for (int i = 1; i <= 3; i++)
-        {
-            s = w;
-            S = z;
-            w = x + w;
-            z = y + z;
-            x = s; y = S;
-            Console.WriteLine(w / z);
         }
-        answer = w / z;
     }
+        public double Task_1_15()
+        {
+            double answer = 0;
+
+            // code here
+            double s = 0, S = 0, x = 1, y = 1, w = 2, z = 1;
+            for (int i = 1; i <= 3; i++)
+            {
+                s = w;
+                S = z;
+                w = x + w;
+                z = y + z;
+                x = s; y = S;
+                Console.WriteLine(w / z);
+            }
+        answer = w / z;
         // end
 
         return answer;
@@ -360,7 +358,7 @@ public class Program
         // code here
         double s = 0;
         int i = 1;
-        while (Math.Abs(Math.Cos(i * x) / (i* i)) >= 0.0001)
+        while (Math.Abs(Math.Cos(i * x) / (i * i)) >= 0.0001)
         {
             s += Math.Cos(i * x) / (i * i);
             i++;
@@ -392,10 +390,10 @@ public class Program
             z = 0;
             return z;
         }
-        for (int i = 0; ;i++)
+        for (int i = 0; ; i++)
         {
             s += a + i * h;
-            if (s > p) 
+            if (s > p)
             {
                 break;
             }
@@ -424,7 +422,7 @@ public class Program
         // code here
         int q = 0, r = 0;
         if (M == 0) { q = 0; r = 0; return (q, r); }
-        rr = N;
+        r = N;
         while (r >= M)
         {
             r = r - M;
@@ -535,7 +533,7 @@ public class Program
         // code here;
         double a = 1;
         double l = 0.1;
-        for (int i = 1;  i <= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
             a /= 10;
         }

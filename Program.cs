@@ -108,20 +108,19 @@ public class Program
         double answer = 0;
 
         // code here
-
-        double X = 0.5;
+        
         double exponent = 1.0;
         double sum = 0.0;
-        if (X == 0.0)
+        if (x == 0.0)
             return 0;
         else
         {
             for (int n = 1; n < 10; n++)
             {
-                double value = Math.Cos(n * X);
+                double value = Math.Cos(n * x);
                 value /= exponent;
                 sum += value;
-                exponent *= X;
+                exponent *= x;
             }
             answer = Math.Round(sum, 2);
         }
@@ -270,8 +269,7 @@ public class Program
 
         // code here
 
-        double X = 1.35;
-        if (X == 0.0)
+        if (x == 0.0)
             return 0;
         else
         {
@@ -280,7 +278,7 @@ public class Program
 
             for (int i = 1; i <= 10; i++)
             {
-                one /= X;
+                one /= x;
                 sum += one;
             }
             answer = Math.Round(sum, 2);
@@ -410,8 +408,7 @@ public class Program
         // code here
 
         int R = 6350;
-        int h = 1000;
-        answer = Math.Sqrt(h * (2 * R + h)); 
+        answer = Math.Sqrt(h * (2 * R + x)); 
         answer = Math.Round(answer, 2);
 
         // end
@@ -447,15 +444,14 @@ public class Program
         double answer = 0;
 
         // code here
-
-        double X = 1;
+        
         double sum = 0;
         double currentTerm = 1;
         int i = 1;
 
-        while (Math.Abs(Math.Cos(i * X) / (i * i)) >= 0.0001)
+        while (Math.Abs(Math.Cos(i * x) / (i * i)) >= 0.0001)
         {
-            currentTerm = Math.Cos(i * X) / (i * i);
+            currentTerm = Math.Cos(i * x) / (i * i);
             sum += currentTerm;
             i += 1;
         }

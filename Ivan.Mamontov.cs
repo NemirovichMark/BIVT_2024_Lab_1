@@ -296,8 +296,8 @@ public class Program
             answer = v / n;
             next = v + n;
             n = v;
-            v = next ;
-              
+            v = next;
+
         }
         answer = Math.Round(answer, 4);
         Console.WriteLine(answer);
@@ -318,7 +318,7 @@ public class Program
             s = s * 2;
         }
 
-        answer = s ;
+        answer = s;
         answer = answer / 15;
         while (answer >= 10)
         {
@@ -417,12 +417,12 @@ public class Program
         // code here
         double e = 0.0001, sum = 0, a = 1;
         int n = 0;
-        if (Math.Abs(x)>=1)
+        if (Math.Abs(x) >= 1)
         {
-            
+
             return 0;
         }
-       
+
         while (Math.Abs(a) >= e)
         {
             sum += a;
@@ -434,8 +434,8 @@ public class Program
         answer = sum;
         answer = Math.Round(answer, 2);
 
-        
-        
+
+
 
         // end
 
@@ -529,13 +529,13 @@ public class Program
     }
     public int Task_2_10()
     {
-        
+
         // code here
         double answer = 0;
         double v = 1, n = 1, next = 0;
         double Panswer = 0;
         double epsilon = 0.001;
-        int i= 0;
+        int i = 0;
         do
         {
             Panswer = answer;
@@ -612,21 +612,22 @@ public class Program
     }
     public (double, double) Task_3_6(double x)
     {
-        double S = 0, y, a, e = 0.0001, denom, numer, minus = -1;
+        double S = 0, y, a, e = 0.0001, denom, numer = 1, minus = -1;
 
         // code here
-        for (int i = 1; ; i++)
+        int i = 1;
+        for (int j = 1; ; j++)
         {
-            minus = minus * -1;
-            numer = 1;
-            for (int j = 1; j <= 2 * i + 1; j++)
+            numer = numer * x;
+            if (j == 2*i+1)
             {
-                numer = numer * x;
+                minus *= -1;
+                denom = 4 * i * i - 1;
+                a = minus * (numer / denom);
+                if (Math.Abs(a) < e) break;
+                S = S + a;
+                i++;
             }
-            denom = 4 * i * i - 1;
-            a = minus * (numer / denom);
-            if (Math.Abs(a) < e) break;
-            S = S + a;
 
         }
         y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);

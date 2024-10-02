@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -99,9 +99,11 @@ public class Program
             return 0;
         }
         // code here
-        for (double i = 1; i <= 9; i++)
+        double n = 1;
+        for (int i = 1; i <= 9; i++)
         {
-            answer += Math.Cos(x * i) / Math.Pow(x, i - 1);
+            answer += Math.Cos(x * i) / n;
+            n *= x;
         }
         // end
 

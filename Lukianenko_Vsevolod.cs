@@ -420,7 +420,7 @@ public class Program
             answer += km;
             km *= 1.1;
         }
-        return Math.Round(answer);
+        return Math.Round(answer, 2);
     }
     public int Task_2_7b()
     {

@@ -9,7 +9,7 @@ public class Program
     {
         Program program = new Program();
 
-        program.Task_1_1();
+        //program.Task_1_1();
         //program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
@@ -27,7 +27,7 @@ public class Program
         //program.Task_1_16();
         //program.Task_1_17(10);
         //program.Task_1_18(24);
-        //program.Task_2_1(0);
+        program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
@@ -55,11 +55,11 @@ public class Program
         int answer = 0;
 
         // code here
-        answer = 222;
-        Console.WriteLine("tapaem");
+        for (int a = 2; a <= 35; a += 3)
+        {
+            answer += a;
+        }
         Console.WriteLine(answer);
-       
-
         // end
 
         return answer;
@@ -69,7 +69,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double chis = 1;
+        for (double znam = 1; znam <= 10; znam++)
+        {
+            answer = answer + chis / znam;
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -79,6 +85,13 @@ public class Program
         double answer = 0;
 
         // code here
+        for (double chis = 2; chis <= 112; chis += 2)
+        {
+            answer += chis / (chis + 1);
+
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer); 
 
         // end
 
@@ -89,6 +102,25 @@ public class Program
         double answer = 0;
 
         // code here
+        if (x != 0)
+        {
+            double step = 1;
+            for (int i = 0; i <= 8; i++)
+            {
+                answer += Math.Cos((i+ 1) * x) / step;
+                step *= x;
+                
+
+            }
+        }
+
+
+
+
+
+
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
 
         // end
 
@@ -99,6 +131,7 @@ public class Program
         double answer = 0;
 
         // code here
+        for (int i = 0; i <= 9; i++) answer += Math.Pow(p + i * h, 2);
 
         // end
 
@@ -109,6 +142,9 @@ public class Program
         double answer = 0;
 
         // code here
+        answer = 0.5 * x * x - 7 * x;
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
 
         // end
 
@@ -119,6 +155,14 @@ public class Program
         int answer = 0;
 
         // code here
+        int f = 1;
+        for (int i = 2; i <= 6; i++)
+        {
+            f *= i;
+
+        }
+        answer += f;
+        Console.WriteLine(answer);
 
         // end
 
@@ -129,6 +173,18 @@ public class Program
         int answer = 0;
 
         // code here;
+        int f;
+        for (int i = 1; i <= 6; i++)
+        {
+            f = 1;
+            for (int j = 2; j <= i; j++)
+            {
+                f *= j;
+            }
+            answer += f;
+
+        }
+        Console.WriteLine(answer); 
 
         // end
 
@@ -139,6 +195,11 @@ public class Program
         double answer = 0;
 
         // code here;
+        
+        for (double i = 1, j = ((-1) * 5), k = 1; i <= 6; i++, j *= ((-1) * 5), k *= i)
+            answer += (j / k);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
 
         // end
 
@@ -149,6 +210,14 @@ public class Program
         int answer = 0;
 
         // code here
+        int n = 1;
+        answer += 1;
+        while (n <= 7)
+        {
+            answer *= 3;
+            n++;
+        }
+        Console.WriteLine(answer);
 
         // end
 
@@ -157,6 +226,21 @@ public class Program
     public void Task_1_11()
     {
         // There is no test for this task
+        int n = 0;
+        while (n <= 6);
+        {
+            Console.WriteLine(n);
+            n++;
+
+        }
+        Console.WriteLine("");
+        int k = 1;
+        while (k <= 6);
+        {
+            Console.WriteLine("5");
+            k++;
+        }
+       
 
         // code here
 
@@ -166,6 +250,12 @@ public class Program
         double answer = 0;
 
         // code here
+        if (x != 0)
+        {
+            for (int i = 0; i <= 10; i++) answer += 1 / Math.Pow(x, i);
+            answer = Math.Round(answer, 2);
+        }
+
 
         // end
 
@@ -176,6 +266,21 @@ public class Program
         double answer = 0;
 
         // code here
+        if (x <= -1)
+        {
+            answer = 1;
+
+        }
+        if (x > -1 && x <= 1)
+        {
+            answer = x * (-1);
+
+            }
+        if (x > 1)
+        {
+            answer = -1;
+            }
+        
 
         // end
 
@@ -184,6 +289,18 @@ public class Program
     public void Task_1_14()
     {
         // There is no test for this task
+        int a1 = 1, a2 = 1;
+        int a3 = a1 + a2;
+        Console.WriteLine($"{a1} {a2} {a3}");
+        for (int i = 4; i <= 8; i++)
+        {
+            a1 = a2;
+            a2 = a3;
+
+            a3 = a1 + a2;
+            Console.WriteLine($"{a3}");
+        }
+        
 
         // code here
 
@@ -193,6 +310,17 @@ public class Program
         double answer = 0;
 
         // code here
+        double ch1 = 1, z1 = 1;
+        double ch2 = 2, z2 = 1;
+        double ch3 = 3, z3 = 2;
+
+        for (int i = 4; i <= 5; ++i)
+        {
+            ch1 = ch2; z1 = z2;
+            ch2 = ch3; z2 = z3;
+            ch3 = ch1 + ch2; z3 = z1 + z2;
+        }
+        answer = Math.Round(ch3 / z3, 2);
 
         // end
 
@@ -204,6 +332,10 @@ public class Program
         int power = 0;
 
         // code here
+        for (int i = 0; i < 64; i++) answer += Math.Pow(2, i);
+        answer /= 15;
+        power = (int)Math.Log10(answer);
+        answer = Math.Round(answer / Math.Pow(10, power), 2);
 
         // end
 
@@ -214,6 +346,9 @@ public class Program
         double answer = 0;
 
         // code here
+        //d = sqrt(h(2R+x))
+        double R = 6350.0;
+        answer = Math.Round(Math.Sqrt(x * (2 * R + x)), 2);
 
         // end
 
@@ -224,6 +359,12 @@ public class Program
         int answer = 0;
 
         // code here
+        answer = 10;
+        for (int i = 3; i <= x; i += 3)
+        {
+            answer *= 2;
+        }
+       
 
         // end
 
@@ -237,6 +378,17 @@ public class Program
         double answer = 0;
 
         // code here
+        double eps = 0.0001, i = 1, nextSum = Math.Cos(x);
+        while (Math.Abs(nextSum) >= eps)
+        {
+            answer += nextSum;
+            i += 1;
+            nextSum = Math.Cos(i * x) / (i * i);
+        }
+
+       
+        Console.WriteLine(answer);
+
 
         // end
 
@@ -257,6 +409,18 @@ public class Program
         int answer = 0;
 
         // code here
+        double s = 0, currSum;
+        int n = 0;
+        // s = a + (a + h) + ... + (a + nh) = (n + 1)*a + (1 + 2 + ... + n)h = (n + 1)*a + n*(n+1)/2 * h
+        do
+        {
+            currSum = a + n * h;
+            if (currSum <= 0 && h <= 0) return 0;
+            s += currSum;
+            n++;
+        } while (s <= p);
+
+        answer = n - 1; 
 
         // end
 
@@ -277,6 +441,18 @@ public class Program
         int quotient = 0, remainder = 0;
 
         // code here
+        if (M != 0)
+        {
+            N = Math.Abs(N);
+            M = Math.Abs(M);
+            while ((N - M) >= 0)
+            {
+                N -= M;
+                quotient++;
+            }
+            remainder = N;
+        }
+        
 
         // end
 
@@ -297,6 +473,14 @@ public class Program
         double answer = 0;
 
         // code here
+        double step = 10.0;
+        for (int i = 1; i <= 7; i++)
+        {
+            answer += step;
+            step *= 1.1;
+        }
+
+        answer = Math.Round(answer, 2);
 
         // end
 
@@ -307,6 +491,13 @@ public class Program
         int answer = 0;
 
         // code here
+        double s = 0, step = 10.0;
+        while (s < 100.0)
+        {
+            s += step;
+            step *= 1.1;
+            answer += 1;
+        }
 
         // end
 
@@ -317,6 +508,13 @@ public class Program
         int answer = 0;
 
         // code here
+        double step = 10.0;
+        while (step <= 20.0)
+        {
+            step *= 1.1;
+            answer += 1;
+        }
+        
 
         // end
 
@@ -337,6 +535,13 @@ public class Program
         int answer = 0;
 
         // code here;
+        double L = 0.1, D = Math.Pow(10, -10);
+        while (L > D)
+        {
+            L /= 2;
+            answer += 1;
+        }
+        
 
         // end
 
@@ -360,7 +565,25 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        double eps = 0.0001, fact, i = 0.0; int sign = (i % 2 == 0) ? 1 : -1; // alternating signdouble currSum = 1; // initialize with x
+        double currSum = 1; // initialize with x 
+        for (int j = 0; j < 2 * i; j++)
+        {
+            currSum *= x;
+        }
+        currSum *= sign; 
+        while (Math.Abs(currSum) >= eps)
+        {
+            S += currSum; i++;
+            int ign = (i % 2 == 0) ? 1 : -1; 
+            double sum = 1; 
+            for (int j = 0; j < 2 * i; j++) sum *= x;
+            fact = 1.0;
+            for (double j = 2; j <= 2 * i; j++) fact *= j;
+            currSum = ign * sum / fact;
+        }
+        y = Math.Round(Math.Cos(x), 2);
+        S = Math.Round(S, 2);
         // end
 
         return (S, y);

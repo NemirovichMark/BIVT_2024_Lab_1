@@ -20,7 +20,7 @@ public class Program
         //program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
-        //program.Task_1_12(0);
+        //program.Task_1_12(0.9);
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
@@ -41,7 +41,7 @@ public class Program
         //program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
-        program.Task_3_3(0.1);
+        program.Task_3_3(1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
@@ -189,11 +189,16 @@ public class Program
         int answer = 0;
 
         // code here;
-        int a = 0, s = 0, f = 1;
+        int a = 0, s = 0;
         while (a < 6)
         {
             a++;
-            f *= a;
+            int i = 0, f = 1;
+            while (i < a)
+            {
+                i++;
+                f *= i;
+            }
             s = s + f;
         }
         answer = s;
@@ -213,8 +218,12 @@ public class Program
             a = a * -1;
             b = b * 5;
             t = a * b;
-            i++;
-            f *= i;
+            while (i < n)
+            {
+                i++;
+                f *= i;
+
+            }
             s += t / f;
             n++;
             
@@ -223,7 +232,7 @@ public class Program
             
         }
         answer = Math.Round(s, 2);
-        Console.WriteLine(answer);
+        Console.WriteLine("{0:f2}",  answer);
         // end
 
         return answer;
@@ -270,13 +279,12 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 1, d = 1;
+        double s = 1 + 1/x;
         if(x != 0)
         {
-            for(double i = 1;i <= 10; i++)
+            for(double i = 2;i <= 10; i++)
             {
-                d = d * x;
-                s += 1 / d;
+                s += 1 / Math.Pow(x, i);
 
             }
             answer = Math.Round(s,2);
@@ -436,7 +444,7 @@ public class Program
             n = n + 1;
             a = Math.Cos(n * x) / (n * n);
         } while (Math.Abs(a) >= eps);
-        answer = s;
+        answer = Math.Round(s, 2);
         Console.WriteLine(answer);
         // end
 
@@ -682,12 +690,14 @@ public class Program
         {
             i++;
             f *= i;
+            Console.WriteLine(f);
             a = Math.Cos(i * x) / f;
+            Console.WriteLine(a);
             if (Math.Abs(a) <= eps)
             {
                 u = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
-                S = s;
-                y = u;
+                S = Math.Round(s, 2);
+                y = Math.Round(u, 2);
                 Console.WriteLine(S);
                 Console.WriteLine(y);
                 break;

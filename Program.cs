@@ -55,8 +55,7 @@ public class Program
         int answer = 0;
 
         // code here
-
-        int answer = 0;
+        
         int a1 = 2;
         while (a1 <= 35)
         {
@@ -137,13 +136,10 @@ public class Program
         double answer = 0;
 
         // code here
-
-        double P = 0;
-        double H = 0;
-        double answer = 0;
+        
         for (int n = 0; n < 10; n++)
         {
-            double currentTerm = P + n * H;
+            double currentTerm = p + n * h;
             answer += currentTerm * currentTerm;
         }
 
@@ -158,13 +154,13 @@ public class Program
         // code here
 
         //double X;
-        double Y;
-        Console.WriteLine("     X |      Y(X) ");
+        double y;
+        Console.WriteLine("     x |      y(x) ");
 
         //for (X = -4; X <=4; X += 0.5)
         {
-            Y = 0.5 * X * X - 7 * X;
-            Console.WriteLine($"{X,7}|{Y,11:F2}");
+            y = 0.5 * x * x - 7 * x;
+            Console.WriteLine($"{x,7}|{y,11:F2}");
         }
 
         // end
@@ -373,7 +369,7 @@ public class Program
             denominators[i] = denominators[i - 1] + denominators[i - 2];
         }
 
-        double answer = (double)numerators[4]/denominators[4];
+        answer = (double)numerators[4]/denominators[4];
 
         // end
 
@@ -385,12 +381,10 @@ public class Program
         int power = 0;
 
         // code here
-
-        double answer = 1;
-        double power = 0;
+        
         double grains = 1;
 
-        for (int i = 1; i <= 63; i++)
+        for (int i = 1; i <= 64; i++)
         {
             grains *= 2;
             answer += grains;
@@ -417,7 +411,7 @@ public class Program
 
         int R = 6350;
         int h = 1000;
-        double answer = Math.Sqrt(h * (2 * R + h)); 
+        answer = Math.Sqrt(h * (2 * R + h)); 
         answer = Math.Round(answer, 2);
 
         // end
@@ -486,18 +480,15 @@ public class Program
         int answer = 0;
 
         // code here
-
-        double a = 1;
-        double h = 1;
-        double p = 10;
+        
         int n = 0;
 
         while (true)
         {
             double currentTerm = a + n * h;
-            answer += currentTerm;
+            answer += (int)currentTerm;
 
-            if (answer > P)
+            if (answer > p)
                 break;
 
             n++;
@@ -524,20 +515,16 @@ public class Program
 
         // code here
 
-        int n = 11;
-        int m = 5;
-
-        if (m == 0)
+        if (M == 0)
             return (0, 0);
 
-        int quotient = 0;
-        int remainder = n;
-
-        while (remainder >= m)
+        while (N >= M)
         {
-            remainder -= m;
-            quotient++;
+            N -= M;
+            quotient ++;
         }
+        remainder = N;
+        
 
         // end
 

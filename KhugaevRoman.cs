@@ -82,7 +82,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 3));
 
-        return Math.Round(answer,3);
+        return Math.Round(answer,2);
     }
     public double Task_1_3()
     {
@@ -98,7 +98,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public double Task_1_4(double x)
     {
@@ -120,7 +120,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 4));
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public double Task_1_5(double p, double h)
     {
@@ -136,7 +136,7 @@ public class Program
 
         Console.WriteLine(Math.Round(answer, 3));
 
-        return Math.Round(answer, 3);
+        return Math.Round(answer, 2);
     }
     public double Task_1_6(double x)
     {
@@ -176,7 +176,7 @@ public class Program
 
         //}
 
-        return (0.5 * x * x - 7 * x);
+        return Math.Round((0.5 * x * x - 7 * x), 2); 
 
     }
     public int Task_1_7()
@@ -209,11 +209,12 @@ public class Program
 
         for (double j = 5,k=0,facktorial = 1; i <= 6; i++)
         {
-            for (int r = 1; r <= i; r++)
-            {
-                facktorial *= r;
+            
+            facktorial *= i;
 
-            }
+            Console.WriteLine(facktorial);
+            Console.WriteLine();
+            
 
             if (i % 2 == 0)
             {
@@ -223,11 +224,11 @@ public class Program
                 { k = -1; }
             answer += (k * j)/ facktorial;
             j *= 5;
-            facktorial = 1;
+            
 
         }
 
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public int Task_1_10()
     {
@@ -269,35 +270,26 @@ public class Program
     public double Task_1_12(double x)
     {
         double answer = 1;
+        if (x != 0)
+        { 
+            for (double i = 1, x2 = 1 / x; i <= 10; i++)
+            {
+                Console.WriteLine($"a = {answer}, x1 = {x2}");
 
-        for (double i = 1, x2 = 0; i <= 10; i++)
-        {
-            Console.WriteLine($"a = {answer}, x1 = {x2}");
-            for (double stepen = 1, x1 = 1; stepen <= i; stepen++)
-            {
-                x1 *= x;
-                Console.WriteLine($"krug {stepen}, x1 = {x1}");
-                x2 = x1;
-            }
-            if (x2 != 0)
-            {
-                answer += 1 / x2;
-            }
-            else
-            {
-                return answer = 0;
-            }
+                answer += x2;
+                x2 /= x;
 
 
+            }
         }
         Console.WriteLine(answer);
-        if (answer != 0)
+        if (x != 0)
         { 
-            return Math.Round(answer, 4);
+            return Math.Round(answer, 2);
         }
         else
         { 
-            return answer;
+            return 0;
         }
     }
 
@@ -447,7 +439,7 @@ public class Program
         //    Console.WriteLine(i + "             km = " + Math.Round(answer, 4));
         //}
         Console.WriteLine(Math.Round(answer, 4));
-        return Math.Round(answer, 4);
+        return Math.Round(answer, 2);
     }
     public int Task_1_18(int x)
     {
@@ -539,7 +531,7 @@ public class Program
 
 
 
-        return Math.Round(s, 4);
+        return Math.Round(s, 2);
     }
     public (int, int) Task_2_5(int N, int M)
     {

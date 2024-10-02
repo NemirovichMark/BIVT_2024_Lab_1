@@ -97,19 +97,18 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
-        double i = 1;
-        if (x == 0) return 0;
-        else
-        {
-            for (double y = 1; y <= 9; y++)
-            {
-                s += Math.Cos(x * y) / i;
-                i *= x;
-            }
-        }
-        s = Math.Round(answer, 2);
-        answer = s;
+        double s = 1;
+for (int i = 1; i <= 9; i++)
+{
+
+    answer += (Math.Cos(i * x)) / s;
+    s = s * x;
+}
+if (x == 0)
+{
+    return 0;
+}
+answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -593,26 +592,22 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double a = 1, p = -1, x1;
-        const double eps = 0.0001;
-        int i = 1;
-        while (Math.Abs(a) > eps)
-        {
-            x1 = 1;
-            p = -p;
-            for (int j = 1; j <= 2 * i + 1; j++)
-            {
-                x1 *= x;
-            }
-
-            a = p * (x1 / (4 * i * i - 1));
-            S += a;
-            i += 1;
-        }
-        y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
-        Console.WriteLine($"s = {S}, y = {y}");
+        double a = 1, p = -1, x1 = x;
+const double eps = 0.0001;
+int i = 1;
+while (Math.Abs(a) > eps)
+{
+    p = -p;
+    if (i > 1)
+    {
+        x1 *= x * x; 
+    }
+    a = p * (x1 / (4 * i * i - 1));
+    S += a;
+    i += 1;
+}
+y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
+Console.WriteLine($"s = {S}, y = {y}");
         // end
 
         return (S, y);

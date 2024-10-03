@@ -51,7 +51,7 @@ public class Program
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
-        //program.Task_3_9(0.1);
+        program.Task_3_9(0.1);
     }
     #region Level 1
     public int Task_1_1()
@@ -60,10 +60,10 @@ public class Program
         for (int x = 2; x <= 35; x += 3)
         {
             summ += x;
-        }    
-            Console.WriteLine(summ);
-            return summ;
-        
+        }
+        Console.WriteLine(summ);
+        return summ;
+
     }
     public double Task_1_2()
     {
@@ -83,7 +83,7 @@ public class Program
 
         for (double a = 2.0; a <= 112.0; a += 2.0)
         {
-            summ += a/(a + 1.0);
+            summ += a / (a + 1.0);
         }
         summ = Math.Round(summ, 2);
         Console.WriteLine("summ = {0:f2}", summ);
@@ -92,7 +92,7 @@ public class Program
     public double Task_1_4(double x)
     {
         double summ = 0.0;
-        int countersu =  1;
+        int countersu = 1;
         double zn = 1;
         if (x == 0)
         {
@@ -100,8 +100,8 @@ public class Program
         }
         while (countersu <= 9)
         {
-            summ += Math.Cos(countersu * x)/ zn;
-            countersu ++;
+            summ += Math.Cos(countersu * x) / zn;
+            countersu++;
             zn *= x;
         }
         summ = Math.Round(summ, 2);
@@ -114,7 +114,7 @@ public class Program
         int counter = 10;
         for (int i = 0; i < counter; i++)
         {
-            double prsumma = p + i*h;
+            double prsumma = p + i * h;
             summ += prsumma * prsumma;
         }
 
@@ -124,14 +124,14 @@ public class Program
     }
     public double Task_1_6(double x)
     {
-        double answer = 0.5*(x*x)- 7*x;
+        double answer = 0.5 * (x * x) - 7 * x;
         answer = Math.Round(answer, 2);
         // code here
         Console.WriteLine(answer);
         return answer;
-     
+
         //end
-         
+
 
     }
     public int Task_1_7()
@@ -168,19 +168,19 @@ public class Program
     }
     public double Task_1_9()
     {
-        
+
 
         // code here;
-        double summ = 0; 
+        double summ = 0;
         int n = 6;
-        int x = 5; 
+        int x = 5;
 
         for (int i = 1; i <= n; i++)
         {
-    
+
             int sign = (i % 2 == 0) ? 1 : -1;
 
-  
+
             double power = 1;
             for (int j = 1; j <= i; j++)
             {
@@ -238,29 +238,29 @@ public class Program
     }
     public double Task_1_12(double x)
     {
-        double summ = 0;
+        double answer = 0;
 
         // code here
-        int counter = 0;
-        double sch = 0;
-        if (x == 0)
+
+        int i = 0;
+        double d = 1.0;
+        if (x == 0) return 0;
+        while (i <= 10)
         {
-            return 0;
+            answer += 1 / d;
+            d *= x;
+            i++;
         }
-        while (counter <= 10)
-        {
-            summ += 1.0/sch;
-            sch *= x;
-            counter++;
-        }
-        summ = Math.Round(summ, 2);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
-        return summ;
+        return answer;
+
     }
     public double Task_1_13(double x)
     {
-    
+
         // code here
         if (x <= -1)
         {
@@ -268,7 +268,7 @@ public class Program
         }
         else if (x > -1 && x <= 1)
         {
-          return -x;
+            return -x;
         }
         else
         {
@@ -288,58 +288,62 @@ public class Program
         int ch3 = 0;
         Console.WriteLine(ch1);
         Console.WriteLine(ch2);
-        for (int i = 2; i < counter; i ++)
+        for (int i = 2; i < counter; i++)
         {
             ch3 = ch1 + ch2;
             ch1 = ch2;
             ch2 = ch3;
             Console.WriteLine(ch3);
         }
-        
+
         // code here
 
     }
     public double Task_1_15()
     {
-        double answer = 0 ;
+        double answer = 0;
 
         // code here
-        double ch1 = 1, zn1 = 1;  
-        double ch2 = 2, zn2 = 1;  
-        double ch3 = 0, zn3 = 0;
-        for (int i = 3; i <= 3; i++)
+        double ch1 = 1;
+        double ch2 = 2;
+        double ch3 = 0;
+        double zn1 = 1;
+        double zn2 = 1;
+        double zn3 = 0;
+        for (int x = 0; x < 3; x++)
         {
-            ch3 = ch1 + ch2;  
-            zn3 = zn1 + zn2;  
+            ch3 = ch1 + ch2;
+            zn3 = zn1 + zn2;
             ch1 = ch2;
-            zn1 = zn2;
+            answer = ch3 / zn3;
             ch2 = ch3;
+            zn1 = zn2;
             zn2 = zn3;
         }
-        answer = ch3 /zn3 ;
         // end
         return answer;
     }
     public (double, int) Task_1_16()
     {
         double answer = 0.0;
-        int gramm = 1;
         int power = 0;
-        
-        for (int i = 0; i <= 64; i++)
+        int i = 1;
+        double mnozh = 1.0;
+        while (i != 65)
         {
-            answer+= gramm;
-            gramm *= 2;
+            answer += mnozh;
+            mnozh *= 2;
+            i++;
         }
-        float total = (int)(answer/15);
-        while (total > 10)
-        {
-            total /= 10;
-            power++;
+        answer /= 15;
+        power = (int)Math.Log10(answer);
+        answer = answer / Math.Pow(10, power);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        Console.WriteLine(power);
 
-        }
-        return (total, power);
-      
+        return (answer, power);
+
     }
     public double Task_1_17(double x)
     {
@@ -347,7 +351,7 @@ public class Program
 
         // code here
         const int R = 6350;
-        answer = Math.Sqrt((x + R)*(x + R) - (R*R));
+        answer = Math.Sqrt((x + R) * (x + R) - (R * R));
         answer = Math.Round(answer, 2);
         // end
 
@@ -370,15 +374,15 @@ public class Program
         double answer = 0;
         // code here
         int n = 1;
-        int total = (int)(Math.Cos (n*x) / (n*n));
-        while (total >= 0.0001)
+        double total = Math.Cos(n * x) / (n * n);
+        while (Math.Abs(total) >= 0.0001)
         {
-            answer += total;
+            answer += Math.Cos(n * x) / (n * n);
             n++;
-            total = Math.Cos (n*x)/(n*n);
+            total = Math.Abs(Math.Cos(n * x) / (n * n));
         }
         // end
-        
+
 
         return answer;
     }
@@ -394,16 +398,26 @@ public class Program
     }
     public int Task_2_3(double a, double h, double p)
     {
-        int counter = 1;
+        int counter = 0;
 
         // code here
-        double summ = 0;
-        summ += a;
-        while (summ <= p)
+        double s = 0;
+        do
         {
-            summ += a + counter * h;
-            counter ++;
-        }
+            if (p > (a + counter * h))
+            {
+                counter++;
+                s += a + counter * h;
+            }
+            else
+            {
+                counter = 0;
+                break;
+            }
+        } while (s <= p);
+
+
+
         // end
 
         return counter;
@@ -452,29 +466,31 @@ public class Program
         double answer = 0;
 
         // code here
-        double start = 10;
+        double start = 10.0;
         int counter = 0;
-        while (counter < 8)
+        while (counter < 7)
         {
-            start *= 1.1;
             answer += start;
+            start *= 1.1;
             counter++;
         }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
     }
     public int Task_2_7b()
     {
-        double total = 10;
+        double total = 0;
         double start = 10;
         int days = 0;
-        while (total < 10)
+        while (total < 100)
         {
-            start *= 1.1;
             total += start;
+            start *= 1.1;
             days++;
         }
+        Console.WriteLine(days);
         // end
 
         return days;
@@ -512,7 +528,7 @@ public class Program
         // code here;
         double length = 0.1;
         double atom = Math.Pow(10, -10);
-        while (length/2 > atom)
+        while (length > atom)
         {
             length /= 2;
             counter++;
@@ -618,16 +634,28 @@ public class Program
     public (double, double) Task_3_9(double x)
     {
         double summ = 0;
-        double xsqrt = x*x;
-        int i = 0;
-        while ((x/(2*i + 1)) >= 0.0001)
+        double xx = x;
+        double znach = 1;
+        for (int i = 0; Math.Abs(znach) >= 0.0001; i++ )
         {
-            int znak = (i % 2 == 0) ? 1:-1;
-            summ += znak * x/(2*i + 1);
-            x *= xsqrt;
-            i++;
+            if (i > 0)
+            {
+                xx *= x * x;
+            }
+            znach = xx / (2 * i + 1);
+            if (i % 2 != 0)
+            {
+                znach = -znach;
+            }
+            if (Math.Abs(znach) >= 0.0001)
+            {
+                summ += znach;
+            }
         }
+        
         double y = Math.Atan(x);
+        Console.WriteLine(summ);
+        Console.WriteLine(y);
         return (summ, y);
     }
     #endregion

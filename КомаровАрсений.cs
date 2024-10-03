@@ -28,7 +28,7 @@ public class Program
         //program.Task_1_16();
         //program.Task_1_17(10);
         //program.Task_1_18(24);
-        //program.Task_2_1(0);
+        //program.Task_2_1(1);
         //program.Task_2_2();
         //program.Task_2_3(0, 5, 985);
         //program.Task_2_4(0.8);
@@ -60,6 +60,7 @@ public class Program
             s += 3;
         }
         answer = summa;
+        Console.WriteLine(answer);
         return answer;
     }
     public double Task_1_2()
@@ -70,7 +71,7 @@ public class Program
             answer += 1 / n;
             n++;
         }
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public double Task_1_3()
@@ -83,7 +84,7 @@ public class Program
             up += 2;
             down += 2;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         return answer;
     }
     public double Task_1_4(double x)
@@ -102,7 +103,7 @@ public class Program
                 k++;
             }
             Console.WriteLine(answer);
-            answer = Math.Round(answer, 4);
+            answer = Math.Round(answer, 2);
         }
         return answer;
     }
@@ -122,6 +123,7 @@ public class Program
     {
         double answer = 0;
         answer = 0.5 * x * x - 7 * x;
+        answer= Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -155,17 +157,13 @@ public class Program
         int counter = 1, f = 1;
         while (counter <= 6)
         {
-            for (int n = 1; n <= counter; n++)
-            {
-                f *= n;
-            }
             answer += (n1 * n2) / f;
             n1 *= -1;
             n2 *= 5;
-            f = 1;
             counter++;
+            f *= counter;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -315,7 +313,7 @@ public class Program
             k++;
             answer += slagaemoe;
         }
-        answer = Math.Round(answer, 4);
+        //answer = Math.Round(answer, 4);
         Console.WriteLine(answer);
         return answer;
     }
@@ -484,19 +482,17 @@ public class Program
     public (double, double) Task_3_3(double x)
     {
         double S = 1, y = 0;
-        double element = 1, i = 1, i1 = 1;
-        while (Math.Abs(element) >= 0.0001)
+        double element = Math.Cos(x), i1 = 1;
+        for (int i = 1; ;)
         {
             element = Math.Cos(i * x) / i1;
+            if (Math.Abs(element) < 0.0001) { break; }
             S += element;
-            y = Math.Pow(double.E, Math.Cos(x)) * Math.Cos(Math.Sin(x));
             i++;
             i1 *= i;
-            x += 0.1;
-            if (x > 1) { break; }
+            y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
             Console.WriteLine($"{S} {y}");
         }
-        Console.WriteLine($"{S} {y}");
         return (S, y);
     }
     public (double, double) Task_3_4(double x)

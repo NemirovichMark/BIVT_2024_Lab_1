@@ -408,6 +408,7 @@ public class Program
         // code here
 
         int R = 6350;
+        int h = 1000;
         answer = Math.Sqrt(h * (2 * R + x)); 
         answer = Math.Round(answer, 2);
 

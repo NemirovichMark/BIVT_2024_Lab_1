@@ -161,6 +161,7 @@ public class Program
             y = 0.5 * x * x - 7 * x;
             Console.WriteLine($"{x,7}|{y,11:F2}");
         }
+        answer = y;
 
         // end
 
@@ -315,6 +316,7 @@ public class Program
             }
             Console.WriteLine($"{X,6:f1} | {Y,6:f1}");
         }
+        answer = y;
 
 
         // end
@@ -381,6 +383,7 @@ public class Program
         // code here
         
         double grains = 1;
+        answer = 1;
 
         for (int i = 1; i <= 64; i++)
         {
@@ -388,14 +391,14 @@ public class Program
             answer += grains;
         }
 
-        answer = answer / 15;
+        answer /= 15;
 
         while (answer >= 10)
         {
-            answer = answer / 10;
+            answer /= 10;
             power ++;
         }
-        answer = Math.Round(answer, 2);
+        answer = Math.Round(answer, 4);
 
         // end
 
@@ -408,8 +411,7 @@ public class Program
         // code here
 
         int R = 6350;
-        int h = 1000;
-        answer = Math.Sqrt(h * (2 * R + x)); 
+        answer = Math.Sqrt(x * (2 * R + x)); 
         answer = Math.Round(answer, 2);
 
         // end
@@ -454,7 +456,7 @@ public class Program
         {
             currentTerm = Math.Cos(i * x) / (i * i);
             sum += currentTerm;
-            i += 1;
+            i ++;
         }
         answer = sum;
 
@@ -477,20 +479,21 @@ public class Program
         int answer = 0;
 
         // code here
-        
-        int n = 0;
 
-        while (true)
+        double sum = 0;
+        int k = 0;
+
+        while (sum <= p)
         {
-            double currentTerm = a + n * h;
-            answer += (int)currentTerm;
-
-            if (answer > p)
-                break;
-
-            n++;
+            sum += a + n * h;
+            k ++;
+            if (h < 0)
+            {
+                return 0;
+            }   
         }
-        Console.WriteLine(answer);
+        k = k - 1;
+        answer = k;
 
         // end
 

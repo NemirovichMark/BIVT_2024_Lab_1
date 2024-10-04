@@ -40,7 +40,7 @@ public class Program
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
-        //program.Task_3_5(double.Pi/5);
+        program.Task_3_5( 25 * Math.PI / 25 );
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
@@ -100,12 +100,19 @@ public class Program
     public double Task_1_4(double x)
     {
         double answer = 0;
-        double powX = x;
+        double powX = 1;
+
+
         if (x > 0) {
             for (int i = 2; i < 10; i++)
             {
-                answer += Math.Cos(i * x) / CustomPow(x, i - 1);
+                for (int j = 1; j < i; j++) {
+                    powX *= x;
+                }
+                answer += Math.Cos(i * x) / powX;
+                powX = 1;  
             }
+            
             answer += Math.Cos(x);
         }
     
@@ -118,7 +125,7 @@ public class Program
 
         for (int i = 0; i < n; i++)
         {
-            answer += CustomPow(p + i * h, 2);
+            answer += (p + i * h) * (p + i * h);
         }
 
         return answer;
@@ -128,7 +135,7 @@ public class Program
         double answer = 0;
 
         // code here
-        answer = 0.5 * CustomPow(x, 2) - 7 * x;
+        answer = 0.5 * (x * x) - 7 * x;
 
         // end
 
@@ -150,16 +157,18 @@ public class Program
     public int Task_1_8()
     {
         int answer = 0;
+        int factorial = 1;
+
 
         // code here;
         for (int i = 1; i <= 6; i++)
         {
-            int factorial = 1;
             for (int j = 1; j <= i; j++)
             {
                 factorial *= j;
             }
         answer += factorial;
+        factorial = 1;
     }
         // end
 
@@ -168,20 +177,27 @@ public class Program
     public double Task_1_9()
     {
         double answer = 0;
+        double powFive = 1, powMinusOne = -1, factorial = 1;
+
 
         // code here;
         for (int i = 1; i <= 6; i++)
-        {
-            double factorial = 1;
+        {            
             for (int j = 1; j <= i; j++)
             {
                 factorial *= j;
+                powFive *= 5;
+                powMinusOne *= -1;
             }
-        answer += CustomPow(-1, i) * CustomPow(5, i) / factorial;
+
+            answer += powMinusOne * powFive / factorial;
+            powFive = 1;
+            powMinusOne = -1;
+            factorial = 1;
         }
         // end
 
-        return Math.Round(answer, 2);
+        return Math.Round(-answer, 2);
     }
     public int Task_1_10()
     {
@@ -212,7 +228,7 @@ public class Program
     }
     public double Task_1_12(double x)
     {
-        double answer = 0;
+        double answer = 0, powX = 1;
 
         if (x == 0) {
             return 0;
@@ -221,7 +237,12 @@ public class Program
         // code here
         for (int i = 0; i <= 10; i++)
         {   
-            answer += 1 / CustomPow(x, i);
+            for (int j = 1; j <= i; j++) {
+                powX *= x;
+            }
+
+            answer += 1 / powX;
+            powX = 1;
         }
         // end
 
@@ -335,12 +356,12 @@ public class Program
 
         // code here
 
-        for (double i = 1, num = Math.Cos(x); Math.Abs(num) > 0.0001; i++, num = Math.Cos(i * x) / (i * i)){
+        for (double i = 1, num = Math.Cos(x); Math.Abs(num) >= 0.0001; i++, num = Math.Cos(i * x) / (i * i)){
             answer += num;
         }
         // end
 
-        return Math.Round(answer, 2);
+        return answer;
     }
     public int Task_2_2()
     {
@@ -464,8 +485,14 @@ public class Program
     public int Task_2_9()
     {
         int answer = 0;
-        double atomSize = CustomPow(10, -10);
-        Console.WriteLine(atomSize);
+        double atomSize = 1;
+
+        for (int i = 0; i < 10; i++) {
+            atomSize *= 10;
+        }
+
+        atomSize = 1 / atomSize;
+
         double l = 0.1;
 
         // code here;
@@ -533,18 +560,20 @@ public class Program
     public (double, double) Task_3_5(double x)
     {
         double S = 0, y = 0;
-        double eps = 0.0001, i = 1, k = (CustomPow(-1, i) * (Math.Cos(i * x)) / CustomPow(i, 2));
+        double eps = 0.0001, i = 1, powMinusOne = -1;
+        double k = -1 * (Math.Cos(i * x)) / (i * i);
 
         // code here
-        while(Math.Abs(k) > eps) {
+        while(Math.Abs(k) >= eps) {
             S += k;
             i++;
-            k = (CustomPow(-1, i) * (Math.Cos(i * x)) / CustomPow(i, 2));
+            powMinusOne *= -1;
+            k = powMinusOne * (Math.Cos(i * x)) / (i * i);
         }
         // end
         
-        y = (CustomPow(x, 2) - Math.PI * Math.PI / 3) / 4;
-        return (S, Math.Round(y, 2));
+        y = (x * x - Math.PI * Math.PI / 3) / 4;
+        return (S, y);
     }
     public (double, double) Task_3_6(double x)
     {

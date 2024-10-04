@@ -24,7 +24,7 @@ namespace Tests
             // Act
             test = main.Task_1_1();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -36,7 +36,7 @@ namespace Tests
             // Act
             test = main.Task_1_2();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -48,7 +48,7 @@ namespace Tests
             // Act
             test = main.Task_1_3();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -66,9 +66,9 @@ namespace Tests
             test2 = main.Task_1_4(test2);
             test3 = main.Task_1_4(test3);
             // Assert
-            Assert.AreEqual(test1, answer1, 0.0001);
-            Assert.AreEqual(test2, answer2, 0.0001);
-            Assert.AreEqual(test3, answer3, 0.0001);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
         }
 
         [TestMethod()]
@@ -93,10 +93,10 @@ namespace Tests
             double test3 = main.Task_1_5(test3p, test3h);
             double test4 = main.Task_1_5(test4p, test4h);
             // Assert
-            Assert.AreEqual(test1, answer1, 0.0001);
-            Assert.AreEqual(test2, answer2, 0.0001);
-            Assert.AreEqual(test3, answer3, 0.0001);
-            Assert.AreEqual(test4, answer4, 0.0001);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
+            Assert.AreEqual(answer4, test4, 0.0001);
         }
         [TestMethod()]
         public void Task_1_6Test()
@@ -108,7 +108,7 @@ namespace Tests
                 test[counter] = main.Task_1_6(i);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(test[i], answer[i], 0.0001);
+                Assert.AreEqual(answer[i], test[i]);
         }
 
         [TestMethod()]
@@ -120,7 +120,7 @@ namespace Tests
             // Act
             test = main.Task_1_7();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -132,7 +132,7 @@ namespace Tests
             // Act
             test = main.Task_1_8();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -144,7 +144,7 @@ namespace Tests
             // Act
             test = main.Task_1_9();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -155,7 +155,7 @@ namespace Tests
             // Act
             test = main.Task_1_10();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -179,9 +179,9 @@ namespace Tests
             test2 = main.Task_1_12(test2);
             test3 = main.Task_1_12(test3);
             // Assert
-            Assert.AreEqual(test1, answer1, 0.0001);
-            Assert.AreEqual(test2, answer2, 0.0001);
-            Assert.AreEqual(test3, answer3, 0.0001);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
         }
 
         [TestMethod()]
@@ -195,7 +195,7 @@ namespace Tests
                 test[i] = main.Task_1_13(test[i]);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(test[i], answer[i], 0.0001);
+                Assert.AreEqual(answer[i], test[i]);
         }
 
         [TestMethod()]
@@ -213,7 +213,7 @@ namespace Tests
             // Act
             test = main.Task_1_15();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -226,8 +226,8 @@ namespace Tests
             // Act
             test = main.Task_1_16();
             // Assert
-            Assert.AreEqual(test.Item1, answer, 0.0001);
-            Assert.AreEqual(test.Item2, power, 0.0001);
+            Assert.AreEqual(answer, test.Item1, 0.0001);
+            Assert.AreEqual(power, test.Item2);
         }
 
         [TestMethod()]
@@ -241,7 +241,7 @@ namespace Tests
                 test[i] = main.Task_1_17(test[i]);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(test[i], answer[i], 0.0001);
+                Assert.AreEqual(answer[i], test[i], 0.0001);
         }
 
         [TestMethod()]
@@ -255,7 +255,7 @@ namespace Tests
                 test[i] = main.Task_1_18(test[i]);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.AreEqual(test[i], answer[i], 0.0001);
+                Assert.AreEqual(answer[i], test[i]);
         }
 
         [TestMethod()]
@@ -276,10 +276,10 @@ namespace Tests
             test3 = main.Task_2_1(test3);
             test4 = main.Task_2_1(test4);
             // Assert
-            Assert.AreEqual(test1, answer1, 0.0001);
-            Assert.AreEqual(test2, answer2, 0.0001);
-            Assert.AreEqual(test3, answer3, 0.0001);
-            Assert.AreEqual(test4, answer4, 0.0001);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
+            Assert.AreEqual(answer4, test4, 0.0001);
         }
 
         [TestMethod()]
@@ -290,7 +290,7 @@ namespace Tests
             // Act
             test = main.Task_2_2();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -324,11 +324,11 @@ namespace Tests
             test4a = main.Task_2_3(test4a, test4h, test4p);
             test5a = main.Task_2_3(test5a, test5h, test5p);
             // Assert
-            Assert.AreEqual(test1a, answer1, 0.0001);
-            Assert.AreEqual(test2a, answer2, 0.0001);
-            Assert.AreEqual(test3a, answer3, 0.0001);
-            Assert.AreEqual(test4a, answer4, 0.0001);
-            Assert.AreEqual(test5a, answer5, 0.0001);
+            Assert.AreEqual(answer1, test1a, 0.0001);
+            Assert.AreEqual(answer2, test2a, 0.0001);
+            Assert.AreEqual(answer3, test3a, 0.0001);
+            Assert.AreEqual(answer4, test4a, 0.0001);
+            Assert.AreEqual(answer5, test5a, 0.0001);
         }
 
         [TestMethod()]
@@ -349,10 +349,10 @@ namespace Tests
             test3 = main.Task_2_4(test3);
             test4 = main.Task_2_4(test4);
             // Assert
-            Assert.AreEqual(test1, answer1, 0.0001);
-            Assert.AreEqual(test2, answer2, 0.0001);
-            Assert.AreEqual(test3, answer3, 0.0001);
-            Assert.AreEqual(test4, answer4, 0.0001);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
+            Assert.AreEqual(answer4, test4, 0.0001);
         }
 
         [TestMethod()]
@@ -377,10 +377,10 @@ namespace Tests
             (int, int) res3 = main.Task_2_5(test3N, test3M);
             (int, int) res4 = main.Task_2_5(test4N, test4M);
             // Assert
-            Assert.AreEqual(res1, answer1);
-            Assert.AreEqual(res2, answer2);
-            Assert.AreEqual(res3, answer3);
-            Assert.AreEqual(res4, answer4);
+            Assert.AreEqual(answer1, res1);
+            Assert.AreEqual(answer2, res2);
+            Assert.AreEqual(answer3, res3);
+            Assert.AreEqual(answer4, res4);
         }
 
         [TestMethod()]
@@ -392,7 +392,7 @@ namespace Tests
             // Act
             test = main.Task_2_6();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -404,7 +404,7 @@ namespace Tests
             // Act
             test = main.Task_2_7a();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -416,7 +416,7 @@ namespace Tests
             // Act
             test = main.Task_2_7b();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -428,7 +428,7 @@ namespace Tests
             // Act
             test = main.Task_2_7c();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -440,7 +440,7 @@ namespace Tests
             // Act
             test = main.Task_2_8();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -452,7 +452,7 @@ namespace Tests
             // Act
             test = main.Task_2_9();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -464,7 +464,7 @@ namespace Tests
             // Act
             test = main.Task_2_10();
             // Assert
-            Assert.AreEqual(test, answer, 0.0001);
+            Assert.AreEqual(answer, test, 0.0001);
         }
         [TestMethod()]
         public void Task_3_1Test()
@@ -480,8 +480,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -499,8 +499,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -518,8 +518,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -537,8 +537,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -556,8 +556,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -575,8 +575,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -594,8 +594,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -613,8 +613,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -633,8 +633,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.AreEqual(test[0, i], answer_S[i], 0.00005);
-                Assert.AreEqual(test[1, i], answer_y[i], 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
     }

@@ -103,8 +103,8 @@ using System.Runtime.InteropServices;
             x1*=x;
         }
         }
+         answer=Math.Round(answer,2);
         // end
-        answer=Math.Round(answer,2);
 
         return answer;
     }
@@ -126,22 +126,21 @@ using System.Runtime.InteropServices;
         double answer = 0;
 
         // code here
-       double y=0.5*x*x-7*x;
-        // end
-        answer=y;
+       answer=0.5*x*x-7*x;
         answer=Math.Round(answer,2);
+        return answer;
+        // end
         return answer;
     }
     public int Task_1_7()
     {
         int answer = 0;
-        int number=1;
         // code here
+        answer=1;
         for (int i=1;i<=6;i+=1){
-            number*=i;
+            answer*=i;
         }
         // end
-        answer=number;
         return answer;
     }
     public int Task_1_8()
@@ -183,13 +182,12 @@ using System.Runtime.InteropServices;
     public int Task_1_10()
     {
         int answer = 0;
-        int three=3;
         // code here
+        answer=3;
        for (int i=2;i<=7;i+=1) {
-            three*=3;
+            answer*=3;
        }
         // end
-        answer=three;
         return answer;
     }
     public void Task_1_11()
@@ -197,12 +195,12 @@ using System.Runtime.InteropServices;
         // There is no test for this task
         for (int i = 1; i <= 6;i+=1){
     Console.WriteLine(i);
-}
-Console.WriteLine("");
+    }
+    Console.WriteLine("");
 
-for (int i = 1;i<=6;i+=1) {
-    Console.WriteLine("5");
-}
+    for (int i = 1;i<=6;i+=1) {
+        Console.WriteLine("5");
+    }
         // code here
 
     }

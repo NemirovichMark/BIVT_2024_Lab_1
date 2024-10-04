@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Markosias\\Documents\\BIVT-24\\Lab1\\Lab1.csproj": {}
+    "/Users/user/BIVT_2024_Lab_1-1/Lab1/Lab1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Markosias\\Documents\\BIVT-24\\Lab1\\Lab1.csproj": {
+    "/Users/user/BIVT_2024_Lab_1-1/Lab1/Lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Markosias\\Documents\\BIVT-24\\Lab1\\Lab1.csproj",
+        "projectUniqueName": "/Users/user/BIVT_2024_Lab_1-1/Lab1/Lab1.csproj",
         "projectName": "Lab1",
-        "projectPath": "C:\\Users\\Markosias\\Documents\\BIVT-24\\Lab1\\Lab1.csproj",
-        "packagesPath": "C:\\Users\\Markosias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Markosias\\Documents\\BIVT-24\\Lab1\\obj\\",
+        "projectPath": "/Users/user/BIVT_2024_Lab_1-1/Lab1/Lab1.csproj",
+        "packagesPath": "/Users/user/.nuget/packages/",
+        "outputPath": "/Users/user/BIVT_2024_Lab_1-1/Lab1/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Markosias\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/user/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.4/libexec/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

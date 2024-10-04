@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -36,7 +36,7 @@ namespace Tests
             // Act
             test = main.Task_1_2();
             // Assert
-            Assert.AreEqual(Math.Abs(answer - test) < 0.0001, true);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -48,7 +48,7 @@ namespace Tests
             // Act
             test = main.Task_1_3();
             // Assert
-            Assert.AreEqual(Math.Abs(answer - test) < 0.0001, true);
+            Assert.AreEqual(answer, test, 0.0001);
         }
 
         [TestMethod()]
@@ -66,9 +66,9 @@ namespace Tests
             test2 = main.Task_1_4(test2);
             test3 = main.Task_1_4(test3);
             // Assert
-            Assert.AreEqual(Math.Abs(answer1 - test1) < 0.0001, true);
-            Assert.AreEqual(Math.Abs(answer2 - test2) < 0.0001, true);
-            Assert.AreEqual(Math.Abs(answer2 - test2) < 0.0001, true);
+            Assert.AreEqual(answer1, test1);
+            Assert.AreEqual(answer2, test2);
+            Assert.AreEqual(answer3, test3);
         }
 
         [TestMethod()]
@@ -226,7 +226,7 @@ namespace Tests
             // Act
             test = main.Task_1_16();
             // Assert
-            Assert.IsTrue(Math.Abs(answer - test.Item1) < 0.0001);
+            Assert.AreEqual(answer, test.Item1, 0.0001);
             Assert.AreEqual(power, test.Item2);
         }
 
@@ -241,7 +241,7 @@ namespace Tests
                 test[i] = main.Task_1_17(test[i]);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.IsTrue(Math.Abs(answer[i] - test[i]) < 0.0001);
+                Assert.AreEqual(answer[i], test[i], 0.0001);
         }
 
         [TestMethod()]
@@ -255,7 +255,7 @@ namespace Tests
                 test[i] = main.Task_1_18(test[i]);
             // Assert
             for (int i = 0; i < test.Length; i++)
-                Assert.IsTrue(Math.Abs(answer[i] - test[i]) < 0.0001);
+                Assert.AreEqual(answer[i], test[i]);
         }
 
         [TestMethod()]
@@ -276,10 +276,10 @@ namespace Tests
             test3 = main.Task_2_1(test3);
             test4 = main.Task_2_1(test4);
             // Assert
-            Assert.IsTrue(Math.Abs(answer1 - test1) < 0.00005);
-            Assert.IsTrue(Math.Abs(answer2 - test2) < 0.00005);
-            Assert.IsTrue(Math.Abs(answer3 - test3) < 0.00005);
-            Assert.IsTrue(Math.Abs(answer4 - test4) < 0.00005);
+            Assert.AreEqual(answer1, test1, 0.0001);
+            Assert.AreEqual(answer2, test2, 0.0001);
+            Assert.AreEqual(answer3, test3, 0.0001);
+            Assert.AreEqual(answer4, test4, 0.0001);
         }
 
         [TestMethod()]
@@ -480,8 +480,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -493,15 +493,14 @@ namespace Tests
             double[,] test = new double[2, 8];
             double[] answer_S = new double[8] { 0.0814177848998413, 0.1868519363168222, 0.31862200371667226, 0.4758924706809592, 0.6513119602707486, 0.8294836394694839, 0.9897546975962459, 1.112103931594239 };
             double[] answer_y = new double[8] { 0.08140964393544776, 0.18677936350519359, 0.3186429098779893, 0.47591414437456914, 0.6512392830509103, 0.8294964000072793, 0.9898495063120466, 1.1121765727275472 };
-
             // Act
             for (int i = 0; i < x.Length; i++)
                 (test[0, i], test[1, i]) = main.Task_3_2(x[i]);
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -519,8 +518,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -538,8 +537,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -557,8 +556,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -576,8 +575,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -595,8 +594,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -614,8 +613,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
 
@@ -625,6 +624,7 @@ namespace Tests
             // Arrange
             double[] x = new double[9] { 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5 };
             double[,] test = new double[2, 9];
+            double[] answer = new double[9] { 0.1, 0.15, 0.2, 0.24, 0.29, 0.34, 0.38, 0.42, 0.46 };
             double[] answer_S = new double[9] { 0.09966666666666667, 0.148875, 0.19733333333333333, 0.24498697916666665, 0.29148599999999997, 0.33675877083333333, 0.3804806095238096, 0.4227817489955357, 0.46368427579365074 };
             double[] answer_y = new double[9] { 0.09966865249116204, 0.14888994760949725, 0.19739555984988078, 0.24497866312686414, 0.2914567944778671, 0.33667481938672716, 0.3805063771123649, 0.4228539261329407, 0.46364760900080615 };
             // Act
@@ -633,8 +633,8 @@ namespace Tests
             // Assert
             for (int i = 0; i < x.Length; i++)
             {
-                Assert.IsTrue(Math.Abs((test[0, i] - answer_S[i])) < 0.00005);
-                Assert.IsTrue(Math.Abs((test[1, i] - answer_y[i])) < 0.00005);
+                Assert.AreEqual(answer_S[i], test[0, i], 0.00005);
+                Assert.AreEqual(answer_y[i], test[1, i], 0.00005);
             }
         }
     }

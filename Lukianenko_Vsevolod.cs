@@ -556,7 +556,7 @@ public class Program
 
         // code here
         double i = 1, F = 1, E = 1, deg = 1;
-        while (Math.Abs(E) >= 0.0001)
+        while (Math.Abs(E) > 0.0001)
 
             {
                 E = deg / F;

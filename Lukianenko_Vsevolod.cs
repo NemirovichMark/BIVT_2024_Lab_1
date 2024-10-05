@@ -558,14 +558,16 @@ public class Program
         double i = 1, F = 1, E = 1, deg = 1;
         while (Math.Abs(E) > 0.0001)
 
-            {
-                E = deg / F;
-                S += E;
-                i += 2;
-                F *= (i - 2) * (i - 1); 
-                deg *= x * x;
-                y = (Math.Exp(x) + Math.Exp(-x)) / 2;
-            }
+        {
+            E = deg / F;
+            if (Math.Abs(E) > 0.0001) S += E;
+            else break;
+            i += 2;
+            F *= (i - 2) * (i - 1);
+            deg *= x * x;
+            y = (Math.Exp(x) + Math.Exp(-x)) / 2;
+            
+        }
         // end
         return (S, y);
     }

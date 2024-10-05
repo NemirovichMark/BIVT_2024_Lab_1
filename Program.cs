@@ -296,26 +296,26 @@ public class Program
 
         // code here
 
-        Console.WriteLine("    X  |     Y");
+        Console.WriteLine("    x  |     y");
 
-        for (double X = -1.5; X <= 1.6; X += 0.1)
-        {
-            double Y;
+        //for (double X = -1.5; X <= 1.6; X += 0.1)
+        //{
+            double y;
 
-            if (X <= -1)
+            if (x <= -1)
             {
-                Y = 1;
+                y = 1;
             }
-            else if (X > -1 && X <= 1)
+            else if (x > -1 && x <= 1)
             {
-                Y = -X;
+                y = -x;
             }
             else
             {
-                Y = -1;
+                y = -1;
             }
-            Console.WriteLine($"{X,6:f1} | {Y,6:f1}");
-        }
+            Console.WriteLine($"{x,6:f1} | {y,6:f1}");
+        //}
         answer = y;
 
 
@@ -398,7 +398,7 @@ public class Program
             answer /= 10;
             power ++;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
 
         // end
 
@@ -428,13 +428,10 @@ public class Program
         Console.WriteLine("Âðåìÿ (÷) | Êîë-âî êëåòîê");
 
         int currentCount = count;
-        for (int hours = 3; hours <= 24; hours += 3)
-        {
-            currentCount *= 2;
-
-            Console.WriteLine($"{hours,10} {currentCount,16}");
-        }
-
+        //for (int hours = 3; hours <= 24; hours += 3)
+        currentCount *= 2;
+        Console.WriteLine($"{hours,10} {currentCount,16}");
+        
         // end
 
         return answer;
@@ -485,7 +482,7 @@ public class Program
 
         while (sum <= p)
         {
-            sum += a + n * h;
+            sum += a + k * h;
             k ++;
             if (h < 0)
             {

@@ -544,27 +544,23 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-x))) / 2;
-        for (double i = 1, n = 1, d = 1, m = 1; i <= 10000000; i++)
+        
+        double i = 1, n = 1, d = 1, m = 1;
+        while (Math.Abs(m) >= 0.0001)
         {
-            n *= x * x;
-            d *= (2 * i) * (2 * i - 1);
             m = n / d;
-            if (Math.Abs(m) < 0.0001)
-            {
-                break;
-            }
-            else
-            {
-                S += m;
-            }
+            S += m;
+            i += 2;
+            d *= (i - 2) * (i - 1);
+            n *= x * x;
+            y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-x))) / 2;
         }
-        S = Math.Round(S, 4);
-        y = Math.Round(y, 4);
 
         // end
 
-        Console.WriteLine("{0} {1}", S, y);
+        S = Math.Round(S, 2);
+        y = Math.Round(y, 2);
+        Console.WriteLine(y);
         return (S, y);
     }
     public (double, double) Task_3_8(double x)

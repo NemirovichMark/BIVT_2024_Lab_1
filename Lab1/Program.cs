@@ -553,7 +553,7 @@ public class Program
             i += 2;
             d *= (i - 2) * (i - 1);
             n *= x * x;
-            y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, (-x))) / 2;
+            y = (Math.Exp(x) + Math.Exp(-x)) / 2;
         }
 
         // end

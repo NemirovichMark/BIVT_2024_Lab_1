@@ -600,6 +600,7 @@ public class Program
             S += a;
             i += 1;
         }
+        S -= a;
         y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
         Console.WriteLine($"s = {S}, y = {y}");
         // end

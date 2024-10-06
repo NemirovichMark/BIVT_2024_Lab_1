@@ -481,20 +481,22 @@ public class Program
     }
     public (double, double) Task_3_4(double x)
     {
-        double s = 0, y = 0;
+        double s = 1, y = 0, k = 1;
 
         // code here
-        s = 1;
-        for (double i = 1, fct = 1, p = x * x, n = 1; Math.Abs(n) >= 0.0001; i++)
+        for (double i = 1, p = x * x, f = 1; Math.Abs(k) >= 0.0001; i++)
         {
-            fct *= i;
-            n = (2 * i + 1) * p / fct;
-            s += n;
+            f *= i;
+            k = (2 * i + 1) * p / f;
+            s += k;
             p *= x * x;
         }
+        s -= k;
+        
         y = (1 + 2 * x * x) * Math.Exp(x * x);
         s = Math.Round(s, 2);
         y = Math.Round(y, 2);
+        Console.WriteLine(s);
         // end
 
         return (s, y);

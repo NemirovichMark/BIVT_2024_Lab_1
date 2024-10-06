@@ -305,7 +305,14 @@ public class Program
         // сумма геометрической последовательности: S = b1*(q^n - 1)/(q-1)
         // S = 2^64 - 1
         // кол-во грамм: (2^64 - 1)/15
-        answer = (Math.Pow(2.0, 64) - 1.0) / 15;    //испотзую тут Math.Pow, т.к. здесь нет цикла, а писать число 64 раза - не очень хорошая идея
+
+        double two_pow = 2.0;
+        for (int i =1; i<64; i++)
+        {
+            two_pow*=2;
+        }
+
+        answer = (two_pow - 1.0) / 15;
 
         do               //вычисляем степень числа в экпоненциальной записи
         {
@@ -503,7 +510,7 @@ public class Program
 
         // code here;
         double L = 0.1;
-        while (L>Math.Pow(10, -10))    //Math.Pow здесь нужно, чтобы не писать кучу десяток
+        while (L>Math.Pow(10, -10))    //Math.Pow здест нужно, чтобы не писать кучу десяток
         {
             L /= 2;
             answer += 1;
@@ -554,14 +561,12 @@ public class Program
         S += 1;
         int i = 1;
         int i_fact = 1;
-        while (Math.Abs(Math.Cos(i*x)/i_fact)>=0.0001)
+        while (Math.Abs(Math.Cos(i * x) / i_fact) >= 0.0001)
         {
             S += Math.Cos(i * x) / i_fact;
             i++;
             i_fact *= i;
         }
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
         // end
 
         return (S, y);

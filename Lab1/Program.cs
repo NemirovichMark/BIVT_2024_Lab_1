@@ -220,12 +220,14 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x != 0)
+        if (x == 0)
         {
-            for (int i = 0; i <= 10; i++)
-            {
-                answer += 1 / Math.Pow(x, i);
-            }
+            return 0;
+        }
+
+        for (int i = 0; i <= 10; i++)
+        {
+            answer += 1 / Math.Pow(x, i);
         }
         answer = Math.Round(answer, 2);
 
@@ -413,19 +415,16 @@ public class Program
         double answer = 0;
 
         // code here
-        double i;
-        double a = 0;
-        a = 10;
-        double f = 1;
-        int x;
-        for (i = 1; i < 7; i += 1)
+        double d1 = 10;
+        for (int i = 1; i <= 7; i++)
         {
-            for (x = 1; x <= i; x += 1)
-                f = f * 1.1;
-            a += f * 10;
-            f = 1;
+            answer += d1;
+            d1 = d1 * 1.1;
+
         }
-        answer = Math.Round(a, 2);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -452,20 +451,20 @@ public class Program
         int answer = 0;
 
         // code here
-        double s = 10;
-        int x = 1;
-        double f = 1;
-        while (s < 20)
+        int ñ = 0;
+        double d1 = 10;
+        for (int i = 0; ; i++)
         {
-            for (int i = 1; i <= x; i += 1)
-                f = f * 1.1;
-            s = f * 10;
-            x += 1;
-            f = 1;
-
+            d1 = d1 * 1.1;
+            ñ++;
+            if (d1 > 20)
+            {
+                break;
+            }
         }
-        x--;
-        answer = x;
+        answer = ñ;
+        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -554,25 +553,23 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        int i = 1;
-
-        double c = 1;
-        while (Math.Abs(c) >= 0.0001)
+        y = (Math.Pow(x, 2) - (Math.Pow(Math.PI, 2) / 3)) / 4;
+        for (int i = 1; ; i++)
         {
-            double per = 1;
-            for (decimal v = 1; v <= i; v++)
-                per = per * -1;
-            c = per * Math.Cos(i * x) / (i * i);
-            S += c;
-            y = (x * x - (Math.PI * Math.PI / 3)) / 4;
-            i++;
-        }
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
-        if (S == -0.15)
-            S = -0.16;
+            double p = Math.Pow(-1, i) * (Math.Cos(i * x) / Math.Pow(i, 2));
 
+            if (Math.Abs(p) < 0.0001)
+            {
+                break;
+
+            }
+            S += p;
+
+        }
         // end
+        Console.WriteLine(S);
+        Console.WriteLine(y);
+
 
         return (S, y);
     }

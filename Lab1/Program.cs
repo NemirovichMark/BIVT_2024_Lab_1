@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -147,12 +147,10 @@ using System.Runtime.InteropServices;
     {
         int answer = 0;
         // code here;
+        int number = 1;
        for (int i=1;i<=6;i+=1){
-         int number = 1;
-           for (int j=1;j<=i;j+=1){
-                number*=j;
-           }
-           answer+=number;
+         number*=i;
+        answer+=number;
        }
         // end
 
@@ -165,13 +163,11 @@ using System.Runtime.InteropServices;
         // code here;
          double q2=1;
          double q1=1;
+         double number=1;
         for (int i=1;i<=6;i+=1){
-        double number=1;
         q1*=-1;
         q2*=5;
-        for (int j=1;j<=i;j+=1) {
-            number*=j;
-        }
+       number*=i;
         answer+=q1*q2/number;
         }
         answer=Math.Round(answer,2);
@@ -495,23 +491,20 @@ using System.Runtime.InteropServices;
         double a=1;
         double a1=1;
         double a2=1;
+        double a3=1;
+        double f1=2;
         S=1;
-        double i=0;
-        do{
-            i++;
-            double a3=1;
+        for (double i=1;Math.Abs(a)>=0.0001;i++){
             a1*=-1;
             a2*=x*x;
-            for (double j=2*i;j!=0;j--){
-                a3*=j;
-            }
+            a3*=i*f1;
+            f1=4*i+2;
         a=a1*a2/a3;
         if (Math.Abs(a)>=0.0001){
         S+=a;
         }
         y=Math.Cos(x);
         }
-        while (Math.Abs(a)>=0.0001);
         Console.WriteLine("S " + S);
         //Console.WriteLine(y);
         // end

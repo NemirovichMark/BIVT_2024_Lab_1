@@ -22,8 +22,11 @@ public class Program
         //program.Task_1_6(4);
         //program.Task_1_7();
         //program.Task_1_8();
+
         //program.Task_1_9();
-       
+        
+
+
         //double answer = 0;
         //double factorial = 1;
         //double power = 5;
@@ -236,38 +239,33 @@ public class Program
     {
 
         int sum = 0;
-        for (int num1 = 1; num1 <= 6; num1++)
+        int factorial = 1;
+        for (int i = 1; i <= 6; i++)
         {
-            int factorial = 1;
-            for (int num2 = 1; num2 <= num1; num2++)
-            {
-                factorial *= num2;
-            }
+            factorial *= i;
             sum += factorial;
         }
-
         return sum;
     }
     public double Task_1_9()
     {
-       
-        double s = 0;
-        double factorial = 1; 
-        for (int n = 1; n <= 6; n++)
+
+        double answer = 0;
+        double factorial = 1;
+        double sum = 0;
+        double step = 1;
+        double step1 = 1;
+        for (int i = 1; i <= 6; i++)
         {
-            double power = 1;
-            for (int i = 1; i <= n; i++)
-            {
-                power *= 5; 
-            }
-            if (n > 1)
-            {
-                factorial *= n; 
-            }
-            s += (n % 2 == 0 ? 1 : -1) * power / factorial;
+            factorial *= i;
+            sum = ((-1 * step) * (5 * step1)) / factorial;
+            step *= -1;
+            step1 *= 5;
+            answer += sum;
+
         }
-        s = Math.Round(s, 2);
-        return s;
+        answer = Math.Round(answer, 2);
+        return answer;
     }
     public int Task_1_10()
     {
@@ -588,24 +586,28 @@ public class Program
     }
     public (double, double) Task_3_3(double x)
     {
-        double S = 0, y = 0;
+        double S = 1, y = 0;  
+        double a = 1;
+        double i = 1;
+        double fact = 1;
 
-        S = 1;
-        double fraction = Math.Cos(x);
-        double i = 1.0;
-        double factorial = 1.0;
-        while (Math.Abs(fraction) > 0.0001)
+        while (Math.Abs(a) > 0.0001)
         {
-            fraction = Math.Cos(i * x) / factorial;
-            i++;
-            factorial *= i;
-            S += fraction;
-            y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
+            a = Math.Cos(i * x) / fact;
+            if (Math.Abs(a) > 0.0001)
+            {
+                i++;
+                fact *= i;
+                S += a;
+            }
+            else break;
+
         }
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
-       
+
+        y = Math.Exp(Math.Cos(x)) * Math.Cos(Math.Sin(x));
+
         return (S, y);
+        
     }
     public (double, double) Task_3_4(double x)
     {

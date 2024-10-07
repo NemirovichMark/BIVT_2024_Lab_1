@@ -107,23 +107,16 @@ public class Program
     {
         double answer = 0;
 
-
         // code here
         if (x == 0)
         {
             return 0;
         }
-
-        double i = 1;       
-        while (i <= 9)
+        double pow = 1;
+        for (int i = 1; i <= 9; i++)
         {
-            double pow = 1;
-            for (int p = 0; p < i-1; p++)
-            {
-                pow *= x;
-            }
-            answer += Math.Cos(i * x) / pow;
-            i++;
+        answer += Math.Cos(i * x) / pow;
+        pow *= x;
         }
         
         answer = Math.Round(answer, 2);
@@ -136,20 +129,15 @@ public class Program
         double answer = 0;
 
         // code here
-        int i = 0;
-        while (i <= 9)
+        for (int i = 0; i <= 9; i++)
         {
-            double pow = 1;
-            for (int j = 0; j < 2; j++)
-            {
-                pow *= p + i * h;
-            }
+            double pow = p + (i * h);
+            pow = pow * pow;
             answer += pow;
-            i++;
         }
         answer = Math.Round(answer, 4);
-        // end
 
+        //end
         return answer;
     }
     public double Task_1_6(double x)
@@ -186,14 +174,10 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        int factorial = 1;
         for (int i = 1; i <= 6; i++)
         {
-            int factorial = 1;
-            for (int f = 1; f <= i; f++)
-            {
-                factorial *= f;
-            }
+            factorial *= i;
             answer += factorial;
         }
         
@@ -206,20 +190,15 @@ public class Program
         double answer = 0;
 
         // code here;
+        int factorial = 1;
+        double pow = 1;
+        double pow2 = 1;
         for (int i = 1; i <= 6; i++)
         {
-            double pow = 1;
-            double pow2 = 1;
-            for (int p = 0; p < i; p++)
-            {
-                pow *= -1;
-                pow2 *= 5;
-            }
-            int factorial = 1;
-            for (int f = 1; f <= i; f++)
-            {
-                factorial *= f;
-            }
+            pow *= -1;
+            pow2 *= 5;
+            
+            factorial *= i;
             answer += pow * pow2 / factorial;
         }
         answer = Math.Round(answer, 2);
@@ -264,14 +243,11 @@ public class Program
         {
             return 0; 
         }
+        double pow = 1;
         for (int i = 0; i <= 10; i++)
         {
-            double pow = 1;
-            for (int p = 0; p < i; p++)
-            {
-                pow *= x;
-            }
-            answer += 1 / pow; 
+            answer += 1 / pow;
+            pow *= x;
         }
         answer = Math.Round(answer, 2);
         // end
@@ -344,27 +320,13 @@ public class Program
 
         // code here
         double amount = 0;
+        double pow = 1;
         for (int i = 0; i < 64; i++)
         {
-            double pow = 1;
-            for (int p = 0; p < i; p++)
-            {
-                pow *= 2;
-            }
             amount += pow;
-            //answer += Math.Pow(2, i);
+            pow *= 2;
         }
-        /* РЕШЕНИЕ 1
-        string[] temp = [];
-        // answer = 1.844....E+18
-        // Научная нотация
-        temp = Convert.ToString(answer / 15).Split('E');
-        // temp = [1.229... | +18]
-        answer = Math.Round(Convert.ToDouble(temp[0]), 2);
-        // temp[0] - строковое представление числовой части научной нотации (1.229...) 
-        power = Convert.ToInt32(temp[1]);
-        // temp[1] - строковое представление символьной части научной нотации (+18) без Е
-        */
+        
         double weight = amount / 15;
        
         power = (int)Math.Floor(Math.Log10(weight));
@@ -449,17 +411,12 @@ public class Program
             Console.WriteLine("x должно быть меньше 1 по модулю");
             return 0;
         }
-        double epsilon = 1;
-        double sum = 0;
-        for (double n = 0; epsilon >= 0.0001; n++)
+        double epsilon = x * x;
+        double sum = 1;
+        while (epsilon >= 0.0001)
         {
-            double pow = 1;
-            for (int p = 0; p < n * 2; p++)
-            {
-                pow *= x;
-            }
-            epsilon = pow;
             sum += epsilon;
+            epsilon *= x * x;
         }
         answer = Math.Round(sum, 2);
         // end
@@ -606,20 +563,15 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        S = Math.Round(S , 3);
+        S = Math.Round(S, 3);
+        double pow = x;  
 
-        for (int i = 1; Math.Abs(Math.Pow(x, i)) >= 0.0001; i++)
+        for (int i = 1; Math.Abs(pow) >= 0.0001; i++)
         {
-            double pow = 1;
-            for (int p = 0; p < i; p++)
-            {
-                pow *= x;
-            }
             S += pow * Math.Sin(Math.PI * i / 4);
+            pow *= x;  
         }
-
         y = Math.Abs(x * Math.Sin(Math.PI / 4) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x));
-
         //end
 
         return (S, y);

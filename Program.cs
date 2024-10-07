@@ -56,7 +56,6 @@ public class Program
         int answer = 0;
 
         // code here
-        // code here
         int s = 2;
 
         while (s <= 35)
@@ -171,7 +170,6 @@ public class Program
             answer += factorial;
             x++;
             factorial *= x;
-            
         }
         // end
 
@@ -335,11 +333,11 @@ public class Program
 
         // code here
         answer += 10;
-        while (x > 0)
+        do
         {
             answer = answer << 1;
             x -= 3;
-        }
+        }while (x > 0)
         // end
 
         return answer;
@@ -576,11 +574,9 @@ public class Program
         while (true)
         {
             S += Q;
-
             k *= -1;
             i++;
             p = Math.Cos(i * x) / (i * i);
-
             Q = p * k;
 
             if (Math.Abs(Q) < 0.0001)

@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public class Program
 {
@@ -101,11 +102,13 @@ public class Program
 
         // code here
         double s = 0;
+        double a = 1;
         if (x != 0)
         {
             for (int i = 1; i <= 9; i++)
             {
-                s = s + Math.Cos(i * x) / Math.Pow(x, i - 1);
+                s = s + Math.Cos(i * x) / a;
+                a *= x;
             }
         }
         answer = Math.Round(s, 2);
@@ -187,14 +190,14 @@ public class Program
 
         // code here;
         double s = 0;
-        for( int i = 1; i <= 6; i = i + 1)
-        {   
-            int f = 1;
-            for(int a = 1; a <= i; a = a + 1)
-            { 
-                f = f * a;
-            }
-            s = s + Math.Pow(-1, i) * Math.Pow(5, i) / f;
+        double a = -1, b = 5, c = 1, f = 2;
+        for (int i = 1; i <= 6; i = i + 1)
+        {
+            s = s + a * b / c;
+            a *= -1;
+            b *= 5;
+            c *= f;
+            f++;
         }
         answer = Math.Round(s, 2);
         // end
@@ -207,7 +210,7 @@ public class Program
 
         // code here
         int c = 1;
-        for(int i = 1; i <= 7; i = i++)
+        for(int i = 1; i <= 7; i++)
         { 
             c = c * 3;
         }
@@ -229,13 +232,14 @@ public class Program
         double answer = 0;
 
         // code here
-        double s = 0;
+        double s = 0, a = 1;
         if (x != 0)
         {
             int i = 0;
-            for(i = 0; i <= 10; i = i + 1)
+            for (i = 0; i <= 10; i = i + 1)
             {
-                s = s + 1 / Math.Pow(x, i);
+                s = s + 1 / a;
+                a *= x;
             }
         }
         answer = Math.Round(s, 2);
@@ -300,9 +304,11 @@ public class Program
 
         // code here
         double s = 0;
+        double summer = 1;
         for (int i = 0; i < 64; i = i + 1)
         {
-            s = s + Math.Pow(2, i);
+            s = s + summer;
+            summer *= 2;
         }
         s = s / 15;
         while (s > 10)
@@ -394,14 +400,14 @@ public class Program
 
         // code here
         double s = 0;
-        int i = 0;
+        double summer = 1;
         if (x != 1)
         {
-            do
+            while (summer > 0.0001)
             {
-                s = s + Math.Pow(x, i);
-                i += 2;
-            } while (Math.Pow(x, i) > 0.0001);
+                s += summer;
+                summer = summer * x * x;
+            }
         }
         answer = Math.Round(s, 2);
         // end
@@ -429,6 +435,7 @@ public class Program
         {
             a = a * 2;
             i += 3;
+
         } while (a < 10000);
         
         answer = i;
@@ -477,6 +484,7 @@ public class Program
         {
             a *= 1.08;
             i = i + 1;
+
         } while (a < 20000);
         answer = i;
         // end
@@ -545,23 +553,21 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        y = (x * Math.Sin(3.14 / 4)) / (1 - 2 * x * Math.Cos(3.14 / 4) + x * x);
-        y = Math.Round(y, 2);
+        y = (x * Math.Sin(Math.PI / 4)) / (1 - 2 * x * Math.Cos(Math.PI / 4) + x * x);
         double sum = 0;
         double i = 0;
         double a = 1;
         while (true)
         {
-            a =  a * x;
+            a = a * x;
             i = i + 1;
-            sum = a * Math.Sin(i * 3.14 / 4);
-            if (Math.Abs(sum) < 0.00001)
+            sum = a * Math.Sin(i * Math.PI / 4);
+            if (Math.Abs(a) < 0.0001)
             {
                 break;
             }
             S = S + sum;
         }
-        S = Math.Round(S, 2);
         // end
 
         return (S, y);
@@ -634,6 +640,10 @@ public class Program
 
         // end
 
+        return (S, y);
+    }
+    #endregion
+}
         return (S, y);
     }
     #endregion

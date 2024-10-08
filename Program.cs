@@ -76,7 +76,7 @@ public class Program
         {
             answer = answer + 1/i;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
 
         // code here
 
@@ -94,7 +94,7 @@ public class Program
             answer = answer + (i / (i + 1));
             i++;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
 
         // end
         Console.WriteLine(answer);
@@ -103,6 +103,10 @@ public class Program
     public double Task_1_4(double x)
     {
         double answer = 0;
+        if (x == 0)
+        {
+            return 0;
+        }
 
         double xn = 1;
         for (double i = 0;i <= 8; i++)
@@ -110,7 +114,7 @@ public class Program
             answer = answer + (Math.Cos((x * (i + 1))) / xn);
             xn = xn * x;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
         Console.WriteLine(answer);
         return answer;
@@ -136,14 +140,15 @@ public class Program
 
         // code here
         answer = 0.5*x*x-7*x;
-        for (double i = -4;i <= 4;i = i + 0.5)
-        {
-            double s = 0.5 * i * i - 7 * i;
-            Console.WriteLine($"{i:f1}    {s}");
-        }
+        //for (double i = -4;i <= 4;i = i + 0.5)
+        //{
+            //double s = 0.5 * i * i - 7 * i;
+            //Console.WriteLine($"{i:f1}    {s}");
+        
 
 
         // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -189,7 +194,7 @@ public class Program
             fct *= i;
             answer += p * fivest / fct;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // code here;
 
         // end
@@ -231,8 +236,12 @@ public class Program
     public double Task_1_12(double x)
     {
         double answer = 0;
-
+        
         double xn = 1;
+        if (x == 0)
+        {
+            return 0;
+        }
         for (int i = 0;i <= 10; i++)
         {
             answer += 1/xn;
@@ -256,7 +265,7 @@ public class Program
             {
             answer = -1;
             }
-            if ((x <= -1) &  (x > 1))
+            if ((x <= -1) && (x > 1))
             {
             answer = -x;
             }
@@ -303,7 +312,7 @@ public class Program
         double answer = 0;
         double sum = 0;
         int power = 0;
-        int k = 1;
+        double k = 1;
         for (int i = 1;i <= 64; i++)
         {
             sum = sum + k;
@@ -323,13 +332,11 @@ public class Program
     {
         double answer = 0;
         int r = 6350;
-        
-        for (int i = 1;i <= 10; i++)
-        {
+        double i = x;
+       
             answer = (r + i) * (r + i) - r * r;
             answer = Math.Round(Math.Sqrt(answer),4);
             Console.WriteLine(Convert.ToString(i) + " " + Convert.ToString(answer));
-        }
 
         return answer;
     }
@@ -338,7 +345,7 @@ public class Program
         int answer = 10;
 
         // code here
-        for (int i = 3; i <= 24;i = i + 3)
+        for (int i = 3; i <= x;i = i + 3)
         {
             answer *= 2;
             Console.WriteLine(Convert.ToString(i) + " " + Convert.ToString(answer));
@@ -369,7 +376,7 @@ public class Program
         }
 
         // end
-        answer = Math.Round(answer, 4);
+        //answer = Math.Round(answer, 4);
         Console.WriteLine(Convert.ToString(answer));
         return answer;
     }
@@ -408,6 +415,10 @@ public class Program
             else
             {
                 break;
+            }
+            if (answer > 10000)
+            {
+                return 0;
             }
         }
         // code here
@@ -475,6 +486,7 @@ public class Program
             norma = 1.1 * norma;
         }
         // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -606,9 +618,9 @@ public class Program
                 S += (ch / zn);
             }
             y = (Math.Pow(Math.E,Math.Cos(x))) * Math.Cos(Math.Sin(x));
-            y = Math.Round(y,4);
-            S = Math.Round(S,4);  
-            x = Math.Round(x,4);
+            //y = Math.Round(y,4);
+            //S = Math.Round(S,4);  
+            //x = Math.Round(x,4);
             Console.WriteLine($"{x:f1} {y} {S}");
         }
 

@@ -555,12 +555,11 @@ public class Program
             n *= x * x;
             y = (Math.Exp(x) + Math.Exp(-x)) / 2;
         }
-
+        S = S - m;
         // end
 
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
-        Console.WriteLine(y);
+        //S = Math.Round(S, 2);
+        //y = Math.Round(y, 2);
         return (S, y);
     }
     public (double, double) Task_3_8(double x)

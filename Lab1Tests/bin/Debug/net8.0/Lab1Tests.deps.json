@@ -350,7 +350,10 @@
       "System.Reflection.Metadata/1.6.0": {},
       "Lab1/1.0.0": {
         "runtime": {
-          "Lab1.dll": {}
+          "Lab1.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {

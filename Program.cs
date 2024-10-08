@@ -161,7 +161,7 @@ public class Program
             y = 0.5 * x * x - 7 * x;
             Console.WriteLine($"{x,7}|{y,11:F2}");
         }
-        answer = y;
+        answer = Math.Round(y, 2);
 
         // end
 
@@ -424,13 +424,11 @@ public class Program
 
         // code here
 
-        int count = 10;
-        Console.WriteLine("Âðåìÿ (÷) | Êîë-âî êëåòîê");
-
-        int currentCount = count;
-        //for (int hours = 3; hours <= 24; hours += 3)
-        currentCount *= 2;
-        Console.WriteLine($"{hours,10} {currentCount,16}");
+       answer = 10;
+        for (int j = 3; j <= x; j += 3)
+        {
+            answer *= 2;
+        }
         
         // end
 

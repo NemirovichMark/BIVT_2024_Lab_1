@@ -392,7 +392,6 @@ public class Program
             double a = i * i;
             next = Math.Cos(i*x)/a;
         }
-        answer = Math.Round(answer,2);
         System.Console.WriteLine("2,1)"+answer);
         // end
 
@@ -559,7 +558,7 @@ public class Program
     #endregion
 
     #region Level 3
-    public static (double, double) Task_3_1(double x)
+    public(double, double) Task_3_1(double x)
     {
         double S = 0, y = 0;
 
@@ -569,7 +568,7 @@ public class Program
 
         return (S, y);
     }
-    public static (double, double) Task_3_2(double x)
+    public (double, double) Task_3_2(double x)
     {
         double S = 0, y = 0;
 
@@ -630,8 +629,6 @@ public class Program
             S += frs;
         }
         y = (((1 + x * x)* Math.Atan(x))/2)-(x/2);
-        S=Math.Round(S,2);
-        y=Math.Round(y,2);
         System.Console.WriteLine($"s={S},y={y}");
 
         // end

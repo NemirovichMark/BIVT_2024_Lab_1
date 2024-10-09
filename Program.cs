@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 
@@ -173,18 +174,12 @@ public class Program
         int answer = 0;
 
         // code here;
-        int f;
-        for (int i = 1; i <= 6; i++)
+        int k = 0;
+        for ( int i = 1, i <= 6, i ++)
         {
-            f = 1;
-            for (int j = 2; j <= i; j++)
-            {
-                f *= j;
-            }
-            answer += f;
-
+            k *= i;
+            answer += k;
         }
-        Console.WriteLine(answer); 
 
         // end
 
@@ -250,10 +245,16 @@ public class Program
         double answer = 0;
 
         // code here
+        double p = 1, q = 1, s = 1; 
         if (x != 0)
         {
-            for (int i = 0; i <= 10; i++) answer += 1 / Math.Pow(x, i);
-            answer = Math.Round(answer, 2);
+            for (int i = 0; i <= 10; i++)
+            {
+                q *= x;
+                s += p / q;
+            }
+            answer = Math.Round(s, 2);
+                
         }
 
 
@@ -332,10 +333,22 @@ public class Program
         int power = 0;
 
         // code here
-        for (int i = 0; i < 64; i++) answer += Math.Pow(2, i);
+        double z = 1; 
+        for (int i = 1, i < 65, i ++)
+        {
+            answer += z;
+            z *= 2;
+        }
         answer /= 15;
         power = (int)Math.Log10(answer);
-        answer = Math.Round(answer / Math.Pow(10, power), 2);
+        double t = 1;
+        for ( int q = 1; q<= power; q ++)
+        {
+            t *= 10;
+        }
+        answer = Math.Round(Math.Abs(answer) / t, 2);
+
+
 
         // end
 
@@ -565,25 +578,14 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double eps = 0.0001, fact, i = 0.0; int sign = (i % 2 == 0) ? 1 : -1; // alternating signdouble currSum = 1; // initialize with x
-        double currSum = 1; // initialize with x 
-        for (int j = 0; j < 2 * i; j++)
+        double n = 1;
+        for (int i = 1; Math.Abs(n) >= 0.0001; i ++ )
         {
-            currSum *= x;
+            S += n;
+            n *= -(x * x) / (4 * i * i - 2 * i);
         }
-        currSum *= sign; 
-        while (Math.Abs(currSum) >= eps)
-        {
-            S += currSum; i++;
-            int ign = (i % 2 == 0) ? 1 : -1; 
-            double sum = 1; 
-            for (int j = 0; j < 2 * i; j++) sum *= x;
-            fact = 1.0;
-            for (double j = 2; j <= 2 * i; j++) fact *= j;
-            currSum = ign * sum / fact;
-        }
-        y = Math.Round(Math.Cos(x), 2);
-        S = Math.Round(S, 2);
+        y = Math.Round(Math.Cos(x), 2, MidpointRounding.ToEven);
+        S = Math.Round(S, 2, MidpointRounding.ToEven);
         // end
 
         return (S, y);

@@ -105,18 +105,20 @@ public class Program
         double answer = 0;
 
         // code here
-        if(x == 0) return 0;
+        double a = 1.0;
+        if (x>0)
         {
-            double step = 1;
-            for( int i = 0; i <= 9; i++)
+            for (int i = 1; i <= 9; i++)
             {
-                answer+=Math.Cos(i*x)/step;
-                step*=x;
+                answer += Math.Cos(i * x) / a;
+                a *= x;
             }
         }
-        
+        else
+        {
+            answer = 0;
+        }
         answer = Math.Round(answer,2);
-        System.Console.WriteLine("4)"+answer);
         // end
 
         return answer;
@@ -333,19 +335,19 @@ public class Program
         int power = 0;
 
         // code here
-       for(int kl = 0; kl < 64; kl++)
-       {
-        answer += 1;
-        answer *= 2;
-       }
-       answer /= 15;
-       while(answer >= 10)
-       {
-        answer /=10;
-        power++;
-       }
-       answer = Math.Round(answer,4);
-       System.Console.WriteLine("16)"+$"{answer} {power}");
+        answer = 1; 
+        for (int kl = 0; kl < 64; kl++)
+        {
+            answer *= 2; 
+        }
+        answer /= 15;
+        while (answer >= 10)
+        {
+            answer /= 10;
+            power++;
+        }
+        answer = Math.Round(answer, 2);
+        System.Console.WriteLine("16)" + $"{answer} {power}");
         // end
 
         return (answer, power);
@@ -409,32 +411,26 @@ public class Program
     }
     public int Task_2_3(double a, double h, double p)
     {
-        int answer = 0;
-
-        // code here
         double s = 0, summ;
         int n = 0;
+
         do
         {
             summ = a + n * h;
-            if (summ <= 0 && a<=0) return 0;
             s += summ;
             n++;
-        } while (s<=p);
-        answer = n - 1;
-        System.Console.WriteLine("2,3)"+answer);
-        // end
-
-        return answer;
-    }
-    public double Task_2_4(double x)
-    {
-        double answer = 0;
-
-        // code here
-
-        // end
-
+        } while (s <= p && summ > 0); 
+        
+        if (s > p)
+        {
+            answer = n - 1; 
+        }
+        
+        else
+        {
+            answer = n;
+        }
+        System.Console.WriteLine("2,3)" + answer);
         return answer;
     }
     public (int, int) Task_2_5(int N, int M)
@@ -613,24 +609,25 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double fct = 4; 
+        double fkt = 4; 
         double i = 1;
         double frs = 1;
-        double mins = -1;
-        double temp = x*x;
-        
-        while (Math.Abs(frs)>0.0001)
+        double minus = -1;
+        double temp = x * x;
+        while (Math.Abs(frs) > 0.0001)
         {
-            mins = -mins;
-            frs = (mins*x*temp)/(fct-1);
-            temp *= x*x;
+            minus = -minus;
+            frs = (minus * x * temp) / (fkt - 1);
+            temp *= x * x;
             i += 1;
-            fct = 4 * i * i;
+            fkt = 4 * i * i;
             S += frs;
         }
-        y = (((1 + x * x)* Math.Atan(x))/2)-(x/2);
-        System.Console.WriteLine($"s={S},y={y}");
 
+        y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
+        S = Math.Round(S, 2);
+        y = Math.Round(y, 2);
+        Console.WriteLine($"s = {S}, y = {y}");
         // end
 
         return (S, y);

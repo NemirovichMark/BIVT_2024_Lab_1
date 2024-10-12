@@ -416,21 +416,25 @@ public class Program
 
         do
         {
-            summ = a + n * h;
-            s += summ;
+            currSum = a + n * h;
+            if(currSum <= 0 && h <= 0) return 0;
+            s += currSum;
             n++;
-        } while (s <= p && summ > 0); 
-        
-        if (s > p)
-        {
-            answer = n - 1; 
         }
+        while (s <= p);
+        answer = n - 1;
         
-        else
-        {
-            answer = n;
-        }
         System.Console.WriteLine("2,3)" + answer);
+        return answer;
+    }
+    public double Task_2_4(double x)
+    {
+        double answer = 0;
+
+        // code here
+
+        // end
+
         return answer;
     }
     public (int, int) Task_2_5(int N, int M)
@@ -609,24 +613,26 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-        double fkt = 4; 
         double i = 1;
         double frs = 1;
         double minus = -1;
         double temp = x * x;
+        
         while (Math.Abs(frs) > 0.0001)
         {
             minus = -minus;
-            frs = (minus * x * temp) / (fkt - 1);
+            frs = (minus * x * temp) / ((4*i*i) - 1);
             temp *= x * x;
             i += 1;
-            fkt = 4 * i * i;
+            if (Math.Abs(frs) < 0.0001)
+        {
+        
+        break;
+        }
             S += frs;
         }
-
+        
         y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
-        S = Math.Round(S, 2);
-        y = Math.Round(y, 2);
         Console.WriteLine($"s = {S}, y = {y}");
         // end
 

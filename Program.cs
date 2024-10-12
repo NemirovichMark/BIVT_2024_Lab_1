@@ -21,14 +21,14 @@ public class Program
         //program.Task_1_9();
         //program.Task_1_10();
         //program.Task_1_11();
-        //program.Task_1_12(0.9);
+        program.Task_1_12(0.9);
         //program.Task_1_13(-1.5);
         //program.Task_1_14();
         //program.Task_1_15();
         //program.Task_1_16();
         //program.Task_1_17(10);
         //program.Task_1_18(24);
-        program.Task_2_1(0);
+        //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
@@ -174,12 +174,14 @@ public class Program
         int answer = 0;
 
         // code here;
-        int k = 0;
-        for ( int i = 1, i <= 6, i ++)
+        int n = 1;
+        for (int k = 1; k <= 6; k ++)
         {
-            k *= i;
-            answer += k;
+            n *= k;
+            answer += n;
         }
+        Console.WriteLine(answer);
+       
 
         // end
 
@@ -248,15 +250,17 @@ public class Program
         double p = 1, q = 1, s = 1; 
         if (x != 0)
         {
-            for (int i = 0; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 q *= x;
                 s += p / q;
+                answer = Math.Round(s, 2);
             }
-            answer = Math.Round(s, 2);
+
+            
                 
         }
-
+        Console.WriteLine(answer);
 
         // end
 
@@ -334,7 +338,7 @@ public class Program
 
         // code here
         double z = 1; 
-        for (int i = 1, i < 65, i ++)
+        for (int i = 1; i < 65; i ++)
         {
             answer += z;
             z *= 2;
@@ -584,8 +588,7 @@ public class Program
             S += n;
             n *= -(x * x) / (4 * i * i - 2 * i);
         }
-        y = Math.Round(Math.Cos(x), 2, MidpointRounding.ToEven);
-        S = Math.Round(S, 2, MidpointRounding.ToEven);
+      
         // end
 
         return (S, y);

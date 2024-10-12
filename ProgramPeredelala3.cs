@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
-        program.Task_3_4(0.1);
+        //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
@@ -74,7 +74,7 @@ public class Program
             answer += 1 / i;
         }
         // end
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -89,7 +89,7 @@ public class Program
         }
 
         // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -110,7 +110,7 @@ public class Program
             Y *= x;
         }
         // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -135,8 +135,8 @@ public class Program
         const double xh = -4, xk = 4, h = 0.5;
         answer = 0.5 * x * x - 7 * x;
         x = x + h;
-        answer = Math.Round(answer, 4);
         // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -185,7 +185,7 @@ public class Program
             d = d * 5;
             answer = answer + c * d / f;
         } // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
             return answer;
         
@@ -224,15 +224,20 @@ public class Program
 
         public double Task_1_12(double x)
     {
-        double answer = 0;
-        double currentPower = 1;
+        double answer = 1;
+        double powerOfX = x;
 
-        for (int i = 0; i <= 10; i += 1)
+        for (int i = 1; i <= 10; i += 1)
         {
-            answer += 1 / currentPower;
-            currentPower *= x;
+            if (x == 0)
+            {
+                Console.Write(answer);
+                return (answer);
+            }
+            answer += 1 / powerOfX;
+            powerOfX *= x;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -240,25 +245,22 @@ public class Program
         {
             double answer = 0;
 
-            // code here
-            for (double i = -1.5; i <= 1.5; i += 0.1)
-            {
-                if (i <= -1.0)
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + 1);
-                }
-                else if (i >= -1.0 && i <= 1.0)
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + (-i).ToString("F1"));
-                }
-                else
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + (-1));
-                }
-            }
-            // end
-
-            return answer;
+        // code here
+        if (x <= -1)
+        {
+            answer = 1;
+        }
+        else if (x > 1)
+        {
+            answer = -1;
+        }
+        else
+        {
+            answer = -x;
+        }
+        // end
+        Console.WriteLine(answer);
+        return answer;
         }
         public void Task_1_14()
         {
@@ -282,18 +284,23 @@ public class Program
             double answer = 0;
 
             // code here
-            int numerator1 = 1, denominator1 = 1;
-            int numerator2 = 2, denominator2 = 1;
-            for (int i = 0; i < 3; i++)
+            double num1 = 1, znam1 = 1;
+            double num2 = 2, znam2 = 1;
+
+            double num3 = 0, znam3 = 0;
+            for (int i = 3; i <= 5; i++)
             {
-                int nextNumerator = numerator1 + numerator2;
-                int nextDenominator = denominator1 + denominator2;
-                numerator1 = numerator2;
-                denominator1 = denominator2;
-                numerator2 = nextNumerator;
-                denominator2 = nextDenominator;
+                num3 = num1 + num2;
+                znam3 = znam1 + znam2;
+
+                num1 = num2;
+                znam1 = znam2;
+                num2 = num3;
+                znam2 = znam3;
             }
-            Console.Write(numerator2 + "/" + denominator2);
+            answer = num3 / znam3;
+        answer = Math.Round(answer, 2);
+        Console.Write(answer);
             // end
 
             return answer;
@@ -325,29 +332,32 @@ public class Program
         }
     public double Task_1_17(double x)
         {
-            double answer = 0;
+        double answer = 0;
 
-            // code here
-            for (int h = 1; h <= 10; h++)
-            {
-                answer = Math.Sqrt(2 * 6350 * h);
-                Console.Write(answer + " ");
-            }
-            // end
+        // code here
+        int R = 6350;
+        answer = Math.Sqrt((R + x) * (R + x) - R * R);
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        // end
 
-            return answer;
+        return answer;
+
         }
         public int Task_1_18(int x)
         {
             int answer = 0;
-            int firstCell = 10;
-            int division = x / 3;
-            answer = firstCell * (int)Math.Pow(2, division);
-            // code here
-            Console.Write(answer);
-            // end
 
-            return answer;
+        // code here
+        int n = 1;
+        for (int i = 0; i < x/3; i++)
+        {
+            n *= 2;
+        }
+        answer = 10 * n;
+        // end
+        Console.Write(answer);
+        return answer;
         }
         #endregion
 
@@ -393,6 +403,7 @@ public class Program
         }
         public double Task_2_4(double x)
         {
+            if (Math.Abs(x)>=1) { return 0; }
             double answer = 1;
             double step = 1;
             double epsilon = 0.0001;
@@ -406,7 +417,7 @@ public class Program
                 n++;
                 currentPower *= x * x;
             }
-            answer = Math.Round(answer,4);
+            answer = Math.Round(answer,2);
             Console.WriteLine(answer);
             // end
 
@@ -491,7 +502,7 @@ public class Program
         }
         public int Task_2_10()
         {
-            int answer = 0;
+            int answer = 1;
             double previousValue = 1.0;
             double currentValue = 2.0;
             double epsilon = 0.001;
@@ -502,6 +513,7 @@ public class Program
             int numerator2 = 2, denominator2 = 1;
             while (difference > epsilon)
             {
+                answer++;
                 int nextNumerator = numerator1 + numerator2;
                 int nextDenominator = denominator1 + denominator2;
                 numerator1 = numerator2;
@@ -512,7 +524,8 @@ public class Program
                 currentValue = (double)nextNumerator / nextDenominator;
                 difference = Math.Abs(currentValue - previousValue);
             }
-            Console.Write(currentValue);
+        answer++;
+            Console.Write(answer);
             // end
 
             return answer;
@@ -551,57 +564,47 @@ public class Program
             return (S, y);
         }
 
-        public (double, double) Task_3_4(double x)
+    public (double, double) Task_3_4(double x)
+    {
+        decimal xDec = (decimal)x;
+
+        decimal S = 0;
+        decimal epsilon = 0.0001m;
+        decimal term = 1.0m;
+        int i = 0;
+        decimal xPower = 1.0m;
+        int factorial = 1;
+
+        while (Math.Abs((double)term) >= (double)epsilon)
+        {
+            if (i > 0)
             {
-                double S = 0;
-                double y = 0;
-                double epsilon = 0.0001;
-                double term = 1.0;
-                int i = 0;
-                double xPower = 1.0;
-                double Factorial(int n)
-                {
-                    if (n == 0 || n == 1)
-                        return 1;
-                    double result = 1;
-                    for (int j = 2; j <= n; j++)
-                    {
-                        result *= j;
-                    }
-                    return result;
-                }
+                xPower *= xDec * xDec;
+                factorial *= i;
+            }
 
-                while (Math.Abs(term) > epsilon)
-                {
-                    if (i > 0)
-                    {
-                        xPower *= x * x;
-                    }
-                    term = (2 * i + 1) * xPower / Factorial(i);
-                    S += term;
-                    i++;
-                }
+            term = (2 * i + 1) * xPower / factorial;
+            S += term;
+            i++;
+        }
 
-                double xSquared = x * x;
-                y = (1 + 2 * xSquared) * Math.Exp(xSquared);
+        double S_double = (double)S;
 
-            S = Math.Round(S, 4);
-            Console.WriteLine(S);
-            y = Math.Round(y, 4);
-            Console.WriteLine(y);
+        double xSquared = x * x;
+        double y = (1 + 2 * xSquared) * Math.Exp(xSquared);
+
+        return (S_double, y);
+    }
+    public (double, double) Task_3_5(double x)
+            {
+                double S = 0, y = 0;
+
+                // code here
+
+                // end
+
                 return (S, y);
             }
-         
-    public (double, double) Task_3_5(double x)
-        {
-            double S = 0, y = 0;
-
-            // code here
-
-            // end
-
-            return (S, y);
-        }
         public (double, double) Task_3_6(double x)
         {
             double S = 0, y = 0;

@@ -12,7 +12,7 @@ public class Program
         Program program = new Program();
 
         //program.Task_1_1();
-        //program.Task_1_2();
+        program.Task_1_2();
         //program.Task_1_3();
         //program.Task_1_4(0.9);
         //program.Task_1_5(0, 2);
@@ -32,7 +32,7 @@ public class Program
         //program.Task_2_1(0);
         //program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
-        //program.Task_2_4(0.8);
+        //program.Task_2_4(0,8);
         //program.Task_2_5(11, 5);
         //program.Task_2_6();
         //program.Task_2_7a();
@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
-        program.Task_3_4(0.1);
+        //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
@@ -74,7 +74,7 @@ public class Program
             answer += 1 / i;
         }
         // end
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -89,7 +89,7 @@ public class Program
         }
 
         // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -108,6 +108,8 @@ public class Program
             }
             answer = answer + Math.Cos(i * x) / Y;
             Y *= x;
+            answer = Math.Round(answer, 2);
+            Console.WriteLine(answer);
         }
         // end
         answer = Math.Round(answer, 4);
@@ -185,7 +187,7 @@ public class Program
             d = d * 5;
             answer = answer + c * d / f;
         } // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
             return answer;
         
@@ -232,7 +234,7 @@ public class Program
             answer += 1 / currentPower;
             currentPower *= x;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -240,25 +242,22 @@ public class Program
         {
             double answer = 0;
 
-            // code here
-            for (double i = -1.5; i <= 1.5; i += 0.1)
-            {
-                if (i <= -1.0)
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + 1);
-                }
-                else if (i >= -1.0 && i <= 1.0)
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + (-i).ToString("F1"));
-                }
-                else
-                {
-                    Console.WriteLine("when x = " + i.ToString("F1") + " y: " + (-1));
-                }
-            }
-            // end
-
-            return answer;
+        // code here
+        if (x <= -1)
+        {
+            answer = 1;
+        }
+        else if (x > 1)
+        {
+            answer = -1;
+        }
+        else
+        {
+            answer = -x;
+        }
+        // end
+        Console.WriteLine(answer);
+        return answer;
         }
         public void Task_1_14()
         {
@@ -340,14 +339,17 @@ public class Program
         public int Task_1_18(int x)
         {
             int answer = 0;
-            int firstCell = 10;
-            int division = x / 3;
-            answer = firstCell * (int)Math.Pow(2, division);
-            // code here
-            Console.Write(answer);
-            // end
 
-            return answer;
+        // code here
+        int n = 1;
+        for (int i = 0; i < x/3; i++)
+        {
+            n *= 2;
+        }
+        answer = 10 * n;
+        // end
+        Console.Write(answer);
+        return answer;
         }
         #endregion
 
@@ -393,6 +395,7 @@ public class Program
         }
         public double Task_2_4(double x)
         {
+            if (Math.Abs(x)>=1) { return 0; }
             double answer = 1;
             double step = 1;
             double epsilon = 0.0001;
@@ -592,16 +595,16 @@ public class Program
                 return (S, y);
             }
          
-    public (double, double) Task_3_5(double x)
-        {
-            double S = 0, y = 0;
+        public (double, double) Task_3_5(double x)
+            {
+                double S = 0, y = 0;
 
-            // code here
+                // code here
 
-            // end
+                // end
 
-            return (S, y);
-        }
+                return (S, y);
+            }
         public (double, double) Task_3_6(double x)
         {
             double S = 0, y = 0;

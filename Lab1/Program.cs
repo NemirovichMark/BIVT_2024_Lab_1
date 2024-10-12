@@ -170,13 +170,10 @@ public class Program
 
         // code here;
         int s = 0;
+        int f = 1;
         for (int i = 1; i <= 6; i += 1)
         {
-            int f = 1;
-            for (int j = 1; j <= i; j+=1)
-            {
-                f *= j;
-            }
+            f *= i;
             s += f;
         }
         answer = s;
@@ -641,11 +638,13 @@ public class Program
         double m = 1;
         double n = 1;
         double a = 0;
+        double power = 1;
         for (int i = 1; ; i++)
         {
             a = 2 * i + 1;
             n *= -1;
-            m = n * Math.Pow(x, a) / a;
+            power *= x;
+            m = n * power / a;
             if (Math.Abs(m) >= 0.0001)
             {
                 S += m;

@@ -129,7 +129,7 @@ public class Program
             answer = answer + phn*phn;
             phn = phn + h;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
         Console.WriteLine(answer);
         return answer;
@@ -249,7 +249,7 @@ public class Program
         }
 
         // end
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -324,7 +324,7 @@ public class Program
             }
         }
         answer = sum/15;
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return (answer, power);
     }
@@ -335,7 +335,7 @@ public class Program
         double i = x;
        
             answer = (r + i) * (r + i) - r * r;
-            answer = Math.Round(Math.Sqrt(answer),4);
+            answer = Math.Round(Math.Sqrt(answer),2);
             Console.WriteLine(Convert.ToString(i) + " " + Convert.ToString(answer));
 
         return answer;
@@ -376,7 +376,7 @@ public class Program
         }
 
         // end
-        //answer = Math.Round(answer, 4);
+        //answer = Math.Round(answer, 2);
         Console.WriteLine(Convert.ToString(answer));
         return answer;
     }
@@ -440,7 +440,11 @@ public class Program
     public (int, int) Task_2_5(int N, int M)
     {
         int quotient = 0, remainder = 0;
-
+        if (N < 0)
+        {
+            N = -N;
+            M = -M;
+        }
         int big;
         int small;
         if (N > M)
@@ -618,9 +622,9 @@ public class Program
                 S += (ch / zn);
             }
             y = (Math.Pow(Math.E,Math.Cos(x))) * Math.Cos(Math.Sin(x));
-            //y = Math.Round(y,4);
-            //S = Math.Round(S,4);  
-            //x = Math.Round(x,4);
+            //y = Math.Round(y,2);
+            //S = Math.Round(S,2);  
+            //x = Math.Round(x,2);
             Console.WriteLine($"{x:f1} {y} {S}");
         }
 

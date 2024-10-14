@@ -25,9 +25,9 @@ public class Program
         program.Task_1_13(-1.5);
         program.Task_1_14();
         program.Task_1_15();
-        //program.Task_1_16();
+        program.Task_1_16();
         program.Task_1_17(10);
-        //program.Task_1_18(24);
+        program.Task_1_18(24);
         //program.Task_2_1(0);
         program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
@@ -37,7 +37,7 @@ public class Program
         //program.Task_2_7a();
         //program.Task_2_7b();
         //program.Task_2_7c();
-        //program.Task_2_8();
+        program.Task_2_8();
         //program.Task_2_9();
         program.Task_2_10();
         //program.Task_3_1(0.1);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
@@ -10,11 +11,11 @@ public class Program
         Program program = new Program();
 
         program.Task_1_1();
-        //program.Task_1_2();
-        //program.Task_1_3();
-        //program.Task_1_4(0.9);
-        //program.Task_1_5(0, 2);
-        //program.Task_1_6(4);
+        program.Task_1_2();
+        program.Task_1_3();
+        program.Task_1_4(0.9);
+        program.Task_1_5(0, 2);
+        program.Task_1_6(4);
         //program.Task_1_7();
         //program.Task_1_8();
         //program.Task_1_9();
@@ -55,7 +56,11 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for(int s = 2; s <= 35; s += 3)
+        {
+            answer+=s;
+        }
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -65,7 +70,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double ch = 1; 
+        for(double zn = 1;  zn<= 10; zn++)
+        {
+            answer += ch/zn;
+        }
+        answer = Math.Round(answer,2);
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -75,7 +86,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for(double ch = 2; ch <= 112; ch += 2)
+        {
+            answer+=ch/(ch+1);
+        }
+        answer = Math.Round(answer,1);
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -85,7 +101,17 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x==0) return 0;
+        {
+            for (int step = 1; step <= 9; step++)
+            {
+                answer += Math.Cos(step*x)/(Math.Pow(x,(step-1)));
+                
+            }
+            
+        }
+        answer=Math.Round(answer,2);
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -95,7 +121,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for(int k = 0; k <= 9; k++)
+        {
+            double a = (p+k*h)*(p+k*h);
+            answer+=a;
+        }
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -105,8 +136,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = 0.5*x*x-7*x;
+        answer=Math.Round(answer,2);
         // end
+        System.Console.WriteLine(answer);
 
         return answer;
     }

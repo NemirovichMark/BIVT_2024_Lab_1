@@ -69,7 +69,7 @@ public class Program
         // code here
         for (int i = 1; i <= 10; i++)
             answer = answer + 1.0 / i;
-        answer = Math.Round(answer, 3);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -79,9 +79,9 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int i = 2; i <= 112; i++)
+        for (int i = 2; i <= 112; i = i + 2)
             answer = answer + i / (i + 1.0);
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -102,7 +102,7 @@ public class Program
             answer = answer + Math.Cos(i * x) / y;
             y *= x;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -126,6 +126,7 @@ public class Program
         const double xn = -4, xk = 4, sh = 0.5;
         answer = 0.5 * x * x - 7 * x;
         x = x + sh;
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -171,7 +172,7 @@ public class Program
             p *= i;
             answer += (k * x / p);
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -212,7 +213,7 @@ public class Program
             answer = answer + 1 / y;
             y = y * x;
         }
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -292,7 +293,7 @@ public class Program
         power = (int)Math.Log10(answer);
         for (int i = 1; i <= power; i++)
             answer /= 10;
-        answer = Math.Round(answer, 4);
+        answer = Math.Round(answer, 2);
         // end
 
         return (answer, power);
@@ -303,8 +304,8 @@ public class Program
 
         // code here
         double R = 6350;
-        answer = Math.Sqrt(R * R + ((R + x) * (R + x)));
-        answer = Math.Round(answer, 4);
+        answer = Math.Sqrt(x * (2 * R + x));
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -383,7 +384,7 @@ public class Program
                     p = p * x * x;
                 }
             }
-            answer = Math.Round(s, 4);
+            answer = Math.Round(s, 2);
         }
         // end
 
@@ -449,7 +450,14 @@ public class Program
         int answer = 0;
 
         // code here;
-        
+        double b = 10000;
+        int p = 8, c = 0;
+        while ( b < 10000 * 2)
+        {
+            b += b * p / 100;
+            c += 1;
+        }
+        answer = c;
         // end
 
         return answer;

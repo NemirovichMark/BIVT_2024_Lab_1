@@ -317,7 +317,7 @@ public class Program
         {
             sum = sum + k;
             k = k * 2;
-            if (sum > 10)
+            while (sum > 150)
             {
                 sum = sum / 10;
                 power++;

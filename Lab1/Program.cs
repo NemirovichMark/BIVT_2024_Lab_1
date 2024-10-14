@@ -494,8 +494,8 @@ public class Program
         s -= k;
         
         y = (1 + 2 * x * x) * Math.Exp(x * x);
-        s = Math.Round(s, 2);
-        y = Math.Round(y, 2);
+        s = (int)(s * 100) / 100.0;
+        y = (int)(y * 100) / 100.0;
         Console.WriteLine(s);
         // end
 

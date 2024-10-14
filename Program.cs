@@ -92,7 +92,7 @@ public class Program
         while(i <= 112)
         {
             answer = answer + (i / (i + 1));
-            i++;
+            i = i + 2;
         }
         answer = Math.Round(answer, 2);
 
@@ -317,7 +317,7 @@ public class Program
         {
             sum = sum + k;
             k = k * 2;
-            if (sum > 1000)
+            if (sum > 10)
             {
                 sum = sum / 10;
                 power++;
@@ -325,7 +325,7 @@ public class Program
         }
         answer = sum/15;
         answer = Math.Round(answer, 2);
-        Console.WriteLine(answer);
+        Console.WriteLine(answer, power);
         return (answer, power);
     }
     public double Task_1_17(double x)

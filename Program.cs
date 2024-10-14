@@ -588,6 +588,9 @@ public class Program
             S += n;
             n *= -(x * x) / (4 * i * i - 2 * i);
         }
+        y = Math.Cos(x);
+
+
       
         // end
 

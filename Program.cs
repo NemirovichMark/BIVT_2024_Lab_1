@@ -368,7 +368,7 @@ public class Program
         while (true)
         {
             slag = Math.Cos(n * x) / n / n;
-            if (slag < 0.0001)
+            if (Math.Abs(slag) < 0.0001)
             {
                 break;
             }

@@ -317,15 +317,16 @@ public class Program
         {
             sum = sum + k;
             k = k * 2;
-            while (sum > 150)
+            while (sum >= 150)
             {
-                sum = sum / 10;
+                sum = sum /10;
                 power++;
             }
         }
         answer = sum/15;
-        answer = Math.Round(answer, 2);
-        Console.WriteLine(answer, power);
+        //answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        Console.WriteLine(power);
         return (answer, power);
     }
     public double Task_1_17(double x)
@@ -608,25 +609,24 @@ public class Program
     public (double, double) Task_3_3(double t)
     {
         double S = 0, y = 0;
-        for (double x = 0.1; x <= 1; x = x + 0.1)
-        {
+        double x = t;
             S = 1; y = 0;
             double zn = 1, ch = 1;
-            for (double i = 1; ; i++)
-            {
-                zn = zn * i;
-                ch = Math.Cos(i * x);
-                if (ch/zn < 0.0001){
+        for (double i = 1; ; i++)
+        {
+            zn = zn * i;
+            ch = Math.Cos(i * x);
+            if (ch / zn < 0.0001) {
                 break;
-                 }
-                S += (ch / zn);
             }
+            S += (ch / zn);
+        }
             y = (Math.Pow(Math.E,Math.Cos(x))) * Math.Cos(Math.Sin(x));
             //y = Math.Round(y,2);
             //S = Math.Round(S,2);  
             //x = Math.Round(x,2);
             Console.WriteLine($"{x:f1} {y} {S}");
-        }
+        
 
         // code here
 

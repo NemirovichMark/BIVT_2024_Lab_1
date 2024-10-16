@@ -46,14 +46,19 @@ public class Program
         //program.Task_2_3(6);
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6, 25.2);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(5);
+        //program.Task_2_6(3);
+        //program.Task_2_7(3);
+        //program.Task_2_8(3);
         //program.Task_2_9(6);
         //program.Task_2_10(6);
         //program.Task_2_11(6);
-        //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        double r = double.Parse(Console.ReadLine());
+        int type = int.Parse(Console.ReadLine());
+        program.Task_2_12(r, type);
+        //double A = double.Parse(Console.ReadLine());
+        //double B = double.Parse(Console.ReadLine());
+        //int type = int.Parse(Console.ReadLine());
+        //program.Task_2_13(A, B, type);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -401,8 +406,19 @@ public class Program
         int answer = 0;
 
         // code here
-
-        // end
+        int k = 0;
+        for(int i = 1; i <= n;i++)
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
+            {
+                k++;
+            }
+        }
+        answer = k;
+        Console.WriteLine(answer);
+        // end ???
 
         return answer;
     }
@@ -412,7 +428,20 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        for(int i = 1; i <= n; i++)
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                answer1++;
+            }
+            if (x < 0 && y < 0)
+            {
+                answer3++;
+            }
+        }
+        Console.WriteLine($"Кол. Точек Квадранта 1 = {answer1}, а кол. точек Квадранта 3 = {answer3}");
         // end
 
         return (answer1, answer3);
@@ -423,7 +452,20 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
+        double c;
+        for(int i = 1; i <= n; i++)
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            c = Math.Sqrt(x * x + y * y);
+            if(c < answerLength)
+            {
+                answer = i;
+                answerLength = Math.Round(c, 2);
+            }
 
+        }
+        Console.WriteLine($"{answer} {answerLength}");
         // end
 
         return (answer, answerLength);
@@ -503,6 +545,19 @@ public class Program
 
         // code here;
 
+        switch (type)
+        {
+            case 0:
+                answer = Math.Round(r * r, 2);
+                break;
+            case 1:
+                answer = Math.Round(Math.PI * r * r, 2);
+                break;
+            case 2:
+                answer = Math.Round((Math.Sqrt(3) * r * r) / 4, 2);
+                break;
+        }
+        Console.WriteLine($"Площаль равна - {answer}");
         // end
 
         return answer;
@@ -512,7 +567,19 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        switch (type)
+        {
+            case 0:
+                answer = Math.Round(A * B, 2);
+                break;
+            case 1:
+                answer = Math.Round((Math.PI * A * A) - (Math.PI * B * B), 2);
+                break;
+            case 2:
+                answer = Math.Round(0.5 * A * Math.Sqrt((B * B - (A / 2) * (A / 2))), 2);
+                break;
+        }
+        Console.WriteLine($"Площаль равна: {answer}");
         // end
 
         return answer;
@@ -526,7 +593,6 @@ public class Program
         int n = 0;
 
         // code here
-
         // end
 
         // answer should be equal to the task_2_1 answer

@@ -503,7 +503,14 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        double n = 1;
+        for (int i = 1; Math.Abs(n) >= 0.0001; i++)
+        {
+            S += n;
+            n *= -(x * x) / (4 * i * i - 2 * i);
+        }
+        y = Math.Round(Math.Cos(x), 2, MidpointRounding.ToEven);
+        S = Math.Round(S, 2, MidpointRounding.ToEven);
         // end
 
         return (S, y);

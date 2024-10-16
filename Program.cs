@@ -633,26 +633,27 @@ public class Program
     public (double, double) Task_3_9(double x)
     {
         double S = 0, y = 0;
-
+        S += x;
         // code here
-        double m = 1;
+        double m = 0;
         double n = 1;
         double a = 0;
-        double power = 1;
+        double power = x;
         for (int i = 1; ; i++)
         {
             a = 2 * i + 1;
-            n *= -1;
-            power *= x;
+            n = -n;
+            power *= x * x;
             m = n * power / a;
-            if (Math.Abs(m) >= 0.0001)
+            if (Math.Abs(m)<0.0001)
             {
-                S += m;
+                break;
             }
-            else { break; }
+            S += m;
         }
         y = Math.Atan(x);
-        //Console.WriteLine($"{S} {y}");
+ 
+        Console.WriteLine($"{y} {S}");
         // end
 
         return (S, y);

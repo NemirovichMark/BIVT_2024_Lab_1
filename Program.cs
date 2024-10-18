@@ -199,14 +199,17 @@ public class Program
     public int Task_1_10()
     {
         int answer = 0;
-        double s = 3, x = 7;
 
         // code here
-        double a = Math.Pow(s, x);
-        answer = Convert.ToInt16(a);
-        // end
+        answer = 3;
+        int i = 1;
+        for (; i < 7; i++)
+        {
+            answer *= 3;
+        }
+         // end
 
-        return answer;
+            return answer;
     }
     public void Task_1_11()
     {
@@ -283,7 +286,7 @@ public class Program
     }
     public (double, int) Task_1_16()
     {
-        double answer = 0;
+        double answer = 1;
         int power = 0;
 
         // code here
@@ -291,28 +294,13 @@ public class Program
         for (int i = 0; i < 64; i++)
         {
             answer += amount / 15.0;
-            amount = amount << 1;
-            //Console.WriteLine(amount);
-        }
+            amount *= 2;
 
-        string sAnswer = answer.ToString();
-        bool read = false;
-        string sPower = "";
-        for (int i = 0; i < sAnswer.Length; i++)
-        {
-            if (read) sPower += sAnswer[i];
-            if (sAnswer[i] == '+') read = true;
         }
-        power = int.Parse(sPower);
-        sPower = "";
-
-        for (int i = 0; i < 5; i++)
-        {
-            sPower += sAnswer[i];
-        }
-        answer = double.Parse(sPower);
+        power = (int)Math.Log10(answer);
+        for (int i = 0; i < power; i++)
+            answer /= 10;
         answer = Math.Round(answer, 2);
-        Console.WriteLine(power + " " + answer);
         // end
 
         return (answer, power);
@@ -337,7 +325,7 @@ public class Program
         {
             answer = answer << 1;
             x -= 3;
-        }while (x > 0)
+        } while (x > 0);
         // end
 
         return answer;

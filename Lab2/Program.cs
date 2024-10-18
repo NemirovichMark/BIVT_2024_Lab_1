@@ -52,9 +52,9 @@ public class Program
         //program.Task_2_9(6);
         //program.Task_2_10(6);
         //program.Task_2_11(6);
-        double r = double.Parse(Console.ReadLine());
-        int type = int.Parse(Console.ReadLine());
-        program.Task_2_12(r, type);
+        //double r = double.Parse(Console.ReadLine());
+        //int type = int.Parse(Console.ReadLine());
+        //program.Task_2_12(r, type);
         //double A = double.Parse(Console.ReadLine());
         //double B = double.Parse(Console.ReadLine());
         //int type = int.Parse(Console.ReadLine());
@@ -64,13 +64,13 @@ public class Program
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
-        //program.Task_3_4(1, 2);
+        //program.Task_3_4(1, 3);
         //program.Task_3_5(30);
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        //program.Task_3_10();
+        program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -544,18 +544,24 @@ public class Program
         double answer = 0;
 
         // code here;
-
-        switch (type)
+        if (r > 0)
         {
-            case 0:
-                answer = Math.Round(r * r, 2);
-                break;
-            case 1:
-                answer = Math.Round(Math.PI * r * r, 2);
-                break;
-            case 2:
-                answer = Math.Round((Math.Sqrt(3) * r * r) / 4, 2);
-                break;
+            switch (type)
+            {
+                case 0:
+                    answer = Math.Round(r * r, 2);
+                    break;
+                case 1:
+                    answer = Math.Round(Math.PI * r * r, 2);
+                    break;
+                case 2:
+                    answer = Math.Round((Math.Sqrt(3) * r * r) / 4, 2);
+                    break;
+            }
+        }
+        else
+        {
+            answer = 0;
         }
         Console.WriteLine($"Площаль равна - {answer}");
         // end
@@ -567,17 +573,32 @@ public class Program
         double answer = 0;
 
         // code here;
-        switch (type)
+        if (A > 0 && B > 0)
         {
-            case 0:
-                answer = Math.Round(A * B, 2);
-                break;
-            case 1:
-                answer = Math.Round((Math.PI * A * A) - (Math.PI * B * B), 2);
-                break;
-            case 2:
-                answer = Math.Round(0.5 * A * Math.Sqrt((B * B - (A / 2) * (A / 2))), 2);
-                break;
+            switch (type)
+            {
+                case 0:
+                    answer = Math.Round(A * B, 2);
+                    break;
+                case 1:
+                    if (A > B)
+                    {
+                        answer = Math.Round((Math.PI * A * A) - (Math.PI * B * B), 2);
+                        break;
+                    }
+                    else
+                    {
+                        answer = Math.Round((Math.PI * B * B) - (Math.PI * A * A), 2);
+                        break;
+                    }
+                case 2:
+                    answer = Math.Round(0.5 * A * Math.Sqrt((B * B - (A / 2) * (A / 2))), 2);
+                    break;
+            }
+        }
+        else
+        {
+            answer = 0;
         }
         Console.WriteLine($"Площаль равна: {answer}");
         // end
@@ -593,6 +614,17 @@ public class Program
         int n = 0;
 
         // code here
+        double s = 0, averagehight, r;
+        for(; ;n++)
+        {
+            double.TryParse(Console.ReadLine(), out r);
+            if (r <= 0) break;
+            else
+            s += r;
+        }
+        averagehight = s / n;
+        answer = Math.Round(averagehight, 2);
+        Console.WriteLine($"Средний рост равен {answer}");
         // end
 
         // answer should be equal to the task_2_1 answer
@@ -624,7 +656,20 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        double k = 0, x, y, i = 0;
+        string input;
+        while(true)
+        {
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out x);
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out y);
+            n += 1;
+            if (Math.Abs(x * x + y * y) <= r2 * r2 && (Math.Abs(x * x + y * y) <= r1 * r1) == false) k += 1;
+        }
+        Console.WriteLine($"В кольцо попало {k} из {n}");
         // end
 
         return answer;
@@ -654,7 +699,26 @@ public class Program
         int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
-
+        double x, y;
+        string input;
+        while(true)
+        {
+            input = Console.ReadLine();
+            if(input == "stop") break;
+            double.TryParse(input, out x);
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out y);
+            if (x > 0 && y > 0)
+            {
+                answer1++;
+            }
+            if (x < 0 && y < 0)
+            {
+                answer3++;
+            }
+        }
+        Console.WriteLine($"Кол. Точек Квадранта 1 = {answer1}, а кол. точек Квадранта 3 = {answer3}");
         // end
 
         return (answer1, answer3);
@@ -686,7 +750,29 @@ public class Program
         int answer = 0, n = 0;
 
         // code here;
-
+        double r1, r2, r3, r4, k = 0;
+        string input;
+        while(true)
+        {
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out r1);
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out r2);
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out r3);
+            input = Console.ReadLine();
+            if (input == "stop") break;
+            double.TryParse(input, out r4);
+            if (r1 > 3 && r2 > 3 && r3 > 3 && r4 > 3)
+            {
+                k++;
+            }
+            n++;
+        }
+        Console.WriteLine($"Всего {k} из {n} учеников имеют хорошие оценки, куда смотрит наше образование!?");
         // end
 
         return answer;
